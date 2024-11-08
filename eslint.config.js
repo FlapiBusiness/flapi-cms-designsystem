@@ -23,6 +23,7 @@ const mainConfig = {
     'src-nuxt/utils/**/*.{ts,tsx}',
     'src-nuxt/directives/**/*.{ts,tsx}',
     'src-core/**/*.{ts,tsx}',
+    '.storybook/stories/**/*.{ts,tsx}',
   ],
   plugins: {
     '@typescript-eslint': eslintPluginTypeScript,
