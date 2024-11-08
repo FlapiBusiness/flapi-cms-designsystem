@@ -7,6 +7,7 @@ import eslintPluginUnusedImports from 'eslint-plugin-unused-imports'
 import eslintPluginVue from 'eslint-plugin-vue'
 import eslintParserVue from 'vue-eslint-parser'
 import eslintParserTypeScript from '@typescript-eslint/parser'
+import eslintPluginCypress from 'eslint-plugin-cypress/flat'
 
 // Configuration principale
 const mainConfig = {
@@ -32,6 +33,7 @@ const mainConfig = {
     'eslint-plugin-jsdoc': eslintPluginJSDoc,
     '@stylistic-eslint-plugin': eslintPluginStylistic,
     'eslint-plugin-vue': eslintPluginVue,
+    'eslint-plugin-cypress': eslintPluginCypress,
   },
   rules: {
     /**
@@ -145,7 +147,7 @@ const mainConfig = {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: ['./tsconfig.json'],
+        project: ['./tsconfig.json', './tsconfig.app.json'],
       },
     },
   },
@@ -154,7 +156,7 @@ const mainConfig = {
     parserOptions: {
       extraFileExtensions: ['.vue'],
       parser: eslintParserTypeScript,
-      project: './tsconfig.json',
+      project: ['./tsconfig.json', './tsconfig.app.json'],
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
@@ -190,4 +192,4 @@ const ignoreConfig = {
  * Exportation combinée des configurations
  * eslint.config.{js,mjs,cjs} nouvelle syntaxe depuis la version >= 8.57
  */
-export default [mainConfig, ignoreConfig, eslintPluginJSDoc.configs['flat/recommended'], eslintConfigPrettier]
+export default [mainConfig, ignoreConfig, eslintPluginJSDoc.configs['flat/recommended'], eslintPluginCypress.configs.recommended, eslintConfigPrettier]

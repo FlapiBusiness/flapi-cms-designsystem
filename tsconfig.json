@@ -1,9 +1,4 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "include": [
-   ".storybook/**/*",
-    "tests/**/*",
-    "src-core/**/*",
-  ]
+  "extends": "./.nuxt/tsconfig.json"
 }

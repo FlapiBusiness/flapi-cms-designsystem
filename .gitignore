@@ -43,3 +43,4 @@ tests/unit/test-reports/
 cypress/screenshots
 cypress/videos
 cypress/downloads
+*storybook.log
