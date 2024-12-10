@@ -108,6 +108,7 @@ git clone git@github.com:FlapiBusiness/MyRepo.git
 
 1. optional : Open Docker Desktop
 2. Run command :
+
 ```bash
    # A la racine du projet (Placer les components dans src/runtime/components/), puis :
    npm install

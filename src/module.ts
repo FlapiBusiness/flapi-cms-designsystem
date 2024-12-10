@@ -12,7 +12,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    css: true
+    css: true,
   },
   async setup(options: ModuleOptions, nuxt: Nuxt): Promise<void> {
     const resolver: Resolver = createResolver(import.meta.url)
@@ -25,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
        * to the current path, ie the playground !
        * (or the app using your module)
        */
-      cssPath: resolver.resolve("./runtime/assets/css/tailwind.css"),
+      cssPath: resolver.resolve('./runtime/assets/css/tailwind.css'),
       configPath: resolver.resolve('../tailwind.config'),
     })
 
