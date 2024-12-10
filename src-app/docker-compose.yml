@@ -1,3 +1,4 @@
+name: 'flapi-cms-designsystem'
 services:
   designsystem:
     container_name: designsystem
@@ -14,6 +15,21 @@ services:
       - /app/node_modules
     ports:
       - '1470:1470'
+    networks:
+      - app-network
+  storybook:
+    container_name: storybook
+    build:
+      context: ../
+      dockerfile: Dockerfile.storybook
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ../:/app
+      - /app/node_modules
+    ports:
+      - '6400:6400' # Port Storybook
+    command: npx storybook dev -p 6400 -c .storybook --no-open
     networks:
       - app-network
 

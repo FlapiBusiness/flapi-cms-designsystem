@@ -1,0 +1,19 @@
+# Set version latest LTS
+FROM node:22.11
+
+WORKDIR /app
+
+# Copier uniquement package.json et package-lock.json pour optimiser le cache Docker
+COPY package*.json ./
+
+# Installer les dépendances
+RUN npm install
+
+# Copier tout le contenu du contexte de build
+COPY . .
+
+# Exposer le port configuré
+EXPOSE 6400
+
+# Commande par défaut pour démarrer Storybook
+CMD ["npx", "storybook", "dev", "-p", "6400", "-c", ".storybook", "--no-open"]
