@@ -4,5 +4,5 @@
 </template>
 
 <script lang="ts" setup>
-import ExempleComponent from '../../../dist/runtime/components/exemple-component.vue'
+// import ExempleComponent from '../../../dist/runtime/components/exemple-component.vue'
 </script>
