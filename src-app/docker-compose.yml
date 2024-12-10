@@ -4,7 +4,7 @@ services:
     image: flapi/designsystem:develop
     restart: always
     build:
-      context: ../                   # Contexte de build au niveau du parent
+      context: ../ # Contexte de build au niveau du parent
       dockerfile: src-app/Dockerfile # Chemin relatif vers le Dockerfile
     environment:
       - ENV_MODE=local

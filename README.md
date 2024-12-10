@@ -105,21 +105,25 @@ git clone git@github.com:FlapiBusiness/MyRepo.git
 <br /><br /><br /><br />
 
 ## 🔄 Cycle Development
+
 ### Docker
+
 1. Open Docker Desktop
 2. Run command :
 
 ```bash
    # A la racine du projet :
    npm install # juste pour l'ide
-   
+
    cd src-app
    npm install # juste pour l'ide
    npm run web:run:dev:docker:local OR npm run web:run:dev:docker:remote
 ```
 
 ### No Docker :
+
 1. Run command :
+
 ```bash
    # A la racine du projet (Placer les components dans src/runtime/components/), puis :
    npm install
@@ -131,7 +135,6 @@ git clone git@github.com:FlapiBusiness/MyRepo.git
    npm install
    npm run web:run:dev:local
 ```
-
 
 <br /><br /><br /><br />
 
