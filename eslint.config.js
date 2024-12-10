@@ -184,6 +184,7 @@ const ignoreConfig = {
     '.nitro/**',
     '.cache/**',
     'src-app/.nuxt/**',
+    'src-app/src-app/.nuxt/**',
     'src-app/.output/**',
     'src-app/dist/**',
     'src-app/dist-ssr/**',
