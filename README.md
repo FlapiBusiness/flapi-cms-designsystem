@@ -1,5 +1,15 @@
 # Flapi - CMS DesignSystem
 
+## Description
+
+Le Flapi CMS DesignSystem est un module Nuxt conçu pour être déployé en tant que package npm. Ce dépôt est organisé en deux dossiers principaux :
+
+`src` : Il s'agit du module Nuxt principal qui définit le DesignSystem et est packagé pour une publication sur npm. Il contient tous les composants, utilitaires et la logique qui composent le DesignSystem.
+
+`src-app` : Un projet Nuxt vierge utilisé pour `lier et tester directement le module situé dans le dossier src`. Cette configuration permet un développement et une validation en temps réel du DesignSystem dans un environnement isolé.
+
+<br /><br /><br /><br />
+
 ## 🛠 Tech Stack
 
 - TypeScript (Language)
@@ -135,6 +145,7 @@ git clone git@github.com:FlapiBusiness/MyRepo.git
    npm install
    npm run web:run:dev:local
 ```
+
 
 <br /><br /><br /><br />
 
