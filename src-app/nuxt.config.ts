@@ -13,7 +13,9 @@ export default defineNuxtConfig({
   srcDir: 'src-nuxt', // Directory of your source files
   ssr: false, // Mettre a false pour : desktop (tauri)
   devtools: { enabled: true },
-  telemetry: false,
+  telemetry: {
+    enabled: false,
+  },
   components: true,
   modules: ['@pinia/nuxt', '@nuxt/test-utils/module', '@nuxtjs/google-fonts', '@nuxtjs/tailwindcss', '../src/module'],
   pinia: {
