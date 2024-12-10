@@ -13,12 +13,12 @@ Le Flapi CMS DesignSystem est un module Nuxt conçu pour être déployé en tant
 ## 🛠 Tech Stack
 
 - TypeScript (Language)
-- Adonis (Framework)
+- Nuxt (Framework)
 - CI / CD (Github Actions)
 - Docker / DockerCompose (Development-Local)
 - Kubernetes (Development-Remote, Staging and Production)
-- Unit / Functional Tests (Japa)
-- MariaDB (Database)
+- Vitest (Unit Tests)
+- Cypress (E2E Tests)
 
 <br /><br /><br /><br />
 
@@ -77,20 +77,12 @@ Pour plus de détails sur les conventions de commit, consultez : [Conventional C
 
 <br /><br /><br /><br />
 
-## 📚 Domains of different environments
-
-- Production : https://test.crzcommon.com
-- Staging : https://staging.test.crzcommon.com
-- Development-Remote : https://dev.test.crzcommon.com
-
-<br /><br /><br /><br />
-
 ## ⚙️ Setup Environment Development
 
 1. Clone the project repository using the following commands :
 
 ```bash
-git clone git@github.com:FlapiBusiness/MyRepo.git
+git clone git@github.com:FlapiBusiness/flapi-cms-designsystem.git
 ```
 
 2. Steps by Platform :
@@ -103,7 +95,7 @@ git clone git@github.com:FlapiBusiness/MyRepo.git
 
 # macOS :
 1. Requirements : macOS Intel x86_64 or macOS Apple Silicon arm64
-2. Requirements (2) : macOS 11.0 (Big Sur)
+2. Requirements (2) : macOS 11.0 (Big Sur) +
 2. Download and Install Docker Desktop : https://docs.docker.com/desktop/install/mac-install/
 
 # Linux (Ubuntu / Debian) :
@@ -149,16 +141,32 @@ git clone git@github.com:FlapiBusiness/MyRepo.git
 
 <br /><br /><br /><br />
 
-## 🔄 Unit / Functional Tests
+## 🔄 Unit / E2E Tests
 
 1. Run command :
 
 ```bash
+# Unit Tests
 # Environment : Development
 npm run test:develop
 
+# Unit Tests
 # Environment : Staging / Production
 npm run test:staging-prod
+
+
+
+# E2E Tests
+# Environment : Development
+npm run test:e2e:dev:chrome
+npm run test:e2e:dev:firefox
+npm run test:e2e:dev:edge
+
+# E2E Tests with GUI
+# Environment : Development
+npm run test:e2e:dev:gui:chrome
+npm run test:e2e:dev:gui:firefox
+npm run test:e2e:dev:gui:edge
 ```
 
 <br /><br /><br /><br />
