@@ -32,6 +32,7 @@ git commit --allow-empty -m "chore: release 1.1.0-rc.0" -m "Release-As: 1.1.0-rc
 <br /><br /><br /><br />
 
 ## 🚀 Conventions de Commit
+
 Nous utilisons les conventions de commit pour maintenir une cohérence dans l'historique du code et faciliter le versionnement automatique avec release-please. Voici les types de commits que nous utilisons, ainsi que leur impact sur le versionnage :
 
 - feat : Introduction d'une nouvelle fonctionnalité pour l'utilisateur. Entraîne une augmentation de la version mineure (par exemple, de 1.0.0 à 1.1.0).
@@ -105,15 +106,18 @@ git clone git@github.com:FlapiBusiness/MyRepo.git
 
 ## 🔄 Cycle Development
 
-1. Open Docker Desktop
+1. optional : Open Docker Desktop
 2. Run command :
-
 ```bash
-   # Start the development server on http://localhost:3555 (AdonisJS)
-   # Start the development server on http://localhost:7450 (PhpMyAdmin)
-   # Start MariaDB port is : 3308
-   npm install # just for the idea
-   npm run dev:docker
+   # A la racine du projet (Placer les components dans src/runtime/components/), puis :
+   npm install
+   npm run dev:prepare
+
+   # Pour tester les components dans un projet classique nuxt (qui ce trouve dans src-app)
+   # Ce projet utilisera le module nuxt présent dans le dossier 'dist' à la racine (l'équivalent du npm run dev:prepare ci-dessus qui génére le dossier dist)
+   cd src-app
+   npm install
+   npm run web:run:dev:local OR npm run web:run:dev:docker:local
 ```
 
 <br /><br /><br /><br />

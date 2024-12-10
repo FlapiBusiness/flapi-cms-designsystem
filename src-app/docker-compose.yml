@@ -1,11 +1,11 @@
 services:
-  nuxt:
-    container_name: nuxt
-    image: flapi/website-frontend:develop
+  designsystem:
+    container_name: designsystem
+    image: flapi/designsystem:develop
     restart: always
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../
+      dockerfile: /src-app/Dockerfile
     environment:
       - ENV_MODE=local
     command: /bin/sh -c "if [ $$ENV_MODE = 'local' ]; then npx nuxi dev --dotenv .env.development --no-clear --port=1470; else npx nuxi dev --dotenv .env.development-remote --no-clear --port=1470; fi"

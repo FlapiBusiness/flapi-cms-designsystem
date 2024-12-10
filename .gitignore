@@ -6,13 +6,21 @@
 .cache
 dist
 dist-ssr
-storybook-static
+src-app/.output
+src-app/.data
+src-app/.nuxt
+src-app/.nitro
+src-app/.cache
+src-app/dist
+src-app/dist-ssr
 
 # Node dependencies
 node_modules
+src-app/node_modules
 
 # Optional eslint cache
 .eslintcache
+src-app/.eslintcache
 
 # Logs
 logs
@@ -38,9 +46,17 @@ lerna-debug.log*
 # Tests Reports
 tests/e2e/test-reports/
 tests/unit/test-reports/
+src-app/tests/e2e/test-reports/
+src-app/tests/unit/test-reports/
 
 # Cypress
 cypress/screenshots
 cypress/videos
 cypress/downloads
+src-app/cypress/screenshots
+src-app/cypress/videos
+src-app/cypress/downloads
+
+# Storybook
 *storybook.log
+storybook-static

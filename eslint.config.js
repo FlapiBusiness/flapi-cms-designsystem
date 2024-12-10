@@ -12,19 +12,21 @@ import eslintPluginCypress from 'eslint-plugin-cypress/flat'
 // Configuration principale
 const mainConfig = {
   files: [
-    'tests/**/*.{ts,tsx}',
-    'src-nuxt/pages/**/*.vue',
-    'src-nuxt/components/**/*.vue',
-    'src-nuxt/composables/**/*.{ts,tsx}',
-    'src-nuxt/modules/**/*.{ts,tsx}',
-    'src-nuxt/stores/**/*.{ts,tsx}',
-    'src-nuxt/plugins/**/*.{ts,tsx}',
-    'src-nuxt/layouts/**/*.vue',
-    'src-nuxt/middlewares/**/*.{ts,tsx}',
-    'src-nuxt/utils/**/*.{ts,tsx}',
-    'src-nuxt/directives/**/*.{ts,tsx}',
-    'src-core/**/*.{ts,tsx}',
-    '.storybook/stories/**/*.{ts,tsx}',
+    'src-app/tests/**/*.{ts,tsx}',
+    'src-app/src-nuxt/pages/**/*.vue',
+    'src-app/src-nuxt/components/**/*.vue',
+    'src-app/src-nuxt/composables/**/*.{ts,tsx}',
+    'src-app/src-nuxt/modules/**/*.{ts,tsx}',
+    'src-app/src-nuxt/stores/**/*.{ts,tsx}',
+    'src-app/src-nuxt/plugins/**/*.{ts,tsx}',
+    'src-app/src-nuxt/layouts/**/*.vue',
+    'src-app/src-nuxt/middlewares/**/*.{ts,tsx}',
+    'src-app/src-nuxt/utils/**/*.{ts,tsx}',
+    'src-app/src-nuxt/directives/**/*.{ts,tsx}',
+    'src-app/src-core/**/*.{ts,tsx}',
+    'src-app/.storybook/stories/**/*.{ts,tsx}',
+    'src/**/*.{ts,tsx}',
+    'src/runtime/**/*.vue',
   ],
   plugins: {
     '@typescript-eslint': eslintPluginTypeScript,
@@ -181,8 +183,15 @@ const ignoreConfig = {
     '.data/**',
     '.nitro/**',
     '.cache/**',
-    'src-tauri/target/**',
-    'src-tauri/gen/**',
+    'src-app/.nuxt/**',
+    'src-app/.output/**',
+    'src-app/dist/**',
+    'src-app/dist-ssr/**',
+    'src-app/node_modules/**',
+    'src-app/.data/**',
+    'src-app/.nitro/**',
+    'src-app/.cache/**',
+    'src/module.ts',
   ],
 }
 
@@ -192,4 +201,10 @@ const ignoreConfig = {
  * Exportation combinée des configurations
  * eslint.config.{js,mjs,cjs} nouvelle syntaxe depuis la version >= 8.57
  */
-export default [mainConfig, ignoreConfig, eslintPluginJSDoc.configs['flat/recommended'], eslintPluginCypress.configs.recommended, eslintConfigPrettier]
+export default [
+  mainConfig,
+  ignoreConfig,
+  eslintPluginJSDoc.configs['flat/recommended'],
+  eslintPluginCypress.configs.recommended,
+  eslintConfigPrettier,
+]

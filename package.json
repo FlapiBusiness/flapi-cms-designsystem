@@ -1,23 +1,26 @@
 {
   "name": "flapi-cms-designsystem",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
+  "description": "My new Nuxt module",
+  "repository": "your-org/my-module",
+  "license": "MIT",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "web:run:dev:local": "nuxi dev --dotenv .env.development --open --no-clear --clipboard --port=1470",
-    "web:run:dev:remote": "nuxi dev --dotenv .env.development-remote --open --no-clear --clipboard --port=1470",
-    "web:run:dev:docker:local": "cross-env ENV_MODE=local docker-compose up",
-    "web:run:dev:docker:remote": "cross-env ENV_MODE=remote docker-compose up",
-    "web:build:static:develop": "nuxi generate --dotenv .env.development",
-    "web:build:static:staging": "nuxi generate --dotenv .env.staging",
-    "web:build:static:prod": "nuxi generate --dotenv .env.production",
-    "web:build:server:develop": "nuxi build --dotenv .env.development",
-    "web:build:server:staging": "nuxi build --dotenv .env.staging",
-    "web:build:server:prod": "nuxi build --dotenv .env.production",
-    "web:preview": "cross-env PORT=1462 nuxt preview --dotenv .env.development",
-    "web:analyze": "nuxi analyze --loglevel verbose",
-    "web:cleanup": "nuxi cleanup",
-    "web:prepare": "nuxi prepare",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
+    "build:prod": "nuxt-module-build build",
     "test:unit:dev": "vitest watch --coverage",
     "test:unit:dev:gui": "vitest watch --ui --coverage",
     "test:unit:staging-prod": "vitest run --coverage",
@@ -38,29 +41,21 @@
     "lint:eslint": "eslint .",
     "lint:ts": "vue-tsc --noEmit",
     "lint:fix": "prettier --write --list-different . && npm run lint:prettier --fix && npm run lint:eslint --fix",
-    "tauri": "tauri",
-    "bash:format": "sed -i 's/\\r//' src-tauri/scripts/beforeDevCommand.sh && sed -i 's/\\r//' src-tauri/scripts/beforeBuildCommand.sh",
     "prepare": "husky && nuxi prepare"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.7.0",
-    "axios": "^1.7.7",
-    "luxon": "^3.5.0",
-    "pinia": "^2.2.6",
-    "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "@nuxt/kit": "^3.14.159"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@nuxt/devtools": "^1.6.0",
+    "@nuxt/module-builder": "^0.8.4",
+    "@nuxt/schema": "^3.14.159",
     "@nuxt/test-utils": "^3.14.4",
-    "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/sitemap": "^6.1.5",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@stylistic/eslint-plugin": "^2.10.1",
     "@types/jsdom": "^21.1.7",
-    "@types/luxon": "^3.4.2",
     "@types/mochawesome": "^6.2.4",
     "@types/node": "^22.9.0",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
@@ -69,7 +64,6 @@
     "@vitest/ui": "^2.1.4",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.20",
-    "cross-env": "^7.0.3",
     "cypress": "^13.15.2",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
@@ -81,10 +75,9 @@
     "eslint-plugin-vue": "^9.30.0",
     "husky": "^9.1.6",
     "jsdom": "^25.0.1",
-    "json": "^11.0.0",
     "mochawesome": "^7.1.3",
     "nitropack": "^2.10.3",
-    "npm-check-updates": "^17.1.1O",
+    "npm-check-updates": "^17.1.11",
     "npm-run-all2": "^7.0.1",
     "nuxt": "^3.14.159",
     "postcss": "^8.4.47",
@@ -95,8 +88,5 @@
     "vitest": "^2.1.4",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.1.10"
-  },
-  "engines": {
-    "node": ">=22.11.0"
   }
 }
