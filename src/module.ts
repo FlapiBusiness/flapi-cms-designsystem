@@ -22,7 +22,7 @@ export default defineNuxtModule<ModuleOptions>({
       /**
        * Here, you specify where your config is.
        * By default, the module have a configPath relative
-       * to the current path, ie the playground !
+       * to the current path, ie the playground!
        * (or the app using your module)
        */
       cssPath: resolver.resolve('./runtime/assets/css/tailwind.css'),

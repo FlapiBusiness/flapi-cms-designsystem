@@ -43,7 +43,8 @@
     "lint:fix": "prettier --write --list-different . && npm run lint:prettier --fix && npm run lint:eslint --fix",
     "prepare": "husky && nuxi prepare",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "create:component": "bash ./scripts/create-component.sh"
   },
   "dependencies": {
     "@nuxt/kit": "^3.14.159"
@@ -57,9 +58,12 @@
     "@nuxt/schema": "^3.14.159",
     "@nuxt/test-utils": "^3.14.4",
     "@nuxtjs/tailwindcss": "^6.12.2",
+    "@storybook/addon-designs": "^8.0.4",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-links": "^8.4.7",
     "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/blocks": "^8.4.7",
     "@storybook/test": "^8.4.7",
     "@storybook/vue3": "^8.4.7",
@@ -70,6 +74,7 @@
     "@types/node": "^22.9.0",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",
+    "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-v8": "^2.1.4",
     "@vitest/ui": "^2.1.4",
     "@vue/test-utils": "^2.4.6",
@@ -99,8 +104,7 @@
     "typescript": "~5.5.0",
     "vitest": "^2.1.4",
     "vue-eslint-parser": "^9.4.3",
-    "vue-tsc": "^2.1.10",
-    "@vitejs/plugin-vue": "^5.2.1"
+    "vue-tsc": "^2.1.10"
   },
   "eslintConfig": {
     "extends": [
