@@ -2,6 +2,7 @@
 
 # Chemin de base pour les composants
 BASE_PATH="src-app/src-nuxt/components"
+BASE_STORIES_PATH="stories"
 
 # Vérification de l'argument
 if [ -z "$1" ]; then
@@ -20,9 +21,10 @@ CAPITALIZED_NAME="$(echo ${COMPONENT_NAME:0:1} | tr '[:lower:]' '[:upper:]')${CO
 # Construire les chemins finaux
 FULL_DIR_PATH="$BASE_PATH/$DIR_PATH"
 COMPONENT_FILE="$FULL_DIR_PATH/$CAPITALIZED_NAME.vue"
-STORYBOOK_FILE="$FULL_DIR_PATH/$CAPITALIZED_NAME.stories.ts"
+STORYBOOK_DIR_PATH="$BASE_STORIES_PATH/$DIR_PATH"
+STORYBOOK_FILE="$STORYBOOK_DIR_PATH/$CAPITALIZED_NAME.stories.ts"
 
-# Créer les dossiers nécessaires
+# Créer les dossiers nécessaires pour le composant
 mkdir -p "$FULL_DIR_PATH"
 
 # Générer le fichier .vue si non existant
@@ -34,7 +36,7 @@ if [ ! -f "$COMPONENT_FILE" ]; then
 
 <script lang="ts">
 /**
- * Type definitions for the flapi button component props
+ * Type definitions for the ${CAPITALIZED_NAME} component props
  * @type {${CAPITALIZED_NAME}Props}
  * @property {string} title - The title of the component
  */
@@ -59,46 +61,47 @@ else
   echo "❌ Le composant Vue existe déjà : $COMPONENT_FILE"
 fi
 
+# Créer les dossiers nécessaires pour les fichiers Storybook
+mkdir -p "$STORYBOOK_DIR_PATH"
+
 # Générer le fichier .stories.ts si non existant
 if [ ! -f "$STORYBOOK_FILE" ]; then
   cat <<EOF > "$STORYBOOK_FILE"
 import type { Meta, StoryFn } from '@storybook/vue3';
-import ${CAPITALIZED_NAME} from './${CAPITALIZED_NAME}.vue';
-import type { ${CAPITALIZED_NAME}Props } from './${CAPITALIZED_NAME}.vue';
-import type { StrictArgTypes } from '@storybook/csf'
+import ${CAPITALIZED_NAME} from '@/components/${DIR_PATH}/${CAPITALIZED_NAME}.vue';
+import type { ${CAPITALIZED_NAME}Props } from '@/components/${DIR_PATH}/${CAPITALIZED_NAME}.vue';
 
 type ${CAPITALIZED_NAME}Args = ${CAPITALIZED_NAME}Props
 
 export default {
-    title: '$DIR_PATH/${CAPITALIZED_NAME}',
-    component: ${CAPITALIZED_NAME},
-    parameters: {
-        design: {
-            type: 'figma',
-            url: 'https://www.figma.com/design',
-        },
+  title: '${DIR_PATH}/${CAPITALIZED_NAME}',
+  component: ${CAPITALIZED_NAME},
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design',
     },
-    argTypes: {
-        title: {
-            control: 'text',
-            description: 'Title of the component',
-        }
+  },
+  argTypes: {
+    title: {
+      control: 'text',
+      description: 'Title of the component',
     },
+  },
 } as Meta<typeof ${CAPITALIZED_NAME}>;
 
-export const Default: StoryFn<${CAPITALIZED_NAME}Args> = (args: ${CAPITALIZED_NAME}Args, { argTypes }: { argTypes: StrictArgTypes<${CAPITALIZED_NAME}Args> }) => ({
-    components: { ${CAPITALIZED_NAME} },
-    props: Object.keys(argTypes),
-    setup() {
-        return { args };
-    },
-    template: \`
-      <${CAPITALIZED_NAME} v-bind="args" :title="args.title" />
-    \`,
+export const Default: StoryFn<${CAPITALIZED_NAME}Args> = (args) => ({
+  components: { ${CAPITALIZED_NAME} },
+  setup() {
+    return { args };
+  },
+  template: \`
+    <${CAPITALIZED_NAME} v-bind="args" :title="args.title" />
+  \`,
 });
 
 Default.args = {
-    title: '${CAPITALIZED_NAME}',
+  title: '${CAPITALIZED_NAME}',
 };
 EOF
   echo "✅ Fichier Storybook créé : $STORYBOOK_FILE"

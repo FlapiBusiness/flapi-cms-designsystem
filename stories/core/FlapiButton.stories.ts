@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiButton, { flapiButtonSizes } from './FlapiButton.vue'
-import type { FlapiButtonProps } from './FlapiButton.vue'
+import FlapiButton, { flapiButtonSizes } from '@/components/core/FlapiButton.vue'
+import type { FlapiButtonProps } from '@/components/core/FlapiButton.vue'
 import type { StrictArgTypes } from '@storybook/csf'
 
 type FlapiButtonArgs = FlapiButtonProps & { slotContent: string }
@@ -59,7 +59,7 @@ export default {
   },
 } as Meta<typeof FlapiButton>
 
-export const Default: StoryFn<FlapiButtonArgs> = (
+export const Playground: StoryFn<FlapiButtonArgs> = (
   args: FlapiButtonArgs,
   { argTypes }: { argTypes: StrictArgTypes<FlapiButtonArgs> },
 ) => ({
@@ -75,7 +75,7 @@ export const Default: StoryFn<FlapiButtonArgs> = (
     `,
 })
 
-Default.args = {
+Playground.args = {
   to: '',
   backgroundColor: '#8472F3',
   backgroundHoverColor: '#6B59D9',
