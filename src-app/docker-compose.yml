@@ -1,22 +1,22 @@
 name: 'flapi-cms-designsystem'
 services:
-  #  designsystem:
-  #    container_name: designsystem
-  #    image: flapi/designsystem:develop
-  #    restart: always
-  #    build:
-  #      context: ../ # Contexte de build au niveau du parent
-  #      dockerfile: src-app/Dockerfile # Chemin relatif vers le Dockerfile
-  #    environment:
-  #      - ENV_MODE=local
-  #    command: /bin/sh -c "if [ $$ENV_MODE = 'local' ]; then npx nuxi dev --dotenv .env.development --no-clear --port=1470; else npx nuxi dev --dotenv .env.development-remote --no-clear --port=1470; fi"
-  #    volumes:
-  #      - ../:/app # Monter tout le contexte parent
-  #      - /app/node_modules
-  #    ports:
-  #      - '1470:1470'
-  #    networks:
-  #      - app-network
+  designsystem:
+    container_name: designsystem
+    image: flapi/designsystem:develop
+    restart: always
+    build:
+      context: ../ # Contexte de build au niveau du parent
+      dockerfile: src-app/Dockerfile # Chemin relatif vers le Dockerfile
+    environment:
+      - ENV_MODE=local
+    command: /bin/sh -c "if [ $$ENV_MODE = 'local' ]; then npx nuxi dev --dotenv .env.development --no-clear --port=1470; else npx nuxi dev --dotenv .env.development-remote --no-clear --port=1470; fi"
+    volumes:
+      - ../:/app # Monter tout le contexte parent
+      - /app/node_modules
+    ports:
+      - '1470:1470'
+    networks:
+      - app-network
   storybook:
     container_name: storybook
     build:

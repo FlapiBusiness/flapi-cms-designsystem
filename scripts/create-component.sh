@@ -32,9 +32,7 @@ if [ ! -f "$COMPONENT_FILE" ]; then
   <h1>{{ props.title }}</h1>
 </template>
 
-<script lang="ts" setup>
-import { defineProps } from '@vue/runtime-core'
-
+<script lang="ts">
 /**
  * Type definitions for the flapi button component props
  * @type {${CAPITALIZED_NAME}Props}
@@ -43,6 +41,10 @@ import { defineProps } from '@vue/runtime-core'
 export type ${CAPITALIZED_NAME}Props = {
   title: string
 }
+</script>
+
+<script lang="ts" setup>
+import { defineProps } from '@vue/runtime-core'
 
 const props: ${CAPITALIZED_NAME}Props = defineProps({
   title: {
@@ -63,6 +65,7 @@ if [ ! -f "$STORYBOOK_FILE" ]; then
 import type { Meta, StoryFn } from '@storybook/vue3';
 import ${CAPITALIZED_NAME} from './${CAPITALIZED_NAME}.vue';
 import type { ${CAPITALIZED_NAME}Props } from './${CAPITALIZED_NAME}.vue';
+import type { StrictArgTypes } from '@storybook/csf'
 
 type ${CAPITALIZED_NAME}Args = ${CAPITALIZED_NAME}Props
 
@@ -83,7 +86,7 @@ export default {
     },
 } as Meta<typeof ${CAPITALIZED_NAME}>;
 
-export const Default: StoryFn<${CAPITALIZED_NAME}Args> = (args, { argTypes }) => ({
+export const Default: StoryFn<${CAPITALIZED_NAME}Args> = (args: ${CAPITALIZED_NAME}Args, { argTypes }: { argTypes: StrictArgTypes<${CAPITALIZED_NAME}Args> }) => ({
     components: { ${CAPITALIZED_NAME} },
     props: Object.keys(argTypes),
     setup() {

@@ -44,7 +44,7 @@
     "prepare": "husky && nuxi prepare",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "create:component": "bash ./scripts/create-component.sh"
+    "create:component": "sh ./scripts/create-component.sh"
   },
   "dependencies": {
     "@nuxt/kit": "^3.14.159"

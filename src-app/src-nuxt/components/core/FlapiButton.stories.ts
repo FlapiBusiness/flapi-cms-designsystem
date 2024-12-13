@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiButton from './FlapiButton.vue'
+import FlapiButton, { flapiButtonSizes } from './FlapiButton.vue'
 import type { FlapiButtonProps } from './FlapiButton.vue'
-import { variants } from '~/utils/constants'
+import type { StrictArgTypes } from '@storybook/csf'
 
 type FlapiButtonArgs = FlapiButtonProps & { slotContent: string }
 
@@ -26,10 +26,13 @@ export default {
       control: 'text',
       description: 'Content of the default slot',
     },
-    variant: {
-      control: 'select',
-      options: variants,
-      description: 'Button variant',
+    backgroundColor: {
+      control: 'color',
+      description: 'Background color of the button',
+    },
+    backgroundHoverColor: {
+      control: 'color',
+      description: 'Background color of the button on hover',
     },
     iconPosition: {
       control: 'select',
@@ -48,10 +51,18 @@ export default {
       control: 'text',
       description: 'Icon name',
     },
+    size: {
+      control: 'select',
+      options: flapiButtonSizes,
+      description: 'Size of the button',
+    },
   },
 } as Meta<typeof FlapiButton>
 
-export const Primary: StoryFn<FlapiButtonArgs> = (args, { argTypes }) => ({
+export const Default: StoryFn<FlapiButtonArgs> = (
+  args: FlapiButtonArgs,
+  { argTypes }: { argTypes: StrictArgTypes<FlapiButtonArgs> },
+) => ({
   components: { FlapiButton },
   props: Object.keys(argTypes),
   setup() {
@@ -64,11 +75,13 @@ export const Primary: StoryFn<FlapiButtonArgs> = (args, { argTypes }) => ({
     `,
 })
 
-Primary.args = {
+Default.args = {
   to: '',
-  variant: 'primary',
+  backgroundColor: '#8472F3',
+  backgroundHoverColor: '#6B59D9',
   disabled: false,
   icon: '',
   iconPosition: null,
   slotContent: 'Click me!',
+  size: 'md',
 }
