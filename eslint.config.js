@@ -8,6 +8,7 @@ import eslintPluginVue from 'eslint-plugin-vue'
 import eslintParserVue from 'vue-eslint-parser'
 import eslintParserTypeScript from '@typescript-eslint/parser'
 import eslintPluginCypress from 'eslint-plugin-cypress/flat'
+import eslintPluginStorybook from 'eslint-plugin-storybook'
 
 // Configuration principale
 const mainConfig = {
@@ -208,4 +209,5 @@ export default [
   eslintPluginJSDoc.configs['flat/recommended'],
   eslintPluginCypress.configs.recommended,
   eslintConfigPrettier,
+  eslintPluginStorybook.configs['recommended']
 ]
