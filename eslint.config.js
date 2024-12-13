@@ -37,6 +37,7 @@ const mainConfig = {
     '@stylistic-eslint-plugin': eslintPluginStylistic,
     'eslint-plugin-vue': eslintPluginVue,
     'eslint-plugin-cypress': eslintPluginCypress,
+    'eslint-plugin-storybook': eslintPluginStorybook,
   },
   rules: {
     /**
@@ -194,6 +195,9 @@ const ignoreConfig = {
     'src-app/.nitro/**',
     'src-app/.cache/**',
     'src/module.ts',
+    'storybook-static/**',
+    '.storybook/main.ts',
+    '.storybook/preview.ts',
   ],
 }
 
@@ -209,5 +213,5 @@ export default [
   eslintPluginJSDoc.configs['flat/recommended'],
   eslintPluginCypress.configs.recommended,
   eslintConfigPrettier,
-  eslintPluginStorybook.configs['recommended']
+  ...eslintPluginStorybook.configs['flat/recommended'],
 ]
