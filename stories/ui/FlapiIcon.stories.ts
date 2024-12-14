@@ -1,12 +1,8 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiIcon, { flapiIconModes } from '@/components/ui/FlapiIcon.vue'
+import FlapiIcon, { flapiIconModes, iconsList } from '@/components/ui/FlapiIcon.vue'
 import type { FlapiIconProps } from '@/components/ui/FlapiIcon.vue'
 
 type FlapiIconArgs = FlapiIconProps
-
-// Dynamically import all icons using import.meta.glob
-const icons = import.meta.glob('@/components/icons/*.vue', { eager: false })
-const iconsList = Object.keys(icons).map((filePath) => filePath.split('/').pop()?.replace('.vue', '') || '')
 
 export default {
   title: 'ui/FlapiIcon',
@@ -14,7 +10,7 @@ export default {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design',
+      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=406-9023&t=VH9OIiLT8w1rSDch-4',
     },
   },
   argTypes: {

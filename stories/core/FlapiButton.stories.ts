@@ -1,5 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiButton, { flapiButtonSizes } from '@/components/core/FlapiButton.vue'
+import { iconsList } from '@/components/ui/FlapiIcon.vue'
 import type { FlapiButtonProps } from '@/components/core/FlapiButton.vue'
 import type { StrictArgTypes } from '@storybook/csf'
 
@@ -48,7 +49,8 @@ export default {
       description: 'Disable the button',
     },
     icon: {
-      control: 'text',
+      control: 'select',
+      options: iconsList,
       description: 'Icon name',
     },
     size: {

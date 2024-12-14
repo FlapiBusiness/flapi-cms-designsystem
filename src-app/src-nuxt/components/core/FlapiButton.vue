@@ -13,13 +13,13 @@
   >
     <span class="flex items-center justify-center">
       <span v-if="props.icon && props.iconPosition === 'left' && !isIconOnly" class="mr-2">
-        <!--        <nuxt-icon :name="props.icon" class="button-icon" filled />-->
+        <FlapiIcon :name="props.icon" class="button-icon" mode="stroke" />
       </span>
       <slot v-if="!isIconOnly" />
       <span v-if="props.icon && props.iconPosition === 'right' && !isIconOnly" class="ml-2">
-        <!--        <nuxt-icon :name="props.icon" class="button-icon" filled />-->
+        <FlapiIcon :name="props.icon" class="button-icon" mode="stroke" />
       </span>
-      <!--      <nuxt-icon v-if="isIconOnly && props.icon" class="button-icon" :name="props.icon" filled />-->
+      <FlapiIcon v-if="isIconOnly && props.icon" class="button-icon" :name="props.icon" mode="stroke" />
     </span>
   </component>
 </template>
@@ -60,6 +60,7 @@ import { computed } from 'vue'
 import type { ComputedRef } from 'vue'
 import type { SetupContext } from '@vue/runtime-core'
 import { defineProps, useSlots } from '@vue/runtime-core'
+import FlapiIcon from '@/components/ui/FlapiIcon.vue'
 
 const props: FlapiButtonProps = defineProps({
   to: {

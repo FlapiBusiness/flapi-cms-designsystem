@@ -1,5 +1,6 @@
 <template>
   <svg
+    class="relative top-1"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
@@ -19,6 +20,11 @@
 </template>
 
 <script lang="ts">
+// Dynamically import all icons using import.meta.glob
+const icons: Record<string, () => Promise<unknown>> = import.meta.glob('@/components/icons/*.vue', { eager: false })
+export const iconsList: string[] = Object.keys(icons).map(
+  (filePath: string) => filePath.split('/').pop()?.replace('.vue', '') || '',
+)
 export const flapiIconModes: string[] = ['fill', 'stroke']
 /**
  * Type definitions for the flapi icon component mode
@@ -27,9 +33,15 @@ export const flapiIconModes: string[] = ['fill', 'stroke']
 type FlapiIconMode = (typeof flapiIconModes)[number]
 
 /**
+ * Type definitions for the flapi icon component name
+ * @type {FlapiIconProps}
+ */
+type FlapiIconName = (typeof iconsList)[number]
+
+/**
  * Type definitions for the flapi icon component props
  * @type {FlapiIconProps}
- * @property {string} name - The icon name
+ * @property {FlapiIconName} name - The icon name
  * @property {number | string} width - The icon width
  * @property {number | string} height - The icon height
  * @property {string} viewBox - The icon viewBox
@@ -37,7 +49,7 @@ type FlapiIconMode = (typeof flapiIconModes)[number]
  * @property {string} color - The icon color
  */
 export type FlapiIconProps = {
-  name: string
+  name: FlapiIconName
   width: number | string
   height: number | string
   viewBox: string
@@ -51,7 +63,7 @@ import { defineAsyncComponent } from 'vue'
 
 const props: FlapiIconProps = defineProps({
   name: {
-    type: String,
+    type: String as PropType<FlapiIconName>,
     required: true,
   },
   width: {
@@ -67,7 +79,7 @@ const props: FlapiIconProps = defineProps({
     default: '0 0 24 24',
   },
   mode: {
-    type: String,
+    type: String as PropType<FlapiIconMode>,
     default: 'fill',
   },
   color: {

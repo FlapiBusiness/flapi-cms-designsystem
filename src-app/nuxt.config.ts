@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     enabled: false,
   },
   components: true,
+  plugins: [{ src: '~/plugins/vee-validate.ts', mode: 'client' }],
   modules: ['@pinia/nuxt', '@nuxt/test-utils/module', '@nuxtjs/google-fonts', '@nuxtjs/tailwindcss', '../src/module'],
   pinia: {
     storesDirs: ['./src-nuxt/stores/**'],

@@ -47,7 +47,11 @@
     "create:component": "sh ./scripts/create-component.sh"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.14.159"
+    "@nuxt/kit": "^3.14.159",
+    "@storybook/addon-backgrounds": "^8.4.7",
+    "@vee-validate/i18n": "^4.14.7",
+    "@vee-validate/rules": "^4.14.7",
+    "vee-validate": "^4.14.7"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
