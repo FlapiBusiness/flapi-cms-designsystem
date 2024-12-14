@@ -11,7 +11,7 @@ RUN npm install
 COPY . .
 
 # Prepare the web application (src-app)
-RUN cd src-app && npm run web:prepare && cd ../
+RUN cd src-app && npm install && cd ../
 
 # Build the application
 RUN npm run storybook:build:prod
