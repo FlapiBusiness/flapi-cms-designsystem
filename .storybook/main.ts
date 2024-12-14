@@ -26,6 +26,7 @@ const config: StorybookConfig = {
       viteConfig.resolve.alias = {
         '@': resolve(__dirname, '../src/runtime/'),
         '~': resolve(__dirname, '../src/runtime/'),
+        '#': resolve(__dirname, '../src/runtime/'),
       }
     }
 
