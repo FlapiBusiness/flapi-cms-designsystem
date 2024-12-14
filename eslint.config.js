@@ -16,6 +16,7 @@ const mainConfig = {
     'src-app/tests/**/*.{ts,tsx}',
     'src-app/src-nuxt/pages/**/*.vue',
     'src-app/src-nuxt/components/**/*.vue',
+    'src-app/src-nuxt/components/**/*.stories.ts',
     'src-app/src-nuxt/composables/**/*.{ts,tsx}',
     'src-app/src-nuxt/modules/**/*.{ts,tsx}',
     'src-app/src-nuxt/stores/**/*.{ts,tsx}',
@@ -28,6 +29,7 @@ const mainConfig = {
     'src-app/.storybook/stories/**/*.{ts,tsx}',
     'src/**/*.{ts,tsx}',
     'src/runtime/**/*.vue',
+    'src/runtime/**/*.stories.ts',
   ],
   plugins: {
     '@typescript-eslint': eslintPluginTypeScript,
