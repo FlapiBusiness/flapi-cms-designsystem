@@ -7,12 +7,8 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
-  },
-  // Default configuration options of the Nuxt module
-  defaults: {
-    css: true,
+    name: 'flapi-cms-designsystem',
+    configKey: 'flapiCMSDesignSystem',
   },
   async setup(options: ModuleOptions, nuxt: Nuxt): Promise<void> {
     const resolver: Resolver = createResolver(import.meta.url)
