@@ -65,7 +65,7 @@ jobs:
 
       - name: Install dependencies for project
         run: npm install
-        
+
       - name: Build project for module nuxt to package npm
         run: npm run module:build:prod
 
