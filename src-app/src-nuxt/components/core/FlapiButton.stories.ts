@@ -3,9 +3,15 @@ import FlapiButton, { flapiButtonSizes } from './FlapiButton.vue'
 import type { FlapiButtonProps } from './FlapiButton.vue'
 import type { StrictArgTypes } from '@storybook/csf'
 
+/**
+ * Args definition for FlapiButton story.
+ */
 type FlapiButtonArgs = FlapiButtonProps & { slotContent: string }
 
 export default {
+  /**
+   * Title for the Storybook sidebar.
+   */
   title: 'core/FlapiButton',
   component: FlapiButton,
   parameters: {
@@ -59,13 +65,23 @@ export default {
   },
 } as Meta<typeof FlapiButton>
 
+/**
+ * Default story for FlapiButton.
+ * @param {FlapiButtonArgs} args - The arguments for the story.
+ * @param {StrictArgTypes<FlapiButtonArgs>} argTypes - The argument types for the story.
+ * @returns {StoryFn} - The story.
+ */
 export const Default: StoryFn<FlapiButtonArgs> = (
   args: FlapiButtonArgs,
   { argTypes }: { argTypes: StrictArgTypes<FlapiButtonArgs> },
 ) => ({
   components: { FlapiButton },
   props: Object.keys(argTypes),
-  setup() {
+  /**
+   * Setup the story.
+   * @returns {FlapiButtonArgs} - The arguments for the story.
+   */
+  setup(): { args: FlapiButtonArgs } {
     return { args }
   },
   template: `
