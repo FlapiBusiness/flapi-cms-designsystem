@@ -2,6 +2,7 @@
   "name": "flapi-cms-designsystem-testapp",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "web:run:dev:local": "nuxi dev --dotenv .env.development --open --no-clear --clipboard --port=1470",
     "web:run:dev:remote": "nuxi dev --dotenv .env.development-remote --open --no-clear --clipboard --port=1470",

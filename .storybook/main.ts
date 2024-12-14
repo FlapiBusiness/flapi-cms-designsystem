@@ -9,10 +9,10 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-essentials',
-    '@chromatic-com/storybook',
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     '@storybook/addon-designs',
+    '@chromatic-com/storybook',
   ],
   framework: {
     name: '@storybook/vue3-vite',
@@ -21,28 +21,25 @@ const config: StorybookConfig = {
   docs: {
     defaultName: 'Documentation',
   },
-  async viteFinal(config) {
-    if (config.resolve) {
-      config.resolve.alias = {
+  async viteFinal(viteConfig) {
+    if (viteConfig.resolve) {
+      viteConfig.resolve.alias = {
         '@': resolve(__dirname, '../src-app/src-nuxt'),
         '~': resolve(__dirname, '../src-app/src-nuxt'),
       }
     }
 
     const { mergeConfig } = await import('vite')
-    return mergeConfig(config, {
+    return mergeConfig(viteConfig, {
       server: {
-        cache: false, // Disable cache
+        cache: false,
         watch: {
           usePolling: true,
-          interval: 100,
+          interval: 0,
         },
       },
-      optimizeDeps: {
-        include: ['../src-app/src-nuxt'],
-      },
       hmr: {
-        overlay: true, // Ensures errors are displayed
+        overlay: true,
       },
       css: {
         postcss: {
@@ -53,4 +50,5 @@ const config: StorybookConfig = {
     })
   },
 }
+
 export default config

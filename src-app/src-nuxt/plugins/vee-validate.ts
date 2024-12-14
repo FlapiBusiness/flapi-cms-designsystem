@@ -1,3 +1,5 @@
 import { configureVeeValidate } from '../../../plugins/vee-validate'
 
-configureVeeValidate()
+export default defineNuxtPlugin(() => {
+  configureVeeValidate()
+})

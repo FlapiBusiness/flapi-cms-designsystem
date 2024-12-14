@@ -8,6 +8,7 @@ import eslintPluginVue from 'eslint-plugin-vue'
 import eslintParserVue from 'vue-eslint-parser'
 import eslintParserTypeScript from '@typescript-eslint/parser'
 import eslintPluginCypress from 'eslint-plugin-cypress/flat'
+import eslintPluginStorybook from 'eslint-plugin-storybook'
 
 // Configuration principale
 const mainConfig = {
@@ -36,6 +37,7 @@ const mainConfig = {
     '@stylistic-eslint-plugin': eslintPluginStylistic,
     'eslint-plugin-vue': eslintPluginVue,
     'eslint-plugin-cypress': eslintPluginCypress,
+    'eslint-plugin-storybook': eslintPluginStorybook,
   },
   rules: {
     /**
@@ -193,6 +195,10 @@ const ignoreConfig = {
     'src-app/.nitro/**',
     'src-app/.cache/**',
     'src/module.ts',
+    'storybook-static/**',
+    '.storybook/main.ts',
+    '.storybook/preview.ts',
+    '**/*.stories.ts',
   ],
 }
 
@@ -208,4 +214,5 @@ export default [
   eslintPluginJSDoc.configs['flat/recommended'],
   eslintPluginCypress.configs.recommended,
   eslintConfigPrettier,
+  ...eslintPluginStorybook.configs['flat/recommended'],
 ]

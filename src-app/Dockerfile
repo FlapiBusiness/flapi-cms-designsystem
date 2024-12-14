@@ -12,10 +12,10 @@ RUN npm install -g npm@latest && npm install
 # Copier tout le contenu du contexte de build
 COPY . .
 
-# Préparer le projet Nuxt 'src'
-RUN npm run dev:prepare
+# Préparer le projet Nuxt 'src' (module nuxt)
+RUN npm run module:dev:prepare
 
 WORKDIR /app/src-app
 
-# Installer les dépendances spécifiques au projet Nuxt 'src-app'
+# Installer les dépendances spécifiques au projet Nuxt 'src-app' (projet nuxt comme test)
 RUN npm install

@@ -23,12 +23,8 @@ jobs:
           node-version: 'lts/*'
           cache: 'npm'
 
-      # Contrainte de devoir faire ça pour generer le dossier .nuxt avant de pouvoir faire le lint:vue
-      - name: Build Project for Staging
-        run: npm run build:static:prod
-
       - name: Install dependencies for project
-        run: npm install
+        run: npm install --ignore-scripts
 
       - name: Lint TypeScript and ESLint for project
         run: npm run lint:eslint && npm run lint:ts

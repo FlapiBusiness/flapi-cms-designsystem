@@ -22,9 +22,14 @@
         v-bind="field"
         :id="props.id"
         :value="props.value"
-        class="relative flex w-full items-center justify-center rounded border-2 border-transparent bg-gray-400 pl-3 pt-3 text-white outline-none placeholder:text-base placeholder:text-light-300 focus:border-primary-400 focus:bg-gray-500"
+        class="relative flex w-full items-center justify-center rounded border-2 bg-gray-400 pl-3 pt-3 text-white outline-none placeholder:text-base placeholder:text-light-300 focus:border-primary-400 focus:bg-gray-500"
         :placeholder="props.placeholder || undefined"
-        :class="meta.validated && !meta.valid ? 'border-red-500' : 'hover:border-light-300'"
+        :class="{
+          'pr-3': typeRef === 'number',
+          'border-[#EC364B]': meta.validated && !meta.valid,
+          'border-transparent': !meta.validated || meta.valid,
+          'hover:border-light-300': !meta.validated || meta.valid,
+        }"
       />
       <input
         v-else
@@ -34,11 +39,12 @@
         :value="props.value"
         :min="props.min ? props.min.toString() : undefined"
         :step="props.step ? props.step.toString() : undefined"
-        class="relative flex h-12 w-full items-center justify-center rounded border-2 border-transparent bg-gray-400 pl-3 text-white outline-none placeholder:text-base placeholder:text-light-300 focus:border-primary-400 focus:bg-gray-500"
+        class="relative flex h-12 w-full items-center justify-center rounded border-2 bg-gray-400 pl-3 text-white outline-none placeholder:text-base placeholder:text-light-300 focus:border-primary-400 focus:bg-gray-500"
         :placeholder="props.placeholder || undefined"
         :class="{
           'pr-3': typeRef === 'number',
           'border-[#EC364B]': meta.validated && !meta.valid,
+          'border-transparent': !meta.validated || meta.valid,
           'hover:border-light-300': !meta.validated || meta.valid,
         }"
       />

@@ -27,17 +27,17 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./docker/production/Dockerfile
+          file: ./docker/Dockerfile
           push: true
-          tags: corentin35/seatyrants-website-frontend:latest
+          tags: corentin35/flapi-designsystem:latest
 
       - name: Build and push Docker image - Production version x.x.x
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./docker/production/Dockerfile
+          file: ./docker/Dockerfile
           push: true
-          tags: corentin35/seatyrants-website-frontend:${{ steps.previoustag.outputs.tag }}
+          tags: corentin35/flapi-designsystem:${{ steps.previoustag.outputs.tag }}
 
       - name: Replace image tag in deployment.yaml for Kubernetes
         run: |
@@ -53,6 +53,23 @@ jobs:
             -f k8s/production/certificate.yaml
             -f k8s/production/docker-registry-secret.yaml
             -f k8s/production/deployment.yaml
-            -f k8s/production/hpa.yaml
             -f k8s/production/ingress.yaml
             -f k8s/production/service.yaml
+
+      - name: Install Node.js to latest version LTS and setup cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+
+      - name: Install dependencies for project
+        run: npm install
+
+      - name: Build project for module nuxt to package npm
+        run: npm run module:build:prod
+
+      - name: Publish package to registry npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

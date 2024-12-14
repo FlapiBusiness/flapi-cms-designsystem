@@ -9,6 +9,7 @@ import { required, email, confirmed, numeric, min, max } from '@vee-validate/rul
  * Configure vee-validate with global rules and localization.
  */
 export const configureVeeValidate = () => {
+  console.log('PASSE')
   // Define global rules
   defineRule('required', required)
   defineRule('email', email)
