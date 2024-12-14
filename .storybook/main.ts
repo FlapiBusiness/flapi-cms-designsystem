@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/vue3-vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
-import { resolve } from 'path'
+import path, { resolve } from 'path'
 
 const config: StorybookConfig = {
   stories: ['../stories/**/*.mdx', '../**/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -24,8 +24,8 @@ const config: StorybookConfig = {
   async viteFinal(viteConfig) {
     if (viteConfig.resolve) {
       viteConfig.resolve.alias = {
-        '@': resolve(__dirname, '../src-app/src-nuxt'),
-        '~': resolve(__dirname, '../src-app/src-nuxt'),
+        '@': resolve(__dirname, '../src/runtime/'),
+        '~': resolve(__dirname, '../src/runtime/'),
       }
     }
 

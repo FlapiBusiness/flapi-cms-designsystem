@@ -4,8 +4,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src-app/src-nuxt/*"],
-      "~/*": ["src-app/src-nuxt/*"]
+      "@/*": ["src/runtime/*"],
+      "~/*": ["src/runtime/*"]
     }
   }
 }

@@ -29,8 +29,8 @@ jobs:
       - name: Lint TypeScript and ESLint for project
         run: npm run lint:eslint && npm run lint:ts
 
-      - name: Run Unit Tests and E2E Tests
-        run: npm run test:unit:staging-prod # && npm run test:e2e
+      - name: Run Unit Tests
+        run: npm run test:unit:staging-prod
 
       - name: Deploy PR (main) for new Release
         uses: googleapis/release-please-action@v4

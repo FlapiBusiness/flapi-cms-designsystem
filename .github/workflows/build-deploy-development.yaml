@@ -26,8 +26,8 @@ jobs:
       - name: Lint TypeScript and ESLint for project
         run: npm run lint:eslint && npm run lint:ts
 
-      - name: Run Unit Tests and E2E Tests
-        run: npm run test:unit:staging-prod # && npm run test:e2e
+      - name: Run Unit Tests
+        run: npm run test:unit:staging-prod
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
