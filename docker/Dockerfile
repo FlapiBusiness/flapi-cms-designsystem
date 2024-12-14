@@ -6,12 +6,15 @@ WORKDIR /app
 COPY package*.json .
 
 # Install dependencies npm
-RUN npm install --ignore-scripts
+RUN npm install
 
 COPY . .
 
+# Prepare the web application (src-app)
+RUN cd src-app && npm run web:prepare && cd ../
+
 # Build the application
-RUN npm run web:prepare && npm run storybook:build:prod
+RUN npm run storybook:build:prod
 
 
 # Second Stage: Setup the runtime
