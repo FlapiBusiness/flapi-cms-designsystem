@@ -11,7 +11,7 @@ RUN npm install --ignore-scripts
 COPY . .
 
 # Build the application
-RUN npm run storybook:build:prod
+RUN npm run web:prepare && npm run storybook:build:prod
 
 
 # Second Stage: Setup the runtime
