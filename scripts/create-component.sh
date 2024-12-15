@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Chemin de base pour les composants
-BASE_PATH="src-app/src-nuxt/components"
+BASE_PATH="src/runtime/components"
 BASE_STORIES_PATH="stories"
 
 # Vérification de l'argument
@@ -16,7 +16,7 @@ DIR_PATH=$(dirname "$INPUT_PATH")
 COMPONENT_NAME=$(basename "$INPUT_PATH")
 
 # Forcer la première lettre en majuscule pour le nom du composant
-CAPITALIZED_NAME="$(echo ${COMPONENT_NAME:0:1} | tr '[:lower:]' '[:upper:]')${COMPONENT_NAME:1}"
+CAPITALIZED_NAME="$(echo "${COMPONENT_NAME:0:1}" | tr '[:lower:]' '[:upper:]')${COMPONENT_NAME:1}"
 
 # Construire les chemins finaux
 FULL_DIR_PATH="$BASE_PATH/$DIR_PATH"
@@ -48,6 +48,11 @@ export type ${CAPITALIZED_NAME}Props = {
 <script lang="ts" setup>
 import { defineProps } from '@vue/runtime-core'
 
+/**
+ * Type definitions for the ${CAPITALIZED_NAME} component props
+ * @type {${CAPITALIZED_NAME}Props}
+ * @property {string} title - The title of the component
+ */
 const props: ${CAPITALIZED_NAME}Props = defineProps({
   title: {
     type: String,
