@@ -25,7 +25,7 @@ export default {
     },
     slotContent: {
       control: 'text',
-      description: 'Content of the default slot',
+      description: 'Content of the default slot (slot vuejs)',
     },
     backgroundColor: {
       control: 'color',

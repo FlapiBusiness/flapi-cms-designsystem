@@ -45,9 +45,7 @@ export const Playground: StoryFn<FlapiPinCodeArgs> = (args: FlapiPinCodeArgs) =>
     return { args, handleConfirm }
   },
   template: `
-    <div class="w-64 mx-auto">
-      <FlapiPinCode v-bind="args" @confirm="handleConfirm" />
-    </div>
+    <FlapiPinCode v-bind="args" @confirm="handleConfirm" />
   `,
 })
 

@@ -1,9 +1,9 @@
 <template>
   <div class="relative flex flex-col gap-2">
-    <label v-if="props.label" class="font-medium text-white" :for="id">
+    <FlapiLabel :id="props.id">
       {{ props.label }}
       <span v-if="rules && rules.includes('required')" class="ml-1 text-red-400"> * </span>
-    </label>
+    </FlapiLabel>
 
     <Field
       :rows="rows"
@@ -91,7 +91,8 @@ export type FlapiInputProps = {
 </script>
 
 <script lang="ts" setup>
-import FlapiIcon from '@/components/ui/FlapiIcon.vue'
+import FlapiIcon from '#/components/ui/FlapiIcon.vue'
+import FlapiLabel from '#/components/core/FlapiLabel.vue'
 import { Field, ErrorMessage } from 'vee-validate'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
