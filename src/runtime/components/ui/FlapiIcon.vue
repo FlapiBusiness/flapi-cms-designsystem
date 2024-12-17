@@ -10,7 +10,7 @@
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    :class="color"
+    :style="color"
     :aria-labelledby="name"
   >
     <g :fill="mode === 'fill' ? color : undefined" :stroke="mode === 'stroke' ? color : undefined">
