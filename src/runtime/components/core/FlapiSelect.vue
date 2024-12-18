@@ -1,6 +1,6 @@
 <template>
   <div class="relative flex w-full min-w-max flex-col gap-2">
-    <FlapiLabel :id="props.id">
+    <FlapiLabel v-if="props.label" :id="props.id">
       {{ props.label }}
       <span v-if="required" class="ml-1 text-red-400"> * </span>
     </FlapiLabel>

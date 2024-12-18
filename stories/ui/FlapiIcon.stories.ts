@@ -59,5 +59,5 @@ Playground.args = {
   height: 24,
   viewBox: '0 0 24 24',
   mode: 'stroke',
-  color: 'currentColor',
+  color: '#fff',
 }
