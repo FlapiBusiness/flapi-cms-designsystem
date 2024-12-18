@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex w-full items-center before:flex-1 before:border-t-2 before:border-gray-200 before:content-[''] after:flex-1 after:border-t-2 after:border-gray-200 after:content-['']"
+    class="relative flex w-full items-center before:flex-1 before:border-t-2 before:border-light-300 before:content-[''] after:flex-1 after:border-t-2 after:border-light-300 after:content-['']"
     :class="{ 'before:mr-4 after:ml-4': props.text, 'justify-center': !props.text }"
     aria-label="divider"
   >
