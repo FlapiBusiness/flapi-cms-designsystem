@@ -22,6 +22,10 @@ export default {
       control: 'color',
       description: 'The background hover color of the button',
     },
+    textColor: {
+      control: 'color',
+      description: 'The text color of the button',
+    },
     disabled: {
       control: 'boolean',
       description: 'Disable the button',
@@ -43,10 +47,10 @@ export const Playground: StoryFn<FlapiSquareButtonArgs> = (args: FlapiSquareButt
     return { args }
   },
   template: `
-    <FlapiSquareButton v-bind="args">
-      <span>1</span>
-    </FlapiSquareButton>
-  `,
+      <FlapiSquareButton v-bind="args">
+        <span>1</span>
+      </FlapiSquareButton>
+    `,
 })
 
 Playground.args = {
@@ -54,6 +58,7 @@ Playground.args = {
   backgroundHoverColor: '#6B59D9',
   disabled: false,
   size: 40,
+  textColor: '#F5F4FB',
 }
 
 export const Disabled: StoryFn<FlapiSquareButtonArgs> = (args: FlapiSquareButtonArgs) => ({
@@ -62,10 +67,10 @@ export const Disabled: StoryFn<FlapiSquareButtonArgs> = (args: FlapiSquareButton
     return { args }
   },
   template: `
-    <FlapiSquareButton v-bind="args">
-      <span>2</span>
-    </FlapiSquareButton>
-  `,
+      <FlapiSquareButton v-bind="args">
+        <span>2</span>
+      </FlapiSquareButton>
+    `,
 })
 
 Disabled.args = {
@@ -79,10 +84,10 @@ export const CustomSize: StoryFn<FlapiSquareButtonArgs> = (args: FlapiSquareButt
     return { args }
   },
   template: `
-    <FlapiSquareButton v-bind="args">
-      <span>3</span>
-    </FlapiSquareButton>
-  `,
+      <FlapiSquareButton v-bind="args">
+        <span>3</span>
+      </FlapiSquareButton>
+    `,
 })
 
 CustomSize.args = {
@@ -96,14 +101,15 @@ export const CustomColors: StoryFn<FlapiSquareButtonArgs> = (args: FlapiSquareBu
     return { args }
   },
   template: `
-    <FlapiSquareButton v-bind="args">
-      <span>4</span>
-    </FlapiSquareButton>
-  `,
+      <FlapiSquareButton v-bind="args">
+        <span>4</span>
+      </FlapiSquareButton>
+    `,
 })
 
 CustomColors.args = {
   ...Playground.args,
   backgroundColor: '#FF5733',
   backgroundHoverColor: '#C70039',
+  textColor: '#ff0',
 }

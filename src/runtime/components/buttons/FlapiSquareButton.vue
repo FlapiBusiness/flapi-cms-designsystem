@@ -8,6 +8,7 @@
       '--background-hover-color': backgroundHoverColor,
       width: `${props.size}px`,
       height: `${props.size}px`,
+      color: textColor,
     }"
   >
     <span class="flex items-center justify-center">
@@ -22,12 +23,14 @@
  * @type {FlapiSquareButtonProps}
  * @property {string} backgroundColor - The button background color
  * @property {string} backgroundHoverColor - The button background hover color
+ * @property {string} textColor - The button text color
  * @property {boolean} disabled - Whether the button is disabled
  * @property {number} size - The button size
  */
 export type FlapiSquareButtonProps = {
   backgroundColor: string
   backgroundHoverColor: string
+  textColor: string
   disabled: boolean
   size: number
 }
@@ -47,6 +50,10 @@ const props: FlapiSquareButtonProps = defineProps({
     type: String,
     default: '#6B59D9',
   },
+  textColor: {
+    type: String,
+    default: '#F5F4FB',
+  },
   disabled: {
     type: Boolean,
     default: false,
@@ -60,7 +67,7 @@ const props: FlapiSquareButtonProps = defineProps({
 const computedClass: ComputedRef<string> = computed(
   () => `
   inline-flex items-center justify-center
-  font-medium text-white select-none
+  font-semibold select-none
   border border-transparent leading-6 rounded-md
   focus:outline-none focus:shadow-outline transition duration-150 ease-in-out
   ${props.disabled ? 'opacity-70 cursor-not-allowed' : ''}

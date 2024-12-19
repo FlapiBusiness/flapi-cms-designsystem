@@ -29,6 +29,7 @@ export default (<Partial<Config>>{
       colors: {
         gray: {
           200: '#222B39',
+          300: '#454D5E',
           400: '#35424D',
           500: '#1B232D',
           700: '#101623',
