@@ -139,4 +139,10 @@ const computedClass: ComputedRef<string> = computed(
 .flapi-button:hover {
   background-color: var(--background-hover-color);
 }
+
+.flapi-button:disabled,
+.flapi-button:disabled:hover,
+.flapi-button:disabled:active {
+  background-color: var(--background-color);
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-10 max-w-[1800px] px-4 py-10 text-light-400 sm:px-6 lg:px-8 lg:py-14">
+  <div class="relative z-10 py-10 text-light-400 lg:py-14">
     <!-- Card -->
     <div class="flex flex-col">
       <div class="-m-1.5 overflow-x-auto">
