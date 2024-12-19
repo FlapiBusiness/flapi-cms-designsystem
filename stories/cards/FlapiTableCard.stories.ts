@@ -12,7 +12,7 @@ export default {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=460-3226&t=fBATonlMCxyPxuwr-4',
+      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=460-2920&t=yJUqBq7YbziDMzPI-4',
     },
   },
   argTypes: {
