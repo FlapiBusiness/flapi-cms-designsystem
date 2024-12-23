@@ -17,7 +17,7 @@
         fill="#EEE3FF"
       />
     </svg>
-    <span v-if="props.large" class="text-2xl font-medium text-white"> Flapi </span>
+    <span v-if="props.large" class="text-xl font-medium text-light-400"> Flapi </span>
   </div>
 </template>
 
