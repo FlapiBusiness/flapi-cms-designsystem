@@ -56,8 +56,22 @@
       v-if="type === 'password'"
       @click.prevent="handleTogglePassword"
     >
-      <FlapiIcon v-if="!togglePassword" title="Afficher le mot de passe" name="Eye" mode="stroke" color="#908e97" />
-      <FlapiIcon v-if="togglePassword" title="Masquer le mot de passe" name="EyeOff" mode="stroke" color="#908e97" />
+      <FlapiIcon
+        v-if="!togglePassword"
+        class="-bottom-1"
+        title="Afficher le mot de passe"
+        name="Eye"
+        mode="stroke"
+        color="#908e97"
+      />
+      <FlapiIcon
+        v-if="togglePassword"
+        class="-bottom-1"
+        title="Masquer le mot de passe"
+        name="EyeOff"
+        mode="stroke"
+        color="#908e97"
+      />
     </div>
     <ErrorMessage class="slide-from-left text-sm text-red-500" :name="props.id" />
   </div>
