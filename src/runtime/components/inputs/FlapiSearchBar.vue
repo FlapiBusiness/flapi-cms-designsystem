@@ -1,5 +1,5 @@
 <template>
-  <div class="grid w-full max-w-md grid-cols-[1fr,auto] items-center">
+  <div class="grid h-fit w-full max-w-md grid-cols-[1fr,auto] items-center">
     <input
       ref="searchInput"
       type="search"
