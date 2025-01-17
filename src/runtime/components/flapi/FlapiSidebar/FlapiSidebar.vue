@@ -52,12 +52,12 @@ import FlapiSidebarToggleButton from '#/components/flapi/FlapiSidebar/FlapiSideb
 
 /**
  * Sidebar item definition
- * @type {SidebarItem}
+ * @type {FlapiSidebarItem}
  * @property {string} to - The route to navigate to
  * @property {string} icon - The icon to display
  * @property {string} text - The text for the link
  */
-export type SidebarItem = {
+export type FlapiSidebarItem = {
   to: string
   icon: string
   text: string
@@ -65,26 +65,26 @@ export type SidebarItem = {
 
 /**
  * Sidebar props definition
- * @type {SidebarProps}
+ * @type {FlapiSidebarProps}
  * @property {string} username - The username to display in the footer
- * @property {SidebarItem[]} items - The list of sidebar links
+ * @property {FlapiSidebarItem[]} items - The list of sidebar links
  * @property {string | null} avatar - The avatar image URL
  * @property {boolean} expand - Whether the sidebar is expanded
  */
-export type SidebarProps = {
+export type FlapiSidebarProps = {
   username: string
-  items: SidebarItem[]
+  items: FlapiSidebarItem[]
   avatar: string | null
   expand: boolean
 }
 
-const props: SidebarProps = defineProps({
+const props: FlapiSidebarProps = defineProps({
   username: {
     type: String,
     required: true,
   },
   items: {
-    type: Array as PropType<SidebarItem[]>,
+    type: Array as PropType<FlapiSidebarItem[]>,
     required: true,
   },
   avatar: {
