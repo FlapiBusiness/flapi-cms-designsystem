@@ -12,7 +12,7 @@
             >
               <!-- Input -->
               <div class="w-full">
-                <!--                <FlapiSearchBar :value="props.searchTerms" @update:value="$emit('update:searchTerms', $event)" />-->
+                <FlapiSearchBar :value="props.searchTerms" @update:value="$emit('update:searchTerms', $event)" />
               </div>
             </div>
             <!-- End Header -->
@@ -100,7 +100,7 @@
 <script lang="ts" setup>
 import type { PropType, SetupContext } from 'vue'
 import { defineProps, useSlots, defineEmits } from 'vue'
-// import FlapiSearchBar from '#/components/inputs/FlapiSearchBar.vue'
+import FlapiSearchBar from '#/components/inputs/FlapiSearchBar.vue'
 import FlapiSpinner from '#/components/ui/FlapiSpinner.vue'
 import FlapiSelect from '#/components/core/FlapiSelect.vue'
 

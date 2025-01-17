@@ -24,7 +24,7 @@
       backgroundColor: props.backgroundColor,
     }"
   >
-    <span class="font-semibold leading-none text-light-400" :style="{ fontSize: `${props.size / fontSizeRatio}px` }">
+    <span class="font-medium leading-none text-light-400" :style="{ fontSize: `${props.size / fontSizeRatio}px` }">
       {{ initials }}
     </span>
   </span>

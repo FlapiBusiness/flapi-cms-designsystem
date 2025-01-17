@@ -1,5 +1,8 @@
 <template>
-  <nav class="relative h-full bg-gray-500 shadow-md" :class="{ 'w-56': props.expand, 'w-14': !props.expand }">
+  <nav
+    class="relative h-full bg-gray-500 shadow-md"
+    :class="{ 'w-full min-w-[280px]': props.expand, 'w-14': !props.expand }"
+  >
     <!-- Toggle Button -->
     <!--    <button-->
     <!--      class="absolute right-[-12px] top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 shadow hover:bg-gray-400"-->
@@ -32,7 +35,7 @@
 
       <!-- Footer -->
       <div class="flex items-center gap-2 border-t p-2" :class="props.expand ? 'justify-start' : 'justify-center'">
-        <FlapiAvatar :photo="props.avatar || undefined" :name="props.username" :size="40" backgroundColor="#35424D" />
+        <FlapiAvatar :photo="props.avatar || undefined" :name="props.username" :size="40" backgroundColor="#35424d" />
         <span v-if="props.expand" class="text-base font-medium text-light-400">
           {{ props.username }}
         </span>
