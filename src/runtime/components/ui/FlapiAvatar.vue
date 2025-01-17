@@ -2,12 +2,13 @@
   <img
     v-if="props.photo"
     :src="props.photo"
-    class="inline-flex flex-shrink-0 items-center justify-center bg-gray-500 text-light-400"
+    class="inline-flex flex-shrink-0 items-center justify-center text-light-400"
     :style="{
       borderRadius,
       fontSize: `${props.size / fontSizeRatio / 4}px`,
       width: `${props.size}px`,
       height: `${props.size}px`,
+      backgroundColor: props.backgroundColor,
     }"
     :width="props.size"
     :height="props.size"
@@ -15,8 +16,13 @@
   />
   <span
     v-else
-    class="inline-flex flex-shrink-0 items-center justify-center bg-gray-500"
-    :style="{ width: `${props.size}px`, height: `${props.size}px`, borderRadius }"
+    class="inline-flex flex-shrink-0 items-center justify-center"
+    :style="{
+      width: `${props.size}px`,
+      height: `${props.size}px`,
+      borderRadius,
+      backgroundColor: props.backgroundColor,
+    }"
   >
     <span class="font-semibold leading-none text-light-400" :style="{ fontSize: `${props.size / fontSizeRatio}px` }">
       {{ initials }}
@@ -31,11 +37,13 @@
  * @property {string} name - The name of the content
  * @property {string} photo - The photo of the content
  * @property {number} size - The size of the avatar
+ * @property {string} backgroundColor - The background color of the avatar
  */
 export type FlapiAvatarProps = {
   name: string
   photo: string
   size: number
+  backgroundColor: string
 }
 </script>
 
@@ -50,6 +58,7 @@ import { defineProps } from '@vue/runtime-core'
  * @property {string} name - The name of the content
  * @property {string} photo - The photo of the content
  * @property {number} size - The size of the avatar
+ * @property {string} backgroundColor - The background color of the avatar
  */
 const props: FlapiAvatarProps = defineProps({
   name: {
@@ -64,9 +73,13 @@ const props: FlapiAvatarProps = defineProps({
     type: Number,
     default: 40,
   },
+  backgroundColor: {
+    type: String,
+    default: '#1B232D',
+  },
 })
 
-const fontSizeRatio: number = 1.5
+const fontSizeRatio: number = 2
 const borderRadiusRatio: number = 7.5
 const borderRadiusMin: number = 4
 

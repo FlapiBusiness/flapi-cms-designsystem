@@ -1,15 +1,13 @@
 <template>
-  <li class="sidebar-link w-full">
+  <li :class="props.large ? 'w-full' : 'w-fit'">
     <NuxtLink
-      :to="props.item.to"
-      :class="[
-        'flex items-center gap-2 rounded p-2 transition-all',
-        { 'justify-center': !props.large, 'hover:bg-gray-200': true, 'active:bg-primary-500': props.item.active },
-      ]"
+      :to="props.to"
+      class="font-base flex cursor-pointer select-none items-center gap-2 rounded px-3 py-2 font-medium text-light-400 transition-all"
+      :class="{ 'justify-center': !props.large, 'bg-primary-400': props.active, 'hover:bg-gray-200': !props.active }"
     >
-      <FlapiIcon :name="props.icon" :size="20" class="text-gray-700" />
-      <span v-if="props.large" class="text-sm font-medium text-gray-800">
-        {{ props.item.text }}
+      <FlapiIcon :name="props.icon" :width="20" :height="20" mode="stroke" />
+      <span v-if="props.large">
+        {{ props.text }}
       </span>
     </NuxtLink>
   </li>
@@ -17,32 +15,22 @@
 
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import type { PropType } from 'vue'
 import FlapiIcon from '@/components/ui/FlapiIcon.vue'
-
-/**
- * Type definition for the SideBarLink item
- * @type {SideBarLinkItem}
- * @property {string} to - The route to navigate to
- * @property {string} text - The text to display in the link
- * @property {boolean} [active] - Whether the link is active
- */
-export type SideBarLinkItem = {
-  to: string
-  text: string
-  active?: boolean
-}
 
 /**
  * Type definition for the SideBarLink props
  * @type {SideBarLinkProps}
  * @property {boolean} large - Whether the sidebar is expanded
- * @property {SideBarLinkItem} item - The item to display
+ * @property {boolean} active - Whether the link is active
+ * @property {string} to - The link to navigate to
+ * @property {string} text - The text to display
  * @property {string} icon - The icon to display
  */
 export type SideBarLinkProps = {
   large: boolean
-  item: SideBarLinkItem
+  active: boolean
+  to: string
+  text: string
   icon: string
 }
 
@@ -51,9 +39,17 @@ const props: SideBarLinkProps = defineProps({
     type: Boolean,
     default: false,
   },
-  item: {
-    type: Object as PropType<SideBarLinkItem>,
+  active: {
+    type: Boolean,
+    default: false,
+  },
+  to: {
+    type: String,
     required: true,
+  },
+  text: {
+    type: String,
+    default: '',
   },
   icon: {
     type: String,

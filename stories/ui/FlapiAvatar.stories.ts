@@ -41,6 +41,14 @@ export default {
         defaultValue: { summary: '40' },
       },
     },
+    backgroundColor: {
+      control: 'color',
+      description: 'The background color of the avatar',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '#1B232D' },
+      },
+    },
   },
 } as Meta<typeof FlapiAvatar>
 
@@ -82,4 +90,5 @@ WithoutImage.args = {
   name: 'NoPic',
   photo: '',
   size: 120,
+  backgroundColor: '#1B232D',
 }
