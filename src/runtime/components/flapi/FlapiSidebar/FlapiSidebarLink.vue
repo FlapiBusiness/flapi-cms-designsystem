@@ -5,7 +5,7 @@
       class="font-base flex cursor-pointer select-none items-center gap-2 rounded px-3 py-2 font-medium text-light-400 transition-all"
       :class="{ 'justify-center': !props.large, 'bg-primary-400': props.active, 'hover:bg-gray-200': !props.active }"
     >
-      <FlapiIcon :name="props.icon" :width="20" :height="20" mode="stroke" />
+      <FlapiIcon :name="props.icon" :width="20" :height="20" mode="stroke" class="mb-[3px]" />
       <span v-if="props.large">
         {{ props.text }}
       </span>

@@ -2,55 +2,46 @@
   {
     "text": "dashboard",
     "icon": "Home",
-    "i18nKey": "dashboard",
     "to": "/"
   },
   {
     "text": "contents",
     "icon": "Edit",
-    "i18nKey": "contents",
     "to": "/contents"
   },
   {
     "text": "collections",
     "icon": "Database",
-    "i18nKey": "collections",
     "to": "/collections"
   },
   {
     "text": "messaging",
     "icon": "MessageCircle",
-    "i18nKey": "messaging",
     "to": "/messaging"
   },
   {
     "text": "users",
     "icon": "Users",
-    "i18nKey": "users",
     "to": "/users"
   },
   {
     "text": "emails",
     "icon": "Mail",
-    "i18nKey": "emails",
     "to": "/emails"
   },
   {
     "text": "automating",
     "icon": "Share",
-    "i18nKey": "automating",
     "to": "/automating"
   },
   {
     "text": "history",
     "icon": "Link",
-    "i18nKey": "history",
     "to": "/history"
   },
   {
     "text": "settings",
     "icon": "Settings",
-    "i18nKey": "settings",
     "to": "/settings"
   }
 ]

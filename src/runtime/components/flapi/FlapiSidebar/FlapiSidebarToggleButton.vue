@@ -3,8 +3,8 @@
     class="absolute right-[-14px] top-4 flex h-6 w-6 items-center justify-center rounded-full bg-primary-400 active:bg-primary-500"
     @click="emit('update:expand', !props.expand)"
   >
-    <FlapiIcon v-if="props.expand" name="ChevronLeft" mode="stroke" color="#F5F4FB" />
-    <FlapiIcon v-else name="ChevronRight" mode="stroke" color="#F5F4FB" />
+    <FlapiIcon v-show="props.expand" name="ChevronLeft" mode="stroke" color="#F5F4FB" />
+    <FlapiIcon v-show="!props.expand" name="ChevronRight" mode="stroke" color="#F5F4FB" />
   </button>
 </template>
 
