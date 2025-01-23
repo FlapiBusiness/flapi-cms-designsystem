@@ -13,6 +13,11 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(options: ModuleOptions, nuxt: Nuxt): Promise<void> {
     const resolver: Resolver = createResolver(import.meta.url)
 
+    console.log('Resolver paths:', {
+      cssPath: resolver.resolve('./runtime/assets/css/tailwind.css'),
+      configPath: resolver.resolve('../tailwind.config'),
+    });
+
     // Installation de Tailwind CSS
     await installModule('@nuxtjs/tailwindcss', {
       /**

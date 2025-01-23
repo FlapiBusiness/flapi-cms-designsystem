@@ -1,5 +1,13 @@
 {
   "extends": "./tsconfig.json",
   "include": [".storybook/**/*", "tests/**/*"],
-  "exclude": ["dist", "node_modules", "src-app"]
+  "exclude": ["dist", "node_modules", "src-app"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/runtime/*"],
+      "~/*": ["src/runtime/*"],
+      "#/*": ["src/runtime/*"]
+    }
+  }
 }
