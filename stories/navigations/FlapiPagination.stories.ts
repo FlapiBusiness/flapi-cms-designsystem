@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiPagination from '@/components/navigations/FlapiPagination.vue'
+import FlapiPagination from '#/components/navigations/FlapiPagination.vue'
 
 export default {
   title: 'navigations/FlapiPagination',

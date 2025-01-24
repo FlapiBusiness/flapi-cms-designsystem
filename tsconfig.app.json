@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
-  "include": [".storybook/**/*", "tests/**/*"],
-  "exclude": ["dist", "node_modules", "src-app"],
+  "include": [".storybook/**/*", "tests/**/*", "stories/**/*"],
+  "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiDivider from '@/components/decorators/FlapiDivider.vue'
-import type { FlapiDividerProps } from '@/components/decorators/FlapiDivider.vue'
+import FlapiDivider from '#/components/decorators/FlapiDivider.vue'
+import type { FlapiDividerProps } from '#/components/decorators/FlapiDivider.vue'
 
 type FlapiDividerArgs = FlapiDividerProps
 

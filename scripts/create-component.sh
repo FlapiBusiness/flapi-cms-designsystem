@@ -73,8 +73,8 @@ mkdir -p "$STORYBOOK_DIR_PATH"
 if [ ! -f "$STORYBOOK_FILE" ]; then
   cat <<EOF > "$STORYBOOK_FILE"
 import type { Meta, StoryFn } from '@storybook/vue3';
-import ${CAPITALIZED_NAME} from '@/components/${DIR_PATH}/${CAPITALIZED_NAME}.vue';
-import type { ${CAPITALIZED_NAME}Props } from '@/components/${DIR_PATH}/${CAPITALIZED_NAME}.vue';
+import ${CAPITALIZED_NAME} from '#/components/${DIR_PATH}/${CAPITALIZED_NAME}.vue';
+import type { ${CAPITALIZED_NAME}Props } from '#/components/${DIR_PATH}/${CAPITALIZED_NAME}.vue';
 
 type ${CAPITALIZED_NAME}Args = ${CAPITALIZED_NAME}Props
 

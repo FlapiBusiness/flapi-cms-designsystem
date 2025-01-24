@@ -41,9 +41,9 @@ export type SelectOption = {
  */
 export type FlapiSelectProps = {
   options: SelectOption[]
-  modelValue: SelectOption
+  modelValue?: SelectOption
   id: string
-  label: string | null
+  label?: string | null
   required: boolean
 }
 </script>
@@ -75,7 +75,7 @@ const selectedItem: ComputedRef<SelectOption> = computed({
    * Get the selected item
    * @returns {SelectOption} - The selected item
    */
-  get: (): SelectOption => props.modelValue,
+  get: (): SelectOption => props.modelValue || props.options[0],
   /**
    * Set the selected item
    * @param {SelectOption} newValue - The newly selected item

@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiPulsatingCircle from '@/components/ui/FlapiPulsatingCircle.vue'
-import type { FlapiPulsatingCircleProps } from '@/components/ui/FlapiPulsatingCircle.vue'
+import FlapiPulsatingCircle from '#/components/ui/FlapiPulsatingCircle.vue'
+import type { FlapiPulsatingCircleProps } from '#/components/ui/FlapiPulsatingCircle.vue'
 
 type FlapiPulsatingCircleArgs = FlapiPulsatingCircleProps
 

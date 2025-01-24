@@ -45,22 +45,22 @@ type FlapiButtonSize = (typeof flapiButtonSizes)[number]
  * @property {FlapiButtonSize} size - The button size
  */
 export type FlapiButtonProps = {
-  to: string | null
+  to?: string | null
   backgroundColor: string
   backgroundHoverColor: string
   disabled: boolean
-  icon: string | null
-  iconPosition: 'left' | 'right' | null
+  icon?: string | null
+  iconPosition?: 'left' | 'right' | null
   size: FlapiButtonSize
 }
 </script>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import type { ComputedRef } from 'vue'
+import type { ComputedRef, PropType } from 'vue'
 import type { SetupContext } from '@vue/runtime-core'
 import { defineProps, useSlots } from '@vue/runtime-core'
-import FlapiIcon from '@/components/ui/FlapiIcon.vue'
+import FlapiIcon from '#/components/ui/FlapiIcon.vue'
 
 const props: FlapiButtonProps = defineProps({
   to: {

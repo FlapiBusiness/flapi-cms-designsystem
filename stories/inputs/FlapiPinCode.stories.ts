@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiPinCode from '@/components/inputs/FlapiPinCode.vue'
-import type { FlapiPinCodeProps } from '@/components/inputs/FlapiPinCode.vue'
+import FlapiPinCode from '#/components/inputs/FlapiPinCode.vue'
+import type { FlapiPinCodeProps } from '#/components/inputs/FlapiPinCode.vue'
 
 type FlapiPinCodeArgs = FlapiPinCodeProps & {
   onConfirm?: (code: string) => void

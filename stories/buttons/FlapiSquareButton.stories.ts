@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiSquareButton from '@/components/buttons/FlapiSquareButton.vue'
-import type { FlapiSquareButtonProps } from '@/components/buttons/FlapiSquareButton.vue'
+import FlapiSquareButton from '#/components/buttons/FlapiSquareButton.vue'
+import type { FlapiSquareButtonProps } from '#/components/buttons/FlapiSquareButton.vue'
 
 type FlapiSquareButtonArgs = FlapiSquareButtonProps
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiLink from '@/components/core/FlapiLink.vue'
-import type { FlapiLinkProps } from '@/components/core/FlapiLink.vue'
+import FlapiLink from '#/components/core/FlapiLink.vue'
+import type { FlapiLinkProps } from '#/components/core/FlapiLink.vue'
 
 type FlapiLinkArgs = FlapiLinkProps & { slotContent: string }
 

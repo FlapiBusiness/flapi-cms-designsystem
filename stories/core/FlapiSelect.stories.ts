@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiSelect from '@/components/core/FlapiSelect.vue'
-import type { FlapiSelectProps, SelectOption } from '@/components/core/FlapiSelect.vue'
+import FlapiSelect from '#/components/core/FlapiSelect.vue'
+import type { FlapiSelectProps, SelectOption } from '#/components/core/FlapiSelect.vue'
 
 type FlapiSelectArgs = FlapiSelectProps
 

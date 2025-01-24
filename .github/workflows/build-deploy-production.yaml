@@ -1,4 +1,4 @@
-name: build_deploy_cluster_production
+name: build-deploy-production
 
 on:
   release:

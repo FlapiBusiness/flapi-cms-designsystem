@@ -46,11 +46,12 @@
 
 <script lang="ts" setup>
 import { defineProps } from 'vue'
+import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { RouteLocationNormalizedGeneric } from 'vue-router'
-import FlapiLogo from '@/components/flapi/FlapiLogo.vue'
-import FlapiSidebarLink from '@/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
-import FlapiAvatar from '@/components/ui/FlapiAvatar.vue'
+import FlapiLogo from '#/components/flapi/FlapiLogo.vue'
+import FlapiSidebarLink from '#/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
+import FlapiAvatar from '#/components/ui/FlapiAvatar.vue'
 import FlapiSidebarToggleButton from '#/components/flapi/FlapiSidebar/FlapiSidebarToggleButton.vue'
 
 /**
@@ -77,7 +78,7 @@ export type FlapiSidebarItem = {
 export type FlapiSidebarProps = {
   username: string
   items: FlapiSidebarItem[]
-  avatar: string | null
+  avatar?: string | null
   expand: boolean
 }
 

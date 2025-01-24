@@ -1,8 +1,8 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiTableCard from '@/components/cards/FlapiTableCard.vue'
-import FlapiBadge from '@/components/ui/FlapiBadge.vue'
-import FlapiAvatar from '@/components/ui/FlapiAvatar.vue'
-import type { FlapiTableCardProps } from '@/components/cards/FlapiTableCard.vue'
+import FlapiTableCard from '#/components/cards/FlapiTableCard.vue'
+import FlapiBadge from '#/components/ui/FlapiBadge.vue'
+import FlapiAvatar from '#/components/ui/FlapiAvatar.vue'
+import type { FlapiTableCardProps } from '#/components/cards/FlapiTableCard.vue'
 
 type FlapiTableCardArgs = FlapiTableCardProps
 

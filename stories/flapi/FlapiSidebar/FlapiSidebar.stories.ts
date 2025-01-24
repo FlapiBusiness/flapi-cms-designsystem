@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiSidebar from '@/components/flapi/FlapiSidebar/FlapiSidebar.vue'
-import items from '@/components/flapi/FlapiSidebar/items.json'
-import type { FlapiSidebarProps } from '@/components/flapi/FlapiSidebar/FlapiSidebar.vue'
+import FlapiSidebar from '#/components/flapi/FlapiSidebar/FlapiSidebar.vue'
+import items from '#/components/flapi/FlapiSidebar/items.json'
+import type { FlapiSidebarProps } from '#/components/flapi/FlapiSidebar/FlapiSidebar.vue'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 

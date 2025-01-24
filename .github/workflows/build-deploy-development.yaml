@@ -1,4 +1,4 @@
-name: tests_build_deploy_cluster_development
+name: build-deploy-development
 
 on:
   push:

@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiSidebarLink from '@/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
-import type { SideBarLinkProps } from '@/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
+import FlapiSidebarLink from '#/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
+import type { SideBarLinkProps } from '#/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
 
 type FlapiSidebarLinkArgs = SideBarLinkProps
 

@@ -109,7 +109,7 @@ import FlapiIcon from '#/components/ui/FlapiIcon.vue'
 import FlapiLabel from '#/components/core/FlapiLabel.vue'
 import { Field, ErrorMessage } from 'vee-validate'
 import { ref } from 'vue'
-import type { Ref } from 'vue'
+import type { Ref, PropType } from 'vue'
 import type { InputTypeHTMLAttribute } from 'vue'
 
 /* PROPS */

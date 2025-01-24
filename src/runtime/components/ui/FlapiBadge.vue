@@ -51,7 +51,7 @@ export type FlapiBadgeSize = (typeof flapiBadgeSizes)[number]
 export type FlapiBadgeProps = {
   close: boolean
   backgroundColor: string
-  textColor: string | null
+  textColor?: string | null
   size: FlapiBadgeSize
 }
 </script>

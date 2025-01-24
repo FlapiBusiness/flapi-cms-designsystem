@@ -74,7 +74,7 @@ export type FlapiTableCardField = {
  */
 export type FlapiTableCardProps = {
   fields: FlapiTableCardField[]
-  item: FlapiTableCardItem | null
+  item?: FlapiTableCardItem | null
   load: boolean
 }
 </script>
