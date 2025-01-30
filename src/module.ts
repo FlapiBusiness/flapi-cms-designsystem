@@ -39,6 +39,9 @@ export default defineNuxtModule<ModuleOptions>({
 
     console.log('Ajout du CSS dans Nuxt:', generatedCssPath);
 
+    nuxt.options.alias['#'] = resolver.resolve('./runtime');
+    console.log('Alias # ajouté pour', nuxt.options.alias['#'])
+
     // Ajoute le répertoire des composants pour l'import automatique
     await addComponentsDir({
       path: resolver.resolve('./runtime/components'),
