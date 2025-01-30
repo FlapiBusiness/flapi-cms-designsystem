@@ -1,4 +1,4 @@
-import { defineNuxtModule, addComponentsDir, createResolver, installModule } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, createResolver, installModule, addImportsDir, addPlugin } from '@nuxt/kit'
 import type { Resolver } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 
@@ -13,13 +13,8 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(options: ModuleOptions, nuxt: Nuxt): Promise<void> {
     const resolver: Resolver = createResolver(import.meta.url)
 
-    const tailwindCssPath: string = resolver.resolve('./runtime/assets/css/tailwind.css');
-    const generatedCssPath: string = resolver.resolve('./runtime/assets/css/generated.css');
-
-    console.log('Resolver paths:', {
-      cssPath: tailwindCssPath,
-      configPath: resolver.resolve('../tailwind.config'),
-    });
+    const tailwindCssPath: string = resolver.resolve('./runtime/assets/css/tailwind.css')
+    const generatedCssPath: string = resolver.resolve('./runtime/assets/css/generated.css')
 
     // Installation de Tailwind CSS
     await installModule('@nuxtjs/tailwindcss', {
@@ -34,14 +29,10 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (!nuxt.options.css.includes(generatedCssPath)) {
-      nuxt.options.css.push(generatedCssPath);
+      nuxt.options.css.push(generatedCssPath)
     }
 
-    console.log('Ajout du CSS dans Nuxt:', generatedCssPath);
-
     nuxt.options.alias['#'] = resolver.resolve('./runtime');
-    console.log('Alias # ajouté pour', nuxt.options.alias['#'])
-
     // Ajoute le répertoire des composants pour l'import automatique
     await addComponentsDir({
       path: resolver.resolve('./runtime/components'),
@@ -49,5 +40,11 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: '',
       global: true,
     })
+
+    // Ajouter le dossier core/ pour les imports automatiques
+    await addImportsDir(resolver.resolve('./runtime/core'))
+
+    // Ajout d'un plugin : VeeValidate
+    await addPlugin(resolver.resolve('./runtime/plugins/vee-validate.ts'))
   },
 })
