@@ -61,7 +61,7 @@ import FlapiIcon from '#/components/ui/FlapiIcon.vue'
 import { defineProps } from '@vue/runtime-core'
 import { computed } from 'vue'
 import type { ComputedRef, PropType } from 'vue'
-import { ColorUtils } from '#/utils/ColorUtils'
+import { ColorUtils } from '#/core'
 
 const props: FlapiBadgeProps = defineProps({
   close: {
