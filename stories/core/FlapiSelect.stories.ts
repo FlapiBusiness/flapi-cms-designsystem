@@ -7,12 +7,6 @@ type FlapiSelectArgs = FlapiSelectProps
 export default {
   title: 'core/FlapiSelect',
   component: FlapiSelect,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=243-388&t=ubo73Ri6rnShXUDA-4',
-    },
-  },
   argTypes: {
     options: {
       control: 'object',

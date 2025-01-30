@@ -9,12 +9,6 @@ type FlapiPinCodeArgs = FlapiPinCodeProps & {
 export default {
   title: 'inputs/FlapiPinCode',
   component: FlapiPinCode,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=456-3255&t=vY5X9uhmiQklBaE2-4',
-    },
-  },
   argTypes: {
     length: {
       control: { type: 'number', min: 4, max: 12 },

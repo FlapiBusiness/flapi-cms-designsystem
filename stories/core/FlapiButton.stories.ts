@@ -9,12 +9,6 @@ type FlapiButtonArgs = FlapiButtonProps & { slotContent: string }
 export default {
   title: 'core/FlapiButton',
   component: FlapiButton,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=134-33&t=4OSbDsauIIR7lH4x-4',
-    },
-  },
   argTypes: {
     onClick: {
       action: 'clicked',

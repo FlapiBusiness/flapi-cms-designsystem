@@ -4,12 +4,6 @@ import FlapiPagination from '#/components/navigations/FlapiPagination.vue'
 export default {
   title: 'navigations/FlapiPagination',
   component: FlapiPagination,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=470-5092&t=yJUqBq7YbziDMzPI-4',
-    },
-  },
   argTypes: {
     onPrevClick: {
       action: 'prevClicked',

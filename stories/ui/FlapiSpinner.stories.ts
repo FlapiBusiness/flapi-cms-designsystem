@@ -7,12 +7,6 @@ type FlapiSpinnerArgs = FlapiSpinnerProps
 export default {
   title: 'ui/FlapiSpinner',
   component: FlapiSpinner,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=191-104&t=vY5X9uhmiQklBaE2-4',
-    },
-  },
   argTypes: {
     size: {
       control: { type: 'number' },

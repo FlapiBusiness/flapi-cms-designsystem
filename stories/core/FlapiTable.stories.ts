@@ -9,12 +9,6 @@ type FlapiTableArgs = FlapiButtonProps
 export default {
   title: 'core/FlapiTable',
   component: FlapiTable,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=460-3226&t=fBATonlMCxyPxuwr-4',
-    },
-  },
   argTypes: {
     load: {
       control: 'boolean',

@@ -10,12 +10,6 @@ type FlapiInputArgs = FlapiInputProps
 export default {
   title: 'core/FlapiInput',
   component: FlapiInput,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=243-294&t=VH9OIiLT8w1rSDch-4',
-    },
-  },
   argTypes: {
     placeholder: {
       control: 'text',

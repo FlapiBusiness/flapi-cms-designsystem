@@ -7,12 +7,6 @@ type FlapiSidebarLinkArgs = SideBarLinkProps
 export default {
   title: 'flapi/FlapiSidebarLink',
   component: FlapiSidebarLink,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=202-282&t=yJUqBq7YbziDMzPI-4',
-    },
-  },
   argTypes: {
     large: {
       control: 'boolean',

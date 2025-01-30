@@ -7,12 +7,6 @@ type FlapiSearchBarArgs = FlapiSearchBarProps
 export default {
   title: 'inputs/FlapiSearchBar',
   component: FlapiSearchBar,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=243-263&t=yJUqBq7YbziDMzPI-4',
-    },
-  },
   argTypes: {
     title: {
       control: 'text',

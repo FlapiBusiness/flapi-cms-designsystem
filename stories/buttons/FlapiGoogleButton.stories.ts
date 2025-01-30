@@ -7,12 +7,6 @@ type FlapiGoogleButtonArgs = FlapiGoogleButtonProps
 export default {
   title: 'buttons/FlapiGoogleButton',
   component: FlapiGoogleButton,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=160-15&t=zPLqciXLXyiSr1NK-4',
-    },
-  },
   argTypes: {
     disabled: {
       control: 'boolean',

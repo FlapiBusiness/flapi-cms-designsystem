@@ -7,12 +7,6 @@ type FlapiLabelArgs = FlapiLabelProps & { slotContent: string }
 export default {
   title: 'core/FlapiLabel',
   component: FlapiLabel,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=606-4195&t=ubo73Ri6rnShXUDA-4',
-    },
-  },
   argTypes: {
     id: {
       control: 'text',

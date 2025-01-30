@@ -7,12 +7,6 @@ type FlapiDividerArgs = FlapiDividerProps
 export default {
   title: 'decorators/FlapiDivider',
   component: FlapiDivider,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=455-4984&t=zPLqciXLXyiSr1NK-4',
-    },
-  },
   argTypes: {
     text: {
       control: 'text',

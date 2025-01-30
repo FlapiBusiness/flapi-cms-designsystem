@@ -10,12 +10,6 @@ type FlapiSidebarArgs = FlapiSidebarProps
 export default {
   title: 'flapi/FlapiSidebar',
   component: FlapiSidebar,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=213-960&t=yJUqBq7YbziDMzPI-4',
-    },
-  },
   argTypes: {
     username: {
       control: 'text',

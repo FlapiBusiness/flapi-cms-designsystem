@@ -7,12 +7,6 @@ type FlapiIconArgs = FlapiIconProps
 export default {
   title: 'ui/FlapiIcon',
   component: FlapiIcon,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=406-9023&t=VH9OIiLT8w1rSDch-4',
-    },
-  },
   argTypes: {
     name: {
       control: 'select',

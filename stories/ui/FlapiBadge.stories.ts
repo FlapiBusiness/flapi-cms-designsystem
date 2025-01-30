@@ -7,12 +7,6 @@ type FlapiBadgeArgs = FlapiBadgeProps
 export default {
   title: 'ui/FlapiBadge',
   component: FlapiBadge,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=460-2071&t=fBATonlMCxyPxuwr-4',
-    },
-  },
   argTypes: {
     size: {
       control: { type: 'select' },

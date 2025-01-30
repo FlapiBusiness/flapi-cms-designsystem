@@ -10,12 +10,6 @@ type FlapiAvatarArgs = FlapiAvatarProps
 export default {
   title: 'ui/FlapiAvatar',
   component: FlapiAvatar,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=192-151&t=ubo73Ri6rnShXUDA-4',
-    },
-  },
   argTypes: {
     name: {
       control: 'text',

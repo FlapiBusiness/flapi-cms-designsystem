@@ -9,12 +9,6 @@ type FlapiTableCardArgs = FlapiTableCardProps
 export default {
   title: 'cards/FlapiTableCard',
   component: FlapiTableCard,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=460-2920&t=yJUqBq7YbziDMzPI-4',
-    },
-  },
   argTypes: {
     load: {
       control: 'boolean',

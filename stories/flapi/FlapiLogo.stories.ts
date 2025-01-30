@@ -8,12 +8,6 @@ import type { FlapiLogoProps } from '#/components/flapi/FlapiLogo.vue'
 export default {
   title: 'flapi/FlapiLogo',
   component: FlapiLogo,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=1607-6191&t=zPLqciXLXyiSr1NK-4',
-    },
-  },
   argTypes: {
     size: {
       control: 'number',

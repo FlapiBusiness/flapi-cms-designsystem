@@ -7,12 +7,6 @@ type FlapiLinkArgs = FlapiLinkProps & { slotContent: string }
 export default {
   title: 'core/FlapiLink',
   component: FlapiLink,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/JukS6d8VqZfcuGHzUQixFg/cms-maquette-(FlapiCms)?node-id=166-31&t=vY5X9uhmiQklBaE2-4',
-    },
-  },
   argTypes: {
     externalLink: {
       control: 'boolean',
