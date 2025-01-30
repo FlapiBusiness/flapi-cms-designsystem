@@ -32,7 +32,7 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.css.push(generatedCssPath)
     }
 
-    nuxt.options.alias['#'] = resolver.resolve('./runtime');
+    nuxt.options.alias['#'] = resolver.resolve('./runtime')
     // Ajoute le répertoire des composants pour l'import automatique
     await addComponentsDir({
       path: resolver.resolve('./runtime/components'),
