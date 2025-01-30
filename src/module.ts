@@ -13,8 +13,11 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(options: ModuleOptions, nuxt: Nuxt): Promise<void> {
     const resolver: Resolver = createResolver(import.meta.url)
 
+    const tailwindCssPath: string = resolver.resolve('./runtime/assets/css/tailwind.css');
+    const generatedCssPath: string = resolver.resolve('./runtime/assets/css/generated.css');
+
     console.log('Resolver paths:', {
-      cssPath: resolver.resolve('./runtime/assets/css/tailwind.css'),
+      cssPath: tailwindCssPath,
       configPath: resolver.resolve('../tailwind.config'),
     });
 
@@ -26,9 +29,15 @@ export default defineNuxtModule<ModuleOptions>({
        * to the current path, ie the playground!
        * (or the app using your module)
        */
-      cssPath: resolver.resolve('./runtime/assets/css/tailwind.css'),
+      cssPath: tailwindCssPath,
       configPath: resolver.resolve('../tailwind.config'),
     })
+
+    if (!nuxt.options.css.includes(generatedCssPath)) {
+      nuxt.options.css.push(generatedCssPath);
+    }
+
+    console.log('Ajout du CSS dans Nuxt:', generatedCssPath);
 
     // Ajoute le répertoire des composants pour l'import automatique
     await addComponentsDir({

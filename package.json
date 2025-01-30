@@ -23,8 +23,9 @@
     "dist"
   ],
   "scripts": {
+    "build:css": "npx tailwindcss -c tailwind.config.ts -i ./src/runtime/assets/css/tailwind.css -o ./src/runtime/assets/css/generated.css",
     "module:dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
-    "module:build:prod": "nuxt-module-build build",
+    "module:build:prod": "npm run build:css && nuxt-module-build build",
     "storybook:run:dev": "storybook dev -p 6006 -c .storybook",
     "storybook:build:prod": "storybook build",
     "create:component": "sh ./scripts/create-component.sh",

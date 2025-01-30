@@ -14,69 +14,70 @@
     :aria-labelledby="name"
   >
     <g :fill="mode === 'fill' ? color : undefined" :stroke="mode === 'stroke' ? color : undefined">
-      <AsyncComp />
+      <component :is="AsyncComp" v-if="AsyncComp" />
     </g>
   </svg>
 </template>
 
-<script lang="ts">
-// Dynamically import all icons using import.meta.glob
-const icons: Record<string, () => Promise<unknown>> = import.meta.glob('#/components/icons/*.vue', { eager: false })
-export const iconsList: string[] = Object.keys(icons).map(
-  (filePath: string) => filePath.split('/').pop()?.replace('.vue', '') || '',
+<script lang="ts" setup>
+import { defineAsyncComponent, computed, type Component } from 'vue'
+import type { PropType } from 'vue'
+
+/**
+ * Type definition for the dynamic import of icons.
+ */
+type IconImportMap = Record<string, () => Promise<{ default: Component }>>
+
+/**
+ * Dynamically import all icon components.
+ * @constant {IconImportMap}
+ */
+const icons: IconImportMap = import.meta.glob('@/components/icons/*.vue') as IconImportMap
+
+/**
+ * Available icon names extracted from the imported files.
+ * @constant {string[]}
+ */
+const _iconsList: string[] = Object.keys(icons).map(
+  (filePath: string): string => filePath.split('/').pop()?.replace('.vue', '') ?? '',
 )
-export const flapiIconModes: string[] = ['fill', 'stroke']
-/**
- * Type definitions for the flapi icon component mode
- * @type {FlapiIconMode}
- */
-type FlapiIconMode = (typeof flapiIconModes)[number]
 
 /**
- * Type definitions for the flapi icon component name
- * @type {FlapiIconProps}
+ * Enum-like definition for available icon display modes.
  */
-type FlapiIconName = (typeof iconsList)[number]
+type FlapiIconMode = 'fill' | 'stroke'
 
 /**
- * Type definitions for the flapi icon component props
- * @type {FlapiIconProps}
- * @property {FlapiIconName} name - The icon name
- * @property {number | string} width - The icon width
- * @property {number | string} height - The icon height
- * @property {string} viewBox - The icon viewBox
- * @property {FlapiIconMode} mode - The icon mode
- * @property {string} color - The icon color
+ * Type definition for the component props.
  */
-export type FlapiIconProps = {
-  name: FlapiIconName
+type FlapiIconProps = {
+  name: (typeof _iconsList)[number]
   width: number | string
   height: number | string
   viewBox: string
   mode: FlapiIconMode
   color: string
 }
-</script>
 
-<script lang="ts" setup>
-import { defineAsyncComponent } from 'vue'
-import type { PropType } from 'vue'
-
+/**
+ * Props definition with strict typing.
+ * @constant {FlapiIconProps}
+ */
 const props: FlapiIconProps = defineProps({
   name: {
-    type: String as PropType<FlapiIconName>,
+    type: String as PropType<(typeof _iconsList)[number]>,
     required: true,
   },
   width: {
-    type: [Number, String],
+    type: [Number, String] as PropType<number | string>,
     default: 24,
   },
   height: {
-    type: [Number, String],
+    type: [Number, String] as PropType<number | string>,
     default: 24,
   },
   viewBox: {
-    type: String,
+    type: String as PropType<string>,
     default: '0 0 24 24',
   },
   mode: {
@@ -84,12 +85,36 @@ const props: FlapiIconProps = defineProps({
     default: 'fill',
   },
   color: {
-    type: String,
+    type: String as PropType<string>,
     default: 'currentColor',
   },
 })
-const AsyncComp: any = defineAsyncComponent(() => import(`#/components/icons/${props.name}.vue`))
+
+/**
+ * Resolve the icon's path dynamically.
+ * @constant {string}
+ */
+const iconPath: string = computed(() => `@/components/icons/${props.name}.vue`).value
+
+/**
+ * Load the component asynchronously if it exists.
+ * @constant {Component | null}
+ */
+const AsyncComp: Component | null = computed<Component | null>(() => {
+  if (!props.name) {
+    console.warn('⚠️ No icon name provided.')
+    return null
+  }
+
+  if (!(iconPath in icons)) {
+    console.warn(`⚠️ Icon "${props.name}" not found at ${iconPath}`)
+    return null
+  }
+
+  return defineAsyncComponent(() => icons[iconPath]())
+}).value
 </script>
+
 <style scoped>
 svg {
   display: inline-block;
