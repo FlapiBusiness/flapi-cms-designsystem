@@ -1,4 +1,3 @@
-// plugins/vee-validate.ts
 import { configure, defineRule } from 'vee-validate'
 import { localize } from '@vee-validate/i18n'
 import en from '@vee-validate/i18n/dist/locale/en.json'
@@ -8,8 +7,7 @@ import { required, email, confirmed, numeric, min, max } from '@vee-validate/rul
 /**
  * Configure vee-validate with global rules and localization.
  */
-export const configureVeeValidate = () => {
-  console.log('PASSE')
+const configureVeeValidate: () => void = (): void => {
   // Define global rules
   defineRule('required', required)
   defineRule('email', email)
@@ -57,3 +55,5 @@ export const configureVeeValidate = () => {
     }),
   })
 }
+
+export default configureVeeValidate
