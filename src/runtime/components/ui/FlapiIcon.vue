@@ -29,7 +29,7 @@ type IconImportMap = Record<string, () => Promise<{ default: Component }>>
  * Dynamically import all icon components.
  * @constant {IconImportMap}
  */
-const icons: IconImportMap = import.meta.glob('@/components/icons/*.vue') as IconImportMap
+const icons: IconImportMap = import.meta.glob('../../components/icons/*.vue') as IconImportMap
 
 /**
  * Available icon names extracted from the imported files.
@@ -95,10 +95,13 @@ const props: FlapiIconProps = defineProps({
 })
 
 /**
- * Resolve the icon's path dynamically.
+ * Resolve the icon's file path dynamically.
  * @constant {string}
  */
-const iconPath: string = computed(() => `@/components/icons/${props.name}.vue`).value
+const iconPath: string =
+  computed(() => {
+    return Object.keys(icons).find((path: string) => path.includes(`${props.name}.vue`))
+  }).value ?? ''
 
 /**
  * Load the component asynchronously if it exists.
