@@ -12,23 +12,7 @@ import eslintPluginStorybook from 'eslint-plugin-storybook'
 
 // Configuration principale
 const mainConfig = {
-  files: [
-    'src-app/tests/**/*.{ts,tsx}',
-    'src-app/src-nuxt/pages/**/*.vue',
-    'src-app/src-nuxt/components/**/*.vue',
-    'src-app/src-nuxt/composables/**/*.{ts,tsx}',
-    'src-app/src-nuxt/modules/**/*.{ts,tsx}',
-    'src-app/src-nuxt/stores/**/*.{ts,tsx}',
-    'src-app/src-nuxt/plugins/**/*.{ts,tsx}',
-    'src-app/src-nuxt/layouts/**/*.vue',
-    'src-app/src-nuxt/middlewares/**/*.{ts,tsx}',
-    'src-app/src-nuxt/utils/**/*.{ts,tsx}',
-    'src-app/src-nuxt/directives/**/*.{ts,tsx}',
-    'src-app/src-core/**/*.{ts,tsx}',
-    'src-app/.storybook/stories/**/*.{ts,tsx}',
-    'src/**/*.{ts,tsx}',
-    'src/runtime/**/*.vue',
-  ],
+  files: ['src/**/*.{ts,tsx}', 'src/runtime/**/*.vue'],
   plugins: {
     '@typescript-eslint': eslintPluginTypeScript,
     'eslint-plugin-prettier': eslintPluginPrettier,
