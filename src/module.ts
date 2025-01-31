@@ -28,12 +28,15 @@ export default defineNuxtModule<ModuleOptions>({
       configPath: resolver.resolve('../tailwind.config'),
     })
 
+    // Ajout du fichier CSS généré
     if (!nuxt.options.css.includes(generatedCssPath)) {
       nuxt.options.css.push(generatedCssPath)
     }
 
+    // Ajout de l'alias #
     nuxt.options.alias['#'] = resolver.resolve('./runtime')
-    // Ajoute le répertoire des composants pour l'import automatique
+
+    // Ajoute le répertoire des composants
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
       pathPrefix: false,
@@ -41,10 +44,10 @@ export default defineNuxtModule<ModuleOptions>({
       global: true,
     })
 
-    // Ajouter le dossier core/ pour les imports automatiques
+    // Ajouter le dossier core/
     addImportsDir(resolver.resolve('./runtime/core'))
 
-    // Ajout d'un plugin : VeeValidate
+    // Ajout du plugin : VeeValidate
     addPlugin(resolver.resolve('./runtime/plugins/VeeValidate'))
   },
 })
