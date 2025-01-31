@@ -17,7 +17,7 @@ export default defineNuxtPlugin((): void => {
  * Définit les règles de validation globales pour `vee-validate`.
  * @returns {void}
  */
-function setupValidationRules(): void {
+const setupValidationRules: () => void = (): void => {
   defineRule('required', required)
   defineRule('email', email)
   defineRule('confirmed', confirmed)
@@ -61,7 +61,7 @@ function setupValidationRules(): void {
  * Configure la localisation des messages d'erreur.
  * @returns {void}
  */
-function setupLocalization(): void {
+const setupLocalization:() => void = (): void => {
   localize({
     en,
     fr,
