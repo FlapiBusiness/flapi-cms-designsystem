@@ -1,8 +1,10 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "include": ["src/runtime/core/**/*"],
+  "include": ["src/**/*"],
   "compilerOptions": {
+    "types": ["vite/client"],
     "baseUrl": ".",
+    "module": "ESNext",
     "paths": {
       "#/*": ["src/runtime/*"],
       "nitropack/types": ["node_modules/nitropack/types"],

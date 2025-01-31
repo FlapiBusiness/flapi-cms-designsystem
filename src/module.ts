@@ -34,7 +34,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.alias['#'] = resolver.resolve('./runtime')
     // Ajoute le répertoire des composants pour l'import automatique
-    await addComponentsDir({
+    addComponentsDir({
       path: resolver.resolve('./runtime/components'),
       pathPrefix: false,
       prefix: '',
@@ -42,9 +42,9 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Ajouter le dossier core/ pour les imports automatiques
-    await addImportsDir(resolver.resolve('./runtime/core'))
+    addImportsDir(resolver.resolve('./runtime/core'))
 
     // Ajout d'un plugin : VeeValidate
-    await addPlugin(resolver.resolve('./runtime/plugins/vee-validate.ts'))
+    addPlugin(resolver.resolve('./runtime/plugins/vee-validate.ts'))
   },
 })
