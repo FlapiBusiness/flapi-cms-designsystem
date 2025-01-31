@@ -30,9 +30,7 @@ Ajoutez **@flapi/cms-designsystem** à la section `modules` de votre configurati
 
 ```ts
 export default defineNuxtConfig({
-  modules: [
-    '@flapi/cms-designsystem'
-  ]
+  modules: ['@flapi/cms-designsystem'],
 })
 ```
 
