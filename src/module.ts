@@ -1,4 +1,4 @@
-import { defineNuxtModule, addComponentsDir, createResolver, installModule, addImportsDir, addPluginTemplate } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, createResolver, installModule, addImportsDir, addPlugin } from '@nuxt/kit'
 import type { Resolver } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 
@@ -48,7 +48,7 @@ export default defineNuxtModule<ModuleOptions>({
     addImportsDir(resolver.resolve('./runtime/core'))
 
     // Ajout du plugin : VeeValidate
-    addPluginTemplate(
+    addPlugin(
       {
         src: resolver.resolve('./runtime/plugins/VeeValidate')
       },
