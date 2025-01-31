@@ -61,7 +61,7 @@ const setupValidationRules: () => void = (): void => {
  * Configure la localisation des messages d'erreur.
  * @returns {void}
  */
-const setupLocalization:() => void = (): void => {
+const setupLocalization: () => void = (): void => {
   localize({
     en,
     fr,
