@@ -2,21 +2,20 @@
 
 ## [1.0.1](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.0...v1.0.1) (2025-01-31)
 
-
 ### Bug Fixes
 
-* fixed all for plugin ([84d39a0](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/84d39a0235bca446db5e8624c61de1381f1eaddd))
-* fixed eslint ([5aebf2d](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/5aebf2dc687ba4445317d4e61dbdcb2c35a945d3))
-* fixed plugin ([fd99071](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/fd99071499dd5dc171d1c61fb6698f7c046b2164))
-* fixed plugin ([a68a541](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/a68a54114fbf547d5f127e1209e335d01a7b553d))
-* fixed plugin ([ce55167](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/ce5516728451bd900a549a9b2590d6d1d884dc73))
-* fixed plugin ([cca74be](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/cca74be6aa7507a119713eb64e0b57a4f7fbbc78))
-* fixed plugin ([6d2e9f1](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/6d2e9f1c25e2bf877488322d79b231da2c04e543))
-* fixed plugin ([8f03be5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/8f03be5ff53ac6b06ad5c52f2bbfe495eb76b8a1))
-* fixed tsconfig, plugin veevalidate and package.json export types ([b19d967](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/b19d967f34bd7c0e4731840c309c63fd4d8bd98e))
-* vee-validate client errors ([1a1e7ad](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1a1e7adf58b95c608080f09f99b774d0ffea269b))
-* vee-validate client errors ([da68d15](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/da68d1560d09556d923a93a2ecb801e0c432eb6f))
-* vee-validate client errors ([1d885f5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1d885f5a504996c0d434b0f76c6e7900cdb44664))
+- fixed all for plugin ([84d39a0](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/84d39a0235bca446db5e8624c61de1381f1eaddd))
+- fixed eslint ([5aebf2d](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/5aebf2dc687ba4445317d4e61dbdcb2c35a945d3))
+- fixed plugin ([fd99071](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/fd99071499dd5dc171d1c61fb6698f7c046b2164))
+- fixed plugin ([a68a541](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/a68a54114fbf547d5f127e1209e335d01a7b553d))
+- fixed plugin ([ce55167](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/ce5516728451bd900a549a9b2590d6d1d884dc73))
+- fixed plugin ([cca74be](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/cca74be6aa7507a119713eb64e0b57a4f7fbbc78))
+- fixed plugin ([6d2e9f1](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/6d2e9f1c25e2bf877488322d79b231da2c04e543))
+- fixed plugin ([8f03be5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/8f03be5ff53ac6b06ad5c52f2bbfe495eb76b8a1))
+- fixed tsconfig, plugin veevalidate and package.json export types ([b19d967](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/b19d967f34bd7c0e4731840c309c63fd4d8bd98e))
+- vee-validate client errors ([1a1e7ad](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1a1e7adf58b95c608080f09f99b774d0ffea269b))
+- vee-validate client errors ([da68d15](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/da68d1560d09556d923a93a2ecb801e0c432eb6f))
+- vee-validate client errors ([1d885f5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1d885f5a504996c0d434b0f76c6e7900cdb44664))
 
 ## 1.0.0 (2025-01-31)
 
