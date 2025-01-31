@@ -30,7 +30,9 @@ Ajoutez **@flapi/cms-designsystem** à la section `modules` de votre configurati
 
 ```ts
 export default defineNuxtConfig({
-  modules: ['@flapi/cms-designsystem'],
+  modules: [
+    '@flapi/cms-designsystem'
+  ]
 })
 ```
 
@@ -50,29 +52,16 @@ import { FlButton } from '@flapi/cms-designsystem'
 
 ---
 
-## 🎨 Personnalisation avec Tailwind CSS
+## 📖 Documentation
 
-Si votre projet utilise **Tailwind CSS**, assurez-vous d'inclure les styles du design system :
-
-Ajoutez cette ligne dans votre `tailwind.config.{js,ts}` :
-
-```js
-module.exports = {
-  content: ['./node_modules/@flapi/cms-designsystem/**/*.{js,ts,vue}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-Cela garantit que Tailwind purge correctement les styles inutilisés.
+Retrouvez la documentation complète avec tous les composants et options disponibles ici : <br />
+Development (tag dev npm) : https://dev.designsystem.flapi.org <br />
+Production (tag latest npm) : https://designsystem.flapi.org
 
 ---
 
-## 📖 Documentation
+## 📜 Licence
 
-Retrouvez la documentation complète avec tous les composants et options disponibles ici :
-
-- Development (tag dev) : https://dev.designsystem.flapi.org
-- Production (tag latest) : https://designsystem.flapi.org
+Ce projet est un logiciel propriétaire de **Flapi**.  
+Il ne peut être ni redistribué, ni modifié sans l'autorisation explicite de **Flapi**.  
+Tous droits réservés © **Flapi**.
