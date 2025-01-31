@@ -2,7 +2,7 @@
   "extends": "./.nuxt/tsconfig.json",
   "include": ["src/**/*", "tests/**/*", ".nuxt/**/*", "cypress/support/**/*"],
   "compilerOptions": {
-    "types": ["vite/client", "nuxt/dist/app/nuxt"],
+    "types": ["vite/client"],
     "baseUrl": ".",
     "module": "ESNext",
     "paths": {

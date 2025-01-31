@@ -20,6 +20,11 @@
       "types": "./dist/runtime/core/index.d.ts",
       "import": "./dist/runtime/core/index.js",
       "require": "./dist/runtime/core/index.js"
+    },
+    "./component": {
+      "types": "./dist/runtime/component/index.d.ts",
+      "import": "./dist/runtime/component/index.js",
+      "require": "./dist/runtime/component/index.js"
     }
   },
   "main": "./dist/module.cjs",
