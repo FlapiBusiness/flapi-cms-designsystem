@@ -1,6 +1,6 @@
 {
   "name": "@flapi/cms-designsystem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "A private design system for Flapi CMS projects, built with Nuxt and Tailwind CSS.",
   "homepage": "https://github.com/FlapiBusiness/flapi-cms-designsystem.git",
