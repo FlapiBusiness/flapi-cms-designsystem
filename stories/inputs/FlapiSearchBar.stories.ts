@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiSearchBar from '#/components/inputs/FlapiSearchBar.vue'
-import type { FlapiSearchBarProps } from '#/components/inputs/FlapiSearchBar.vue'
+import type { FlapiSearchBarProps } from '#/core'
 
 type FlapiSearchBarArgs = FlapiSearchBarProps
 

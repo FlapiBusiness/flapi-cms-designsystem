@@ -26,18 +26,8 @@
   </button>
 </template>
 
-<script lang="ts">
-/**
- * Type definitions for the FlapiGoogleButton component props
- * @type {FlapiGoogleButtonProps}
- * @property {boolean} disabled - The disabled state of the button
- */
-export type FlapiGoogleButtonProps = {
-  disabled: boolean
-}
-</script>
-
 <script lang="ts" setup>
+import type { FlapiGoogleButtonProps } from '#/core'
 import { defineProps } from '@vue/runtime-core'
 
 /**

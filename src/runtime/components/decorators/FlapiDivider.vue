@@ -10,18 +10,8 @@
   </div>
 </template>
 
-<script lang="ts">
-/**
- * Type definitions for the FlapiDivider component props
- * @type {FlapiDividerProps}
- * @property {string | null} text - The text to display in the divider
- */
-export type FlapiDividerProps = {
-  readonly text?: string | null
-}
-</script>
-
 <script lang="ts" setup>
+import type { FlapiDividerProps } from '#/core'
 import { defineProps } from '@vue/runtime-core'
 
 /**

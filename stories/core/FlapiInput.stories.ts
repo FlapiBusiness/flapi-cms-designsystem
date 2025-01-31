@@ -1,9 +1,9 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiInput from '#/components/core/FlapiInput.vue'
-import type { FlapiInputProps } from '#/components/core/FlapiInput.vue'
 import { Form } from 'vee-validate'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+import type { FlapiInputProps } from '#/core'
 
 type FlapiInputArgs = FlapiInputProps
 

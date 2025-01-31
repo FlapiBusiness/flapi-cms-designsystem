@@ -1,6 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiGoogleButton from '#/components/buttons/FlapiGoogleButton.vue'
-import type { FlapiGoogleButtonProps } from '#/components/buttons/FlapiGoogleButton.vue'
 
 type FlapiGoogleButtonArgs = FlapiGoogleButtonProps
 

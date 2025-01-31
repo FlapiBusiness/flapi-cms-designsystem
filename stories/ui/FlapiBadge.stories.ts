@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiBadge, { flapiBadgeSizes } from '#/components/ui/FlapiBadge.vue'
-import type { FlapiBadgeProps } from '#/components/ui/FlapiBadge.vue'
+import FlapiBadge from '#/components/ui/FlapiBadge.vue'
+import { flapiBadgeSizes } from '#/core'
+import type { FlapiBadgeProps } from '#/core'
 
 type FlapiBadgeArgs = FlapiBadgeProps
 

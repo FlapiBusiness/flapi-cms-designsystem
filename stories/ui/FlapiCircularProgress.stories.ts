@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiCircularProgress from '#/components/ui/FlapiCircularProgress.vue'
-import type { FlapiCircularProgressProps } from '#/components/ui/FlapiCircularProgress.vue'
+import type { FlapiCircularProgressProps } from '#/core'
 
 type FlapiCircularProgressArgs = FlapiCircularProgressProps
 

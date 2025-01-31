@@ -16,22 +16,12 @@
   </form>
 </template>
 
-<script lang="ts">
-/**
- * Type definitions for the FlapiPinCode component props
- * @type {FlapiPinCodeProps}
- * @property {number} length - The length of the pin code
- */
-export type FlapiPinCodeProps = {
-  length: number
-}
-</script>
-
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 import { defineProps } from '@vue/runtime-core'
 import FlapiPin from '#/components/inputs/FlapiPin.vue'
+import type { FlapiPinCodeProps } from '#/core'
 
 /**
  * Type definitions for the FlapiPinCode component props

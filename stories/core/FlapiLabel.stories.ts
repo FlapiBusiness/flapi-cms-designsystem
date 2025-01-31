@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiLabel from '#/components/core/FlapiLabel.vue'
-import type { FlapiLabelProps } from '#/components/core/FlapiLabel.vue'
+import type { FlapiLabelProps } from '#/core'
 
 type FlapiLabelArgs = FlapiLabelProps & { slotContent: string }
 

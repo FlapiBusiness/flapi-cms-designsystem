@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiSpinner from '#/components/ui/FlapiSpinner.vue'
-import type { FlapiSpinnerProps } from '#/components/ui/FlapiSpinner.vue'
+import type { FlapiSpinnerProps } from '#/core/types/FlapiSpinner'
 
 type FlapiSpinnerArgs = FlapiSpinnerProps
 

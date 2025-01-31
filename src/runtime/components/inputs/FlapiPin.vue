@@ -11,6 +11,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+
 /* REFS */
 const pinValue: Ref<string> = ref('')
 

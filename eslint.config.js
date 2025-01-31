@@ -12,7 +12,7 @@ import eslintPluginStorybook from 'eslint-plugin-storybook'
 
 // Configuration principale
 const mainConfig = {
-  files: ['src/**/*.{ts,tsx}', 'src/runtime/**/*.vue'],
+  files: ['src/**/*.{vue,ts,tsx}'],
   plugins: {
     '@typescript-eslint': eslintPluginTypeScript,
     'eslint-plugin-prettier': eslintPluginPrettier,
@@ -135,7 +135,7 @@ const mainConfig = {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: ['./tsconfig.json', './tsconfig.app.json'],
+        project: ['./tsconfig.json'],
       },
     },
   },
@@ -144,7 +144,7 @@ const mainConfig = {
     parserOptions: {
       extraFileExtensions: ['.vue'],
       parser: eslintParserTypeScript,
-      project: ['./tsconfig.json', './tsconfig.app.json'],
+      project: ['./tsconfig.json'],
       ecmaVersion: 'latest',
       sourceType: 'module',
     },

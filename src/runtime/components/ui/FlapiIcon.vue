@@ -19,47 +19,8 @@
   </svg>
 </template>
 
-<script lang="ts">
-/**
- * Type definition for the dynamic import of icons.
- */
-type IconImportMap = Record<string, () => Promise<{ default: Component }>>
-
-/**
- * Dynamically import all icon components.
- * @constant {IconImportMap}
- */
-const icons: IconImportMap = import.meta.glob('../../components/icons/*.vue') as IconImportMap
-
-/**
- * Available icon names extracted from the imported files.
- * @constant {string[]}
- */
-export const iconsList: string[] = Object.keys(icons).map(
-  (filePath: string): string => filePath.split('/').pop()?.replace('.vue', '') ?? '',
-)
-
-export const flapiIconModes: string[] = ['fill', 'stroke']
-
-/**
- * Enum-like definition for available icon display modes.
- */
-type FlapiIconMode = (typeof flapiIconModes)[number]
-
-/**
- * Type definition for the component props.
- */
-export type FlapiIconProps = {
-  name: (typeof iconsList)[number]
-  width: number | string
-  height: number | string
-  viewBox: string
-  mode: FlapiIconMode
-  color: string
-}
-</script>
-
 <script lang="ts" setup>
+import { icons, type FlapiIconMode, type FlapiIconProps, type iconsList } from '#/core'
 import { defineAsyncComponent, computed } from 'vue'
 import type { PropType, Component } from 'vue'
 

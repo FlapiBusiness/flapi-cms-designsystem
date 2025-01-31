@@ -11,20 +11,8 @@
   </div>
 </template>
 
-<script lang="ts">
-/**
- * Type definitions for the FlapiPulsatingCircle component props
- * @type {FlapiPulsatingCircleProps}
- * @property {string} title - The color of the pulsating circle
- * @property {number} size - The size of the pulsating circle
- */
-export type FlapiPulsatingCircleProps = {
-  color: string
-  size: number
-}
-</script>
-
 <script lang="ts" setup>
+import type { FlapiPulsatingCircleProps } from '#/core'
 import { defineProps } from '@vue/runtime-core'
 
 /**

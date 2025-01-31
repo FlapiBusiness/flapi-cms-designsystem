@@ -17,18 +17,8 @@
   </svg>
 </template>
 
-<script lang="ts">
-/**
- * Type definitions for the FlapiSpinner component props.
- * @type {FlapiSpinnerProps}
- * @property {number} size - The size of the spinner (in pixels).
- */
-export type FlapiSpinnerProps = {
-  size: number
-}
-</script>
-
 <script lang="ts" setup>
+import type { FlapiSpinnerProps } from '#/core/types/FlapiSpinner'
 import { defineProps } from 'vue'
 
 /**

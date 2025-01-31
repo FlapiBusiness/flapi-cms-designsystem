@@ -6,8 +6,6 @@ Le Flapi CMS DesignSystem est un module Nuxt conçu pour être déployé en tant
 
 `src` : Il s'agit du module Nuxt principal qui définit le DesignSystem et est packagé pour une publication sur npm. Il contient tous les composants, utilitaires et la logique qui composent le DesignSystem.
 
-`src-app` : Un projet Nuxt vierge utilisé pour `lier et tester directement le module situé dans le dossier src`. Cette configuration permet un développement et une validation en temps réel du DesignSystem dans un environnement isolé.
-
 <br /><br /><br /><br />
 
 ## 🛠 Tech Stack
@@ -77,6 +75,13 @@ Pour plus de détails sur les conventions de commit, consultez : [Conventional C
 
 <br /><br /><br /><br />
 
+## 📚 Domains of different environments :
+
+- Development : https://dev.designsystem.flapi.org
+- Production : https://designsystem.flapi.org
+
+<br /><br /><br /><br />
+
 ## ⚙️ Setup Environment Development
 
 1. Clone the project repository using the following commands :
@@ -108,35 +113,7 @@ git clone git@github.com:FlapiBusiness/flapi-cms-designsystem.git
 
 ## 🔄 Cycle Development
 
-### Docker
-
-1. Open Docker Desktop
-2. Run command :
-
-```bash
-   # A la racine du projet :
-   npm install # juste pour l'ide
-
-   cd src-app
-   npm install # juste pour l'ide
-   npm run web:run:dev:docker:local OR npm run web:run:dev:docker:remote
-```
-
-### No Docker :
-
 1. Run command :
-
-```bash
-   # A la racine du projet (Placer les components dans src/runtime/components/), puis :
-   npm install
-   npm run dev:prepare
-
-   # Pour tester les components dans un projet classique nuxt (qui ce trouve dans src-app)
-   # Ce projet utilisera le module nuxt présent dans le dossier 'dist' à la racine (l'équivalent du npm run dev:prepare ci-dessus qui génére le dossier dist)
-   cd src-app
-   npm install
-   npm run web:run:dev:local
-```
 
 <br /><br /><br /><br />
 

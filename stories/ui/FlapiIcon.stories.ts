@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import FlapiIcon, { flapiIconModes, iconsList } from '#/components/ui/FlapiIcon.vue'
-import type { FlapiIconProps } from '#/components/ui/FlapiIcon.vue'
+import FlapiIcon from '#/components/ui/FlapiIcon.vue'
+import { flapiIconModes, iconsList } from '#/core'
+import type { FlapiIconProps } from '#/core'
 
 type FlapiIconArgs = FlapiIconProps
 

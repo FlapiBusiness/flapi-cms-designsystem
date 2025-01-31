@@ -4,18 +4,8 @@
   </label>
 </template>
 
-<script lang="ts">
-/**
- * Type definitions for the FlapiLabel component props
- * @type {FlapiLabelProps}
- * @property {string} id - The id of the label
- */
-export type FlapiLabelProps = {
-  id: string
-}
-</script>
-
 <script lang="ts" setup>
+import type { FlapiLabelProps } from '#/core'
 import { defineProps } from '@vue/runtime-core'
 
 /**

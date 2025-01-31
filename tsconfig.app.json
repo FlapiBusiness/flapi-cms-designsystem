@@ -1,5 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "include": [".storybook/**/*", "tests/**/*", "stories/**/*", "src/runtime/**/*"],
-  "exclude": ["dist", "node_modules"]
-}

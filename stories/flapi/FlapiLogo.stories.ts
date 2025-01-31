@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiLogo from '#/components/flapi/FlapiLogo.vue'
-import type { FlapiLogoProps } from '#/components/flapi/FlapiLogo.vue'
+import type { FlapiLogoProps } from '#/core'
 
 /**
  * Storybook configuration for the FlapiLogo component.

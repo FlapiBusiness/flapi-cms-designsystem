@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiAvatar from '#/components/ui/FlapiAvatar.vue'
-import type { FlapiAvatarProps } from '#/components/ui/FlapiAvatar.vue'
+import type { FlapiAvatarProps } from '#/core'
 
 // Placeholder image path
 const placeholderImage = 'stories/assets/avatar-placeholder.png'
