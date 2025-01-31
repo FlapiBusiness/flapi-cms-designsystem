@@ -1,1 +1,1 @@
-export { default as FlapiButton } from "./FlapiButton.vue";
+export { default as FlapiButton } from './FlapiButton.vue'
