@@ -1,9 +1,10 @@
 import type { Preview } from '@storybook/vue3'
 import '../src/runtime/assets/css/tailwind.css'
-import configureVeeValidate from '#/plugins/VeeValidate'
+import { setupLocalization, setupValidationRules } from '../plugins-local/VeeValidate'
 
 /*vee-validate*/
-configureVeeValidate()
+setupLocalization()
+setupValidationRules()
 
 const preview: Preview = {
   //👇 Enables auto-generated documentation for all stories

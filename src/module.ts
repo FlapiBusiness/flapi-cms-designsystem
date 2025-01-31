@@ -41,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.css.push(generatedCssPath)
     }
 
-    // Ajout de l'alias #
+    // Ajout de l'alias # pour le répertoire runtime/
     nuxt.options.alias['#'] = resolver.resolve('./runtime')
 
     // Ajoute le répertoire des composants
@@ -52,7 +52,7 @@ export default defineNuxtModule<ModuleOptions>({
       global: true,
     })
 
-    // Ajouter le dossier core/
+    // Ajouter le dossier core/ (services, types, etc.)
     addImportsDir(resolver.resolve('./runtime/core'))
 
     // Ajout du plugin : VeeValidate

@@ -3,22 +3,12 @@ import { localize } from '@vee-validate/i18n'
 import en from '@vee-validate/i18n/dist/locale/en.json'
 import fr from '@vee-validate/i18n/dist/locale/fr.json'
 import { required, email, confirmed, numeric, min, max } from '@vee-validate/rules'
-import { defineNuxtPlugin } from '#app'
-
-/**
- * Plugin Nuxt pour la configuration globale de VeeValidate.
- * @returns {void}
- */
-export default defineNuxtPlugin((): void => {
-  setupValidationRules()
-  setupLocalization()
-})
 
 /**
  * Définit les règles de validation globales pour `vee-validate`.
  * @returns {void}
  */
-const setupValidationRules: () => void = (): void => {
+export const setupValidationRules: () => void = (): void => {
   defineRule('required', required)
   defineRule('email', email)
   defineRule('confirmed', confirmed)
@@ -62,7 +52,7 @@ const setupValidationRules: () => void = (): void => {
  * Configure la localisation des messages d'erreur.
  * @returns {void}
  */
-const setupLocalization: () => void = (): void => {
+export const setupLocalization: () => void = (): void => {
   localize({
     en,
     fr,
