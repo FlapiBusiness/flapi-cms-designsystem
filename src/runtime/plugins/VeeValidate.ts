@@ -3,13 +3,21 @@ import { localize } from '@vee-validate/i18n'
 import en from '@vee-validate/i18n/dist/locale/en.json'
 import fr from '@vee-validate/i18n/dist/locale/fr.json'
 import { required, email, confirmed, numeric, min, max } from '@vee-validate/rules'
-import { defineNuxtPlugin } from '#app'
 
 /**
- * Configure vee-validate with global rules and localization.
+ * Plugin Nuxt pour la configuration globale de VeeValidate.
+ * @returns {void}
  */
-const configureVeeValidate: () => void = (): void => {
-  // Define global rules
+export default defineNuxtPlugin((): void => {
+  setupValidationRules()
+  setupLocalization()
+})
+
+/**
+ * Définit les règles de validation globales pour `vee-validate`.
+ * @returns {void}
+ */
+const setupValidationRules: () => void = (): void => {
   defineRule('required', required)
   defineRule('email', email)
   defineRule('confirmed', confirmed)
@@ -17,46 +25,51 @@ const configureVeeValidate: () => void = (): void => {
   defineRule('max', max)
 
   /**
-   * Custom numeric rule with a personalized error message.
-   * @param {string | number} value - The value to validate
-   * @param {Record<string, any>} params - The parameters to pass to the rule
-   * @returns {string | boolean} - The error message or true if the rule passes
+   * Règle personnalisée pour les valeurs numériques.
+   * @param {string | number} value - La valeur à valider.
+   * @param {Record<string, any>} [params={}] - Paramètres optionnels.
+   * @returns {boolean | string} `true` si valide, sinon un message d'erreur.
    */
-  defineRule('numeric', (value: string | number, params: Record<string, any> = {}) => {
-    if (numeric(value)) {
-      return true // Rule passes
-    }
-
-    return params.message || 'Le champ doit être un nombre valide.'
+  defineRule('numeric', (value: string | number, params: Record<string, any> = {}): boolean | string => {
+    return numeric(value) ? true : params.message || 'Le champ doit être un nombre valide.'
   })
 
-  defineRule('complex_password', (value: string) => {
+  /**
+   * Règle personnalisée pour la validation des mots de passe complexes.
+   * @param {string} value - Le mot de passe à valider.
+   * @returns {boolean | string} `true` si valide, sinon un message d'erreur.
+   */
+  defineRule('complex_password', (value: string): boolean | string => {
     const passwordRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d\s])[A-Za-z\d\S]{8,}$/
-    return (
-      passwordRegex.test(value) ||
-      'Le mot de passe doit comporter au moins 8 caractères, inclure au minimum un chiffre, une lettre majuscule et un caractère spécial.'
-    )
+    return passwordRegex.test(value)
+      ? true
+      : 'Le mot de passe doit comporter au moins 8 caractères, inclure un chiffre, une majuscule et un caractère spécial.'
   })
 
-  defineRule('price_format', (value: string) => {
+  /**
+   * Règle personnalisée pour la validation des prix.
+   * @param {string} value - La valeur à valider.
+   * @returns {boolean | string} `true` si valide, sinon un message d'erreur.
+   */
+  defineRule('price_format', (value: string): boolean | string => {
     const priceRegex: RegExp = /^[0-9]+([.,][0-9]{1,2})?$/
-    return priceRegex.test(value) || 'Le champ prix doit être un nombre valide avec un maximum de deux décimales.'
+    return priceRegex.test(value) ? true : 'Le champ prix doit être un nombre valide avec un maximum de deux décimales.'
   })
+}
 
-  // Configure localization
+/**
+ * Configure la localisation des messages d'erreur.
+ * @returns {void}
+ */
+const setupLocalization: () => void = (): void => {
   localize({
     en,
     fr,
   })
 
-  // Set the default locale
   configure({
     generateMessage: localize('fr', {
       names: {},
     }),
   })
 }
-
-export default defineNuxtPlugin(() => {
-  configureVeeValidate()
-})
