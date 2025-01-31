@@ -12,14 +12,9 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
-    },
-    "./components": {
-      "import": "./dist/runtime/components/index.js",
-      "require": "./dist/runtime/components/index.js",
-      "types": "./dist/runtime/components/index.d.ts"
+      "require": "./dist/module.cjs",
+      "types": "./dist/types.d.ts"
     },
     "./core": {
       "import": "./dist/runtime/core/index.js",
