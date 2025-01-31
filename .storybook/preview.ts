@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/vue3'
 import '../src/runtime/assets/css/tailwind.css'
-import configureVeeValidate from '#/plugins/vee-validate'
+import configureVeeValidate from '#/plugins/VeeValidate'
 
 /*vee-validate*/
 configureVeeValidate()
