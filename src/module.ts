@@ -45,6 +45,6 @@ export default defineNuxtModule<ModuleOptions>({
     addImportsDir(resolver.resolve('./runtime/core'))
 
     // Ajout d'un plugin : VeeValidate
-    addPlugin(resolver.resolve('./runtime/plugins/vee-validate.ts'))
+    addPlugin(resolver.resolve('./runtime/plugins/VeeValidate'))
   },
 })

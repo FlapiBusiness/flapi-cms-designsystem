@@ -12,14 +12,14 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": "./dist/types.d.ts"
+      "require": "./dist/module.cjs"
     },
     "./core": {
+      "types": "./dist/runtime/core/index.d.ts",
       "import": "./dist/runtime/core/index.js",
-      "require": "./dist/runtime/core/index.js",
-      "types": "./dist/runtime/core/index.d.ts"
+      "require": "./dist/runtime/core/index.js"
     }
   },
   "main": "./dist/module.cjs",
@@ -28,12 +28,10 @@
     "dist"
   ],
   "scripts": {
-    "build:css": "npx tailwindcss -c tailwind.config.ts -i ./src/runtime/assets/css/tailwind.css -o ./src/runtime/assets/css/generated.css",
-    "module:dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
-    "module:build:prod": "npm run build:css && nuxt-module-build build",
+    "components:build:css:prod": "npx tailwindcss -c tailwind.config.ts -i ./src/runtime/assets/css/tailwind.css -o ./src/runtime/assets/css/generated.css",
+    "module:build:prod": "npm run components:build:css:prod && nuxt-module-build build",
     "storybook:run:dev": "storybook dev -p 6006 -c .storybook",
     "storybook:build:prod": "storybook build",
-    "create:component": "sh ./scripts/create-component.sh",
     "web:build:static:develop": "nuxi generate --dotenv .env.development",
     "web:build:static:staging": "nuxi generate --dotenv .env.staging",
     "web:build:static:prod": "nuxi generate --dotenv .env.production",
@@ -59,6 +57,7 @@
     "cypress-run-chrome": "cypress run --browser chrome --e2e --config-file cypress.config.ts",
     "cypress-run-firefox": "cypress run --browser firefox --e2e --config-file cypress.config.ts",
     "cypress-run-edge": "cypress run --browser edge --e2e --config-file cypress.config.ts",
+    "create:component": "sh ./scripts/create-component.sh",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:ts",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint .",
