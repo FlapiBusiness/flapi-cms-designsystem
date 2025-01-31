@@ -1,4 +1,4 @@
-import { defineNuxtModule, addComponentsDir, createResolver, installModule, addImportsDir, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, addTemplate, createResolver, installModule, addImportsDir, addPlugin } from '@nuxt/kit'
 import type { Resolver } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 
@@ -45,6 +45,16 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Ajouter le dossier core/
+    addTemplate({
+      filename: 'flapi-cms-designsystem.mjs',
+      getContents: () => `export * from '${resolver.resolve("./runtime/index")}';`,
+      write: true,
+    })
+
+    // Ajout de l'alias pour les imports
+    // nuxt.options.alias["@flapi/cms-designsystem"] = resolver.resolve("./runtime");
+
+    // Ajouter le dossier core/ pour les imports automatiques
     addImportsDir(resolver.resolve('./runtime/core'))
 
     // Ajout du plugin : VeeValidate
