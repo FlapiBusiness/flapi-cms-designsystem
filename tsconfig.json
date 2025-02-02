@@ -1,6 +1,6 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "include": ["src/**/*", "tests/**/*", ".nuxt/**/*", "cypress/support/**/*"],
+  "include": ["src/**/*", "tests/**/*.spec.ts", ".nuxt/**/*", "cypress/support/**/*"],
   "compilerOptions": {
     "types": ["vite/client"],
     "baseUrl": ".",

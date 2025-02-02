@@ -1,23 +1,22 @@
-import { defineVitestConfig } from '@nuxt/test-utils/config'
-import { configDefaults } from 'vitest/config'
+import { defineConfig } from 'vitest/config'
+import { fileURLToPath } from 'node:url'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
-export default defineVitestConfig({
+export default defineConfig({
+  plugins: [tsconfigPaths()],
   test: {
-    environment: 'nuxt',
-    exclude: [...configDefaults.exclude, 'tests/e2e/**/*'],
+    environment: 'node', // Utilisez 'node' pour les tests de logique pure
+    root: fileURLToPath(new URL('./', import.meta.url)),
     coverage: {
-      provider: 'v8',
-      reportsDirectory: './tests/unit/test-reports',
+      provider: 'v8', // Fournisseur de couverture
+      reportsDirectory: './tests/unit/test-reports', // Répertoire pour les rapports de couverture
       reporter: ['html'],
-    },
-    environmentOptions: {
-      nuxt: {
-        mock: {
-          intersectionObserver: true,
-          indexedDb: true,
-        },
-        domEnvironment: 'jsdom',
-      },
+      include: [
+        'src/runtime/core/services/**', // Inclure uniquement les fichiers du dossier services
+      ],
+      exclude: [
+        'src/runtime/core/services/index.ts', // Exclure index.ts spécifiquement
+      ],
     },
   },
 })
