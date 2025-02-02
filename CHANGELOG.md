@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.2...v1.0.3) (2025-02-02)
+
+
+### Bug Fixes
+
+* fixed unit tests ([2c4f00a](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2c4f00ab7273ad2dd65bcc9b041c6e36a841f50a))
+
 ## [1.0.2](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.1...v1.0.2) (2025-02-02)
 
 
