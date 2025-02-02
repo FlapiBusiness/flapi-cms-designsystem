@@ -36,15 +36,24 @@ export default defineNuxtConfig({
 
 ### 2️⃣ Importer les composants
 
-Une fois installé, vous pouvez directement utiliser les composants dans vos pages ou composants Vue :
+Vous pouvez directement utiliser les composants dans vos pages ou composants Vue :
 
-```vue
+```ts
 <template>
-  <FlButton label="Cliquez-moi" />
+  <FlapiButton>MyButton</FlapiButton>
 </template>
+```
 
+✅ **Pas besoin d'import !** Les composants sont déjà disponibles dans votre projet GLOBALEMENT.
+
+### 3️⃣ Importer les Services, Types.. (`/core`)
+
+Pour utiliser les Services, Types.. situés dans **`@flapi/cms-designsystem/core`**, vous devez **les importer explicitement** :
+
+```ts
 <script lang="ts" setup>
-import { FlButton } from '@flapi/cms-designsystem'
+import { ColorUtils } from '@flapi/cms-designsystem/core'
+console.log(ColorUtils.hexToHSL('#ff0000'))
 </script>
 ```
 
