@@ -2,17 +2,15 @@
 
 ## [1.0.3](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.2...v1.0.3) (2025-02-02)
 
-
 ### Bug Fixes
 
-* fixed unit tests ([2c4f00a](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2c4f00ab7273ad2dd65bcc9b041c6e36a841f50a))
+- fixed unit tests ([2c4f00a](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2c4f00ab7273ad2dd65bcc9b041c6e36a841f50a))
 
 ## [1.0.2](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.1...v1.0.2) (2025-02-02)
 
-
 ### Bug Fixes
 
-* fixed storybook for deployment ([fd62169](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/fd6216995c3f7c897e6dc118b672c7b93833bad9))
+- fixed storybook for deployment ([fd62169](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/fd6216995c3f7c897e6dc118b672c7b93833bad9))
 
 ## [1.0.1](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.0...v1.0.1) (2025-01-31)
 

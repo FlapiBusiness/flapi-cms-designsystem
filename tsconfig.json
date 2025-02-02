@@ -1,10 +1,16 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "include": ["src/**/*", "tests/**/*.spec.ts", ".nuxt/**/*", "cypress/support/**/*"],
+  "include": [
+    "src/**/*",
+    "tests/**/*.spec.ts",
+    "stories/**/*",
+    ".nuxt/**/*",
+    "cypress/support/**/*",
+    ".storybook/**/*",
+    "plugins/**/*",
+  ],
   "compilerOptions": {
-    "types": ["vite/client"],
     "baseUrl": ".",
-    "module": "ESNext",
     "paths": {
       "#/*": ["src/runtime/*"],
       "nitropack/types": ["node_modules/nitropack/types"],
