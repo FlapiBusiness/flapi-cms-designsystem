@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.3...v1.0.4) (2025-02-02)
+
+
+### Performance Improvements
+
+* improvement import in .stories and bump package npm ([3924bad](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/3924bad700bf7f83b103b19ada37f62bdd54f898))
+
 ## [1.0.3](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.2...v1.0.3) (2025-02-02)
 
 ### Bug Fixes
