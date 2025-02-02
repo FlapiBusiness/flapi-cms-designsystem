@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.1...v1.0.2) (2025-02-02)
+
+
+### Bug Fixes
+
+* fixed storybook for deployment ([fd62169](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/fd6216995c3f7c897e6dc118b672c7b93833bad9))
+
 ## [1.0.1](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.0...v1.0.1) (2025-01-31)
 
 ### Bug Fixes
