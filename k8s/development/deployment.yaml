@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: dev-designsystem-flapi
-          image: corentin35/flapi-designsystem:develop-${TAG_VERSION}
+          image: corentin35/flapi-cms-designsystem:develop-${TAG_VERSION}
           imagePullPolicy: Always
           ports:
             - containerPort: 80

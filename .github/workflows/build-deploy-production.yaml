@@ -29,7 +29,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: corentin35/flapi-designsystem:latest
+          tags: corentin35/flapi-cms-designsystem:latest
 
       - name: Build and push Docker image - Production version x.x.x
         uses: docker/build-push-action@v6
@@ -37,7 +37,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: corentin35/flapi-designsystem:${{ steps.previoustag.outputs.tag }}
+          tags: corentin35/flapi-cms-designsystem:${{ steps.previoustag.outputs.tag }}
 
       - name: Replace image tag in deployment.yaml for Kubernetes
         run: |
