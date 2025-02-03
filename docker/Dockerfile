@@ -20,7 +20,6 @@ FROM nginx:stable-alpine AS prod-stage
 WORKDIR /app
 
 COPY --from=builder /app/storybook-static/ /usr/share/nginx/html
-COPY --from=builder /app/stories /usr/share/nginx/html
 
 # Copiez le fichier de configuration Nginx personnalisé
 COPY ./docker/nginx.conf /etc/nginx/conf.d/default.conf
