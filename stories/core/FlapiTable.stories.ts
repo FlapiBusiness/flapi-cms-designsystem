@@ -114,7 +114,7 @@ export const LogsExample: StoryFn<FlapiTableArgs> = (args: FlapiTableArgs) => ({
         <div class="flex items-center gap-2">
           <FlapiAvatar
               :name="item.user.name"
-              photo="stories/assets/avatar-placeholder.png"
+              photo="/assets/avatar-placeholder.png"
               :size="32"
           />
           <span class="font-semibold">{{ item.user.name }}</span>

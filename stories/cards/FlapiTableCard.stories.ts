@@ -34,7 +34,7 @@ const Template: StoryFn<FlapiTableCardArgs> = (args: FlapiTableCardArgs) => ({
     <FlapiTableCard v-bind="args">
       <template #header="{ item }">
         <div class="flex items-center gap-2 text-base font-medium text-light-400">
-          <FlapiAvatar :name="item.user.name" photo="stories/assets/avatar-placeholder.png" :size="32" />
+          <FlapiAvatar :name="item.user.name" photo="/assets/avatar-placeholder.png" :size="32" />
           <span class="font-semibold">{{ item.user.name }}</span>
         </div>
       </template>

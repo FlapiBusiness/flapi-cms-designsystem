@@ -66,7 +66,7 @@ export const Expanded = Template.bind({})
 Expanded.args = {
   username: 'John Doe',
   items,
-  avatar: 'stories/assets/avatar-placeholder.png',
+  avatar: '/assets/avatar-placeholder.png',
   expand: true,
 }
 
@@ -75,6 +75,6 @@ export const Collapsed = Template.bind({})
 Collapsed.args = {
   username: 'John Doe',
   items,
-  avatar: 'stories/assets/avatar-placeholder.png',
+  avatar: '/assets/avatar-placeholder.png',
   expand: false,
 }
