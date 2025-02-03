@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer'
 import path, { resolve } from 'path'
 
 const config: StorybookConfig = {
-  staticDirs: [{ from: '../stories/assets', to: 'assets/stories/assets' }],
+  staticDirs: [{ from: '../stories/assets/', to: 'assets' }],
   stories: ['../stories/**/*.mdx', '../**/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-onboarding',

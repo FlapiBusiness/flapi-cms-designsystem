@@ -3,7 +3,7 @@ import FlapiAvatar from '#/components/ui/FlapiAvatar.vue'
 import type { FlapiAvatarProps } from '#/core'
 
 // Placeholder image path
-const placeholderImage = 'stories/assets/avatar-placeholder.png'
+const placeholderImage = '/assets/avatar-placeholder.png';
 
 type FlapiAvatarArgs = FlapiAvatarProps
 
