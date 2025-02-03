@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.4...v1.1.0) (2025-02-03)
+
+
+### Features
+
+* rename repo docker hub ([21bfa7c](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/21bfa7c147326ede571ee0ffe124aa92203e1f9d))
+
 ## [1.0.4](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.3...v1.0.4) (2025-02-02)
 
 
