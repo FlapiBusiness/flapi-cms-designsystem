@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer'
 import path, { resolve } from 'path'
 
 const config: StorybookConfig = {
-  staticDirs: ['../stories/assets'],
+  staticDirs: [{ from: '../stories/assets', to: 'stories/assets' }],
   stories: ['../stories/**/*.mdx', '../**/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-onboarding',
@@ -19,7 +19,7 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    defaultName: 'Documentation',
+    defaultName: '@flapi/cms-designsystem - Documentation',
   },
   async viteFinal(viteConfig) {
     if (viteConfig.resolve) {
