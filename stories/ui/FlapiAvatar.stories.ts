@@ -2,7 +2,7 @@ import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiAvatar from '#/components/ui/FlapiAvatar.vue'
 import type { FlapiAvatarProps } from '#/core'
 
-const placeholderImage: string = new URL('/assets/avatar-placeholder.png', import.meta.url).href;
+const placeholderImage: string = '/assets/avatar-placeholder.png';
 
 type FlapiAvatarArgs = FlapiAvatarProps
 
