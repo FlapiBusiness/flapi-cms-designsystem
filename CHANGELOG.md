@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.2.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.1.0...v1.2.0) (2025-02-05)
+
+
+### Features
+
+* add type in var ([f99e89f](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/f99e89f5e66ebbf7d5c4ad941585ba795fca9407))
+
+
+### Bug Fixes
+
+* fixed assets in storybook ([75781b6](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/75781b6cd3573dfa92851fc56902e2c26553dea7))
+* fixed assets in storybook ([c99bbb4](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/c99bbb41936d988a55044b02c152dca385215b38))
+* fixed assets in storybook ([7ff841f](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/7ff841faa273cd72b1938cab0efcd46e732431d3))
+* fixed file static ([68512fa](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/68512fa1436b5b64062647c77e6a00fa84a3b8a3))
+* fixed file static ([be27c36](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/be27c36e86f74e6a4a625db9c1adfe95f34949e7))
+* fixed nginx.conf for assets ([1c59ef4](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1c59ef4760f718d498de70fad6e78833c9fc5cd7))
+* fixed nginx.conf for assets ([2adbbf9](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2adbbf96f8dcfd84326454b4a646b73ed36c2039))
+* fixed nginx.conf for assets ([d646ebd](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/d646ebd69e06a4fa9bd3104f441d45befcd1ed47))
+
 ## [1.1.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.0.4...v1.1.0) (2025-02-03)
 
 
