@@ -1,6 +1,6 @@
 <template>
   <span
-    :class="`inline-flex w-fit items-center gap-1.5 ${padding} ${props.close ? 'pr-1' : null} rounded ${fontSize} font-semibold`"
+    :class="`flex w-fit max-w-full items-center justify-center gap-1.5 whitespace-break-spaces ${padding} ${props.close ? 'pr-1' : null} rounded ${fontSize} font-semibold`"
     :style="{
       backgroundColor: props.backgroundColor,
       color: computedTextColor,
