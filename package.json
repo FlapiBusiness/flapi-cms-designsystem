@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "components:build:css:prod": "npx tailwindcss -c tailwind.config.ts -i ./src/runtime/assets/css/tailwind.css -o ./src/runtime/assets/css/generated.css",
-    "module:build:prod": "npm run components:build:css:prod && nuxt-module-build build",
+    "module:build:prod": "npm run components:build:css:prod && nuxt-module-build build && npm run link-dist",
+    "link-dist": "cd dist && npm link",
     "storybook:run:dev": "storybook dev -p 6006 -c .storybook",
     "storybook:build:prod": "storybook build",
     "web:build:static:develop": "nuxi generate --dotenv .env.development",

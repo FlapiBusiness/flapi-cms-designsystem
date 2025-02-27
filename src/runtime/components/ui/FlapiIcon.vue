@@ -14,15 +14,31 @@
     :aria-labelledby="name"
   >
     <g :fill="mode === 'fill' ? color : undefined" :stroke="mode === 'stroke' ? color : undefined">
-      <component :is="AsyncComp" v-if="AsyncComp" />
+      <component :is="iconComponent" v-if="iconComponent" />
     </g>
   </svg>
 </template>
 
 <script lang="ts" setup>
-import { icons, type FlapiIconMode, type FlapiIconProps, type iconsList } from '#/core'
-import { defineAsyncComponent, computed } from 'vue'
-import type { PropType, Component } from 'vue'
+import type { IconComponent, FlapiIconMode, FlapiIconProps } from '#/core'
+import type { iconsList } from '#/core'
+import { computed } from 'vue'
+import type { PropType, ComputedRef } from 'vue'
+import ChevronLeft from '#/components/icons/ChevronLeft.vue'
+import ChevronRight from '#/components/icons/ChevronRight.vue'
+import Database from '#/components/icons/Database.vue'
+import Edit from '#/components/icons/Edit.vue'
+import Eye from '#/components/icons/Eye.vue'
+import EyeOff from '#/components/icons/EyeOff.vue'
+import Home from '#/components/icons/Home.vue'
+import Link from '#/components/icons/Link.vue'
+import Mail from '#/components/icons/Mail.vue'
+import MessageCircle from '#/components/icons/MessageCircle.vue'
+import Search from '#/components/icons/Search.vue'
+import Settings from '#/components/icons/Settings.vue'
+import Share from '#/components/icons/Share.vue'
+import Users from '#/components/icons/Users.vue'
+import X from '#/components/icons/X.vue'
 
 /**
  * Props definition with strict typing.
@@ -56,31 +72,32 @@ const props: FlapiIconProps = defineProps({
 })
 
 /**
- * Resolve the icon's file path dynamically.
- * @constant {string}
+ * Icons dictionary with all the available icons.
+ * @constant {Record<string, IconComponent>}
  */
-const iconPath: string =
-  computed(() => {
-    return Object.keys(icons).find((path: string) => path.includes(`${props.name}.vue`))
-  }).value ?? ''
+const iconsDictionary: Record<string, IconComponent> = {
+  ChevronLeft,
+  ChevronRight,
+  Database,
+  Edit,
+  Eye,
+  EyeOff,
+  Home,
+  Link,
+  Mail,
+  MessageCircle,
+  Search,
+  Settings,
+  Share,
+  Users,
+  X,
+}
 
 /**
- * Load the component asynchronously if it exists.
- * @constant {Component | null}
+ * Icon component computed with the props name and the icons dictionary.
+ * @constant {ComputedRef<IconComponent>}
  */
-const AsyncComp: Component | null = computed<Component | null>(() => {
-  if (!props.name) {
-    console.warn('⚠️ No icon name provided.')
-    return null
-  }
-
-  if (!(iconPath in icons)) {
-    console.warn(`⚠️ Icon "${props.name}" not found at ${iconPath}`)
-    return null
-  }
-
-  return defineAsyncComponent(() => icons[iconPath]())
-}).value
+const iconComponent: ComputedRef<IconComponent> = computed(() => iconsDictionary[props.name])
 </script>
 
 <style scoped>

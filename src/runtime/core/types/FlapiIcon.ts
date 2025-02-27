@@ -1,4 +1,4 @@
-import type { Component } from 'vue'
+import type { Component, DefineComponent } from 'vue'
 
 /**
  * Type definition for the dynamic import of icons.
@@ -37,3 +37,9 @@ export type FlapiIconProps = {
   mode: FlapiIconMode
   color: string
 }
+
+
+/**
+ * Type definition for the icon component.
+ */
+export type IconComponent = DefineComponent<{}, {}, any>
