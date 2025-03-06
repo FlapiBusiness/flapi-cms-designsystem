@@ -24,6 +24,9 @@ import type { IconComponent, FlapiIconMode, FlapiIconProps } from '#/core'
 import type { iconsList } from '#/core'
 import { computed } from 'vue'
 import type { PropType, ComputedRef } from 'vue'
+import AlertCircle from '#/components/icons/AlertCircle.vue'
+import ArrowRight from '#/components/icons/ArrowRight.vue'
+import CheckCircle from '#/components/icons/CheckCircle.vue'
 import ChevronLeft from '#/components/icons/ChevronLeft.vue'
 import ChevronRight from '#/components/icons/ChevronRight.vue'
 import Database from '#/components/icons/Database.vue'
@@ -31,6 +34,7 @@ import Edit from '#/components/icons/Edit.vue'
 import Eye from '#/components/icons/Eye.vue'
 import EyeOff from '#/components/icons/EyeOff.vue'
 import Home from '#/components/icons/Home.vue'
+import Info from '#/components/icons/Info.vue'
 import Link from '#/components/icons/Link.vue'
 import Mail from '#/components/icons/Mail.vue'
 import MessageCircle from '#/components/icons/MessageCircle.vue'
@@ -39,6 +43,7 @@ import Settings from '#/components/icons/Settings.vue'
 import Share from '#/components/icons/Share.vue'
 import Users from '#/components/icons/Users.vue'
 import X from '#/components/icons/X.vue'
+import XCircle from '#/components/icons/XCircle.vue'
 
 /**
  * Props definition with strict typing.
@@ -76,6 +81,9 @@ const props: FlapiIconProps = defineProps({
  * @constant {Record<string, IconComponent>}
  */
 const iconsDictionary: Record<string, IconComponent> = {
+  AlertCircle,
+  ArrowRight,
+  CheckCircle,
   ChevronLeft,
   ChevronRight,
   Database,
@@ -83,6 +91,7 @@ const iconsDictionary: Record<string, IconComponent> = {
   Eye,
   EyeOff,
   Home,
+  Info,
   Link,
   Mail,
   MessageCircle,
@@ -91,6 +100,7 @@ const iconsDictionary: Record<string, IconComponent> = {
   Share,
   Users,
   X,
+  XCircle,
 }
 
 /**

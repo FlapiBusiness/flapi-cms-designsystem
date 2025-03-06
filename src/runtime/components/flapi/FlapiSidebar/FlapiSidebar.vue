@@ -53,34 +53,7 @@ import FlapiLogo from '#/components/flapi/FlapiLogo.vue'
 import FlapiSidebarLink from '#/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
 import FlapiAvatar from '#/components/ui/FlapiAvatar.vue'
 import FlapiSidebarToggleButton from '#/components/flapi/FlapiSidebar/FlapiSidebarToggleButton.vue'
-
-/**
- * Sidebar item definition
- * @type {FlapiSidebarItem}
- * @property {string} to - The route to navigate to
- * @property {string} icon - The icon to display
- * @property {string} text - The text for the link
- */
-export type FlapiSidebarItem = {
-  to: string
-  icon: string
-  text: string
-}
-
-/**
- * Sidebar props definition
- * @type {FlapiSidebarProps}
- * @property {string} username - The username to display in the footer
- * @property {FlapiSidebarItem[]} items - The list of sidebar links
- * @property {string | null} avatar - The avatar image URL
- * @property {boolean} expand - Whether the sidebar is expanded
- */
-export type FlapiSidebarProps = {
-  username: string
-  items: FlapiSidebarItem[]
-  avatar?: string | null
-  expand: boolean
-}
+import type { FlapiSidebarItem, FlapiSidebarProps } from '#/core'
 
 const props: FlapiSidebarProps = defineProps({
   username: {

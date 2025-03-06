@@ -2,7 +2,7 @@ import { configure, defineRule } from 'vee-validate'
 import { localize } from '@vee-validate/i18n'
 import en from '@vee-validate/i18n/dist/locale/en.json'
 import fr from '@vee-validate/i18n/dist/locale/fr.json'
-import { required, email, confirmed, numeric, min, max } from '@vee-validate/rules'
+import { required, email, numeric, min, max } from '@vee-validate/rules'
 import { defineNuxtPlugin } from '#app'
 
 /**
@@ -21,9 +21,25 @@ export default defineNuxtPlugin((): void => {
 const setupValidationRules: () => void = (): void => {
   defineRule('required', required)
   defineRule('email', email)
-  defineRule('confirmed', confirmed)
   defineRule('min', min)
   defineRule('max', max)
+
+  /**
+   * Custom confirmed rule with a personalized error message.
+   * @param {string} value - The value to validate
+   * @param {Record<string, any>} params - The parameters to pass to the rule
+   */
+  defineRule('confirmed', (value: string, [target]: [string], { form }) => {
+    if (!target) {
+      return 'Le champ de confirmation est manquant.'
+    }
+
+    if (!form || !form[target]) {
+      return `Impossible de trouver le champ correspondant : ${target}`
+    }
+
+    return value === form[target] ? true : 'Les mots de passe ne correspondent pas.'
+  })
 
   /**
    * Règle personnalisée pour les valeurs numériques.

@@ -59,6 +59,7 @@
     "cypress-run-firefox": "cypress run --browser firefox --e2e --config-file cypress.config.ts",
     "cypress-run-edge": "cypress run --browser edge --e2e --config-file cypress.config.ts",
     "create:component": "sh ./scripts/create-component.sh",
+    "delete:component": "sh ./scripts/delete-component.sh",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:ts",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint .",
