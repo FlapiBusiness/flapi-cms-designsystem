@@ -44,6 +44,7 @@ import Share from '#/components/icons/Share.vue'
 import Users from '#/components/icons/Users.vue'
 import X from '#/components/icons/X.vue'
 import XCircle from '#/components/icons/XCircle.vue'
+import Logout from '#/components/icons/Logout.vue'
 
 /**
  * Props definition with strict typing.
@@ -101,6 +102,7 @@ const iconsDictionary: Record<string, IconComponent> = {
   Users,
   X,
   XCircle,
+  Logout,
 }
 
 /**
