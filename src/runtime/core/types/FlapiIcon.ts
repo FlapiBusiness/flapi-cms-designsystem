@@ -38,7 +38,6 @@ export type FlapiIconProps = {
   color: string
 }
 
-
 /**
  * Type definition for the icon component.
  */

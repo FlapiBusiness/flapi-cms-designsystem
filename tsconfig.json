@@ -7,12 +7,9 @@
     ".nuxt/**/*",
     "cypress/support/**/*",
     ".storybook/**/*",
-    "plugins/**/*",
+    "plugins/**/*"
   ],
-  "exclude": [
-    "dist",
-    "node_modules",
-  ],
+  "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

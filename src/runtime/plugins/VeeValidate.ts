@@ -29,17 +29,20 @@ const setupValidationRules: () => void = (): void => {
    * @param {string} value - The value to validate
    * @param {Record<string, any>} params - The parameters to pass to the rule
    */
-  defineRule('confirmed', (value: string, [target]: [string], { form }) => {
-    if (!target) {
-      return 'Le champ de confirmation est manquant.'
-    }
+  defineRule(
+    'confirmed',
+    (value: string, [target]: [string], { form }: { form: Record<string, unknown> }): string | boolean => {
+      if (!target) {
+        return 'Le champ de confirmation est manquant.'
+      }
 
-    if (!form || !form[target]) {
-      return `Impossible de trouver le champ correspondant : ${target}`
-    }
+      if (!form[target]) {
+        return `Impossible de trouver le champ correspondant : ${target}`
+      }
 
-    return value === form[target] ? true : 'Les mots de passe ne correspondent pas.'
-  })
+      return value === form[target] ? true : 'Les mots de passe ne correspondent pas.'
+    },
+  )
 
   /**
    * Règle personnalisée pour les valeurs numériques.
