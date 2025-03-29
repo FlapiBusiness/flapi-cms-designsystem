@@ -10,7 +10,6 @@
     <!--    >-->
     <!--      <FlapiIcon :name="props.expand ? 'ChevronLeft' : 'ChevronRight'" class="text-gray-700" :size="20" />-->
     <!--    </button>-->
-
     <FlapiSidebarToggleButton :expand="props.expand" @update:expand="emit('update:expand', $event)" />
 
     <!-- Sidebar Content -->
@@ -18,6 +17,12 @@
       <!-- Logo -->
       <div class="flex items-center border-b p-4" :class="props.expand ? 'justify-start' : 'justify-center'">
         <FlapiLogo :size="32" :large="props.expand" />
+      </div>
+      <div class="flex items-center gap-2 border-b p-2" :class="props.expand ? 'justify-start' : 'justify-center'">
+        <FlapiAvatar :photo="props.avatar || undefined" :name="props.username" :size="40" backgroundColor="#35424d" />
+        <span v-if="props.expand" class="text-base font-medium text-light-400">
+          {{ props.username }}
+        </span>
       </div>
 
       <!-- Links -->
@@ -33,12 +38,9 @@
         />
       </ul>
 
-      <!-- Footer -->
-      <div class="flex items-center gap-2 border-t p-2" :class="props.expand ? 'justify-start' : 'justify-center'">
-        <FlapiAvatar :photo="props.avatar || undefined" :name="props.username" :size="40" backgroundColor="#35424d" />
-        <span v-if="props.expand" class="text-base font-medium text-light-400">
-          {{ props.username }}
-        </span>
+      <!-- Footer  logout button -->
+      <div class="flex items-center justify-center p-4">
+        <FlapiSidebarLink to="/signout" icon="Logout" text="Déconnexion" :large="props.expand" />
       </div>
     </div>
   </nav>
