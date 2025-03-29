@@ -138,14 +138,19 @@ const hasSlot: (name: string) => boolean = (name: string): boolean => !!slots[na
 
 /**
  * Function to get the value of an object using a path
- * @param {FlapiTableItem} item - The item object
+ * @param {FlapiTableItem | null} item - The item object
  * @param {string} path - The key or path to extract value
- * @returns {FlapiTableItem} The extracted value
+ * @returns {FlapiTableItem | null} The extracted value
  */
-const getValue: (item: FlapiTableItem, path: string) => FlapiTableItem = (
-  item: FlapiTableItem,
+const getValue: (item: FlapiTableItem | null, path: string) => FlapiTableItem | null = (
+  item: FlapiTableItem | null,
   path: string,
-): FlapiTableItem => {
-  return path.split('.').reduce((obj: FlapiTableItem, key: string) => obj[key], item)
+): FlapiTableItem | null => {
+  return path.split('.').reduce((obj: FlapiTableItem | null, key: string) => {
+    if (obj) {
+      return obj[key]
+    }
+    return null
+  }, item)
 }
 </script>
