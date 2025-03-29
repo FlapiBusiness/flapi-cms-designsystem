@@ -24,6 +24,7 @@ import type { IconComponent, FlapiIconMode, FlapiIconProps } from '#/core'
 import type { iconsList } from '#/core'
 import { computed } from 'vue'
 import type { PropType, ComputedRef } from 'vue'
+import Account from '#/components/icons/Account.vue'
 import AlertCircle from '#/components/icons/AlertCircle.vue'
 import ArrowRight from '#/components/icons/ArrowRight.vue'
 import CheckCircle from '#/components/icons/CheckCircle.vue'
@@ -82,6 +83,7 @@ const props: FlapiIconProps = defineProps({
  * @constant {Record<string, IconComponent>}
  */
 const iconsDictionary: Record<string, IconComponent> = {
+  Account,
   AlertCircle,
   ArrowRight,
   CheckCircle,
