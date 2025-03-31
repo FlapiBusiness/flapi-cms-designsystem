@@ -1,3 +1,5 @@
+import type { FlapiTableCardField } from '#/core'
+
 /**
  * Type definitions for the flapi table component
  * @type {FlapiTableItem}
@@ -33,8 +35,24 @@ export type FlapiTableField = {
  */
 export type FlapiTableProps = {
   fields: FlapiTableField[]
+  cardFields: FlapiTableCardField[] | null
   items: FlapiTableItem[]
   load: boolean
   searchTerms: string
   showSearchBar: boolean
+  searchBarPosition: FlapiTableSearchBarPosition
+  clickable: boolean
+  switchToCardAt: number | null
 }
+
+/**
+ * @constant {string[]} flapiTableSearchBarPosition
+ * @description The possible positions for the search bar
+ */
+export const flapiTableSearchBarPosition: string[] = ['left', 'right', 'center'] as const
+
+/**
+ * Type definitions for the flapi table component search bar position
+ * @type {FlapiTableSearchBarPosition}
+ */
+export type FlapiTableSearchBarPosition = (typeof flapiTableSearchBarPosition)[number]

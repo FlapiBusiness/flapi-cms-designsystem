@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-10 max-w-md px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <div class="relative z-10 w-full max-w-md">
     <div class="bg-gray-500 p-4">
       <template v-if="!props.load && props.item">
         <div class="mb-4 space-y-4" v-if="hasSlot('header')">
