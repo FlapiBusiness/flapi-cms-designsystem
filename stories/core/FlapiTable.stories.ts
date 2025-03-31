@@ -225,7 +225,7 @@ SearchBarPosition.args = {
   load: false,
   searchTerms: '',
   showSearchBar: true,
-  searchBarPosition: 'right',
+  searchBarPosition: 'center',
 }
 
 export const ResponsiveAtCard = LogsExampleTemplate.bind({})

@@ -1,22 +1,38 @@
 <template>
   <div class="relative z-10 py-10 text-light-400 lg:py-14">
-    <div v-if="showTableCard" class="flex w-full flex-wrap items-center gap-6">
-      <FlapiTableCard
-        v-for="(item, index) in props.items"
-        :fields="props.cardFields || props.fields"
-        :item="item"
-        :load="props.load"
-        :key="`card-${index}-${item.id}`"
+    <div class="grid gap-12" v-if="showTableCard">
+      <!-- Search Bar -->
+      <div
+        v-if="props.showSearchBar"
+        class="flex w-full"
+        :class="{
+          'justify-center': !props.searchBarPosition || props.searchBarPosition === 'center',
+          'justify-start': props.searchBarPosition === 'left',
+          'justify-end': props.searchBarPosition === 'right',
+        }"
       >
-        <!--  SLOT card-header  -->
-        <template v-if="hasSlot('card-header')" #header="slotProps">
-          <slot name="card-header" v-bind="slotProps" />
-        </template>
+        <FlapiSearchBar :value="props.searchTerms" @update:value="$emit('update:searchTerms', $event)" />
+      </div>
 
-        <template v-for="(field, i) in fieldsWithSlot" #[field.key]="slotProps" :key="`slot-${i}-${field.key}`">
-          <slot :name="field.key" v-bind="slotProps" />
-        </template>
-      </FlapiTableCard>
+      <!-- Cards -->
+      <div class="flex w-full flex-wrap items-center gap-6">
+        <FlapiTableCard
+          v-for="(item, index) in props.items"
+          :fields="props.cardFields || props.fields"
+          :item="item"
+          :load="props.load"
+          :key="`card-${index}-${item.id}`"
+        >
+          <!--  SLOT card-header  -->
+          <template v-if="hasSlot('card-header')" #header="slotProps">
+            <slot name="card-header" v-bind="slotProps" />
+          </template>
+
+          <template v-for="(field, i) in fieldsWithSlot" #[field.key]="slotProps" :key="`slot-${i}-${field.key}`">
+            <slot :name="field.key" v-bind="slotProps" />
+          </template>
+        </FlapiTableCard>
+      </div>
     </div>
 
     <!-- Card -->
@@ -150,7 +166,7 @@ const props: FlapiTableProps = defineProps({
   load: { type: Boolean, default: false },
   searchTerms: { type: String, default: '' },
   showSearchBar: { type: Boolean, default: true },
-  searchBarPosition: { type: String as PropType<FlapiTableSearchBarPosition>, default: 'center' },
+  searchBarPosition: { type: String as PropType<FlapiTableSearchBarPosition>, default: 'right' },
   clickable: { type: Boolean, default: false },
   switchToCardAt: { type: Number, default: null },
 })
