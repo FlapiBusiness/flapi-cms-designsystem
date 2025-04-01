@@ -15,7 +15,7 @@
       </div>
 
       <!-- Cards -->
-      <div class="flex w-full flex-wrap items-center gap-6">
+      <div v-if="props.items.length > 0" class="flex w-full flex-wrap items-center gap-6">
         <FlapiTableCard
           v-for="(item, index) in props.items"
           :fields="props.cardFields || props.fields"
@@ -33,6 +33,9 @@
           </template>
         </FlapiTableCard>
       </div>
+      <p v-else class="flex w-full items-center justify-center gap-2 text-center text-light-400">
+        <span class="text-sm font-semibold">Aucun résultat</span>
+      </p>
     </div>
 
     <!-- Card -->

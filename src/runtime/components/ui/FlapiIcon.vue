@@ -37,15 +37,16 @@ import EyeOff from '#/components/icons/EyeOff.vue'
 import Home from '#/components/icons/Home.vue'
 import Info from '#/components/icons/Info.vue'
 import Link from '#/components/icons/Link.vue'
+import Logout from '#/components/icons/Logout.vue'
 import Mail from '#/components/icons/Mail.vue'
 import MessageCircle from '#/components/icons/MessageCircle.vue'
+import MoreHorizontal from '#/components/icons/MoreHorizontal.vue'
 import Search from '#/components/icons/Search.vue'
 import Settings from '#/components/icons/Settings.vue'
 import Share from '#/components/icons/Share.vue'
 import Users from '#/components/icons/Users.vue'
 import X from '#/components/icons/X.vue'
 import XCircle from '#/components/icons/XCircle.vue'
-import Logout from '#/components/icons/Logout.vue'
 
 /**
  * Props definition with strict typing.
@@ -96,15 +97,16 @@ const iconsDictionary: Record<string, IconComponent> = {
   Home,
   Info,
   Link,
+  Logout,
   Mail,
   MessageCircle,
+  MoreHorizontal,
   Search,
   Settings,
   Share,
   Users,
   X,
   XCircle,
-  Logout,
 }
 
 /**
