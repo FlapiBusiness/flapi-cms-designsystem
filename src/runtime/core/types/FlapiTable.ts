@@ -43,6 +43,7 @@ export type FlapiTableProps = {
   searchBarPosition: FlapiTableSearchBarPosition
   clickable: boolean
   switchToCardAt: number | null
+  itemsPerPage: number
 }
 
 /**
@@ -56,3 +57,14 @@ export const flapiTableSearchBarPosition: string[] = ['left', 'right', 'center']
  * @type {FlapiTableSearchBarPosition}
  */
 export type FlapiTableSearchBarPosition = (typeof flapiTableSearchBarPosition)[number]
+
+/**
+ * Type definitions for the flapi table component pagination items per page
+ * @type {FlapiTableItemPerPage}
+ * @property {string} label - The label to display in the header
+ * @property {number} value - The number of items per page
+ */
+export type FlapiTableItemPerPage = {
+  label: string
+  value: number
+}

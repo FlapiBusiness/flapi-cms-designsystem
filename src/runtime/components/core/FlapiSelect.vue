@@ -23,16 +23,16 @@ import type { PropType, ComputedRef } from 'vue'
 import { computed } from 'vue'
 import { defineProps } from '@vue/runtime-core'
 import FlapiLabel from '#/components/core/FlapiLabel.vue'
-import type { FlapiSelectProps, SelectOption } from '#/core'
+import type { FlapiSelectProps, FlapiSelectOption } from '#/core'
 
 /* PROPS */
 const props: FlapiSelectProps = defineProps({
   options: {
-    type: Array as PropType<SelectOption[]>,
+    type: Array as PropType<FlapiSelectOption[]>,
     required: true,
   },
   modelValue: {
-    type: Object as PropType<SelectOption>,
+    type: Object as PropType<FlapiSelectOption>,
     default: null,
   },
   id: { type: String, default: 'field' },
@@ -41,25 +41,25 @@ const props: FlapiSelectProps = defineProps({
 })
 
 /* Computed */
-const selectedItem: ComputedRef<SelectOption> = computed({
+const selectedItem: ComputedRef<FlapiSelectOption> = computed({
   /**
    * Get the selected item
-   * @returns {SelectOption} - The selected item
+   * @returns {FlapiSelectOption} - The selected item
    */
-  get: (): SelectOption => props.modelValue || props.options[0],
+  get: (): FlapiSelectOption => props.modelValue || props.options[0],
   /**
    * Set the selected item
-   * @param {SelectOption} newValue - The newly selected item
+   * @param {FlapiSelectOption} newValue - The newly selected item
    * @returns {void}
    */
-  set: (newValue: SelectOption): void => {
+  set: (newValue: FlapiSelectOption): void => {
     emit('update:modelValue', newValue)
   },
 })
 
 /* EMIT */
-const emit: (event: 'update:modelValue', value: SelectOption) => void = defineEmits<{
-  (event: 'update:modelValue', value: SelectOption): void
+const emit: (event: 'update:modelValue', value: FlapiSelectOption) => void = defineEmits<{
+  (event: 'update:modelValue', value: FlapiSelectOption): void
 }>()
 
 /* METHODS */
@@ -73,8 +73,8 @@ const onChange: (event: Event) => void = (event: Event): void => {
   const selectedOptionValue: string = selectElement.value
 
   // Find the selected option from the option array
-  const selectedOption: SelectOption | undefined = props.options.find(
-    (option: SelectOption) => option.value.toString() === selectedOptionValue,
+  const selectedOption: FlapiSelectOption | undefined = props.options.find(
+    (option: FlapiSelectOption) => option.value.toString() === selectedOptionValue,
   )
 
   if (selectedOption) {

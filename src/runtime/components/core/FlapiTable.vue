@@ -14,10 +14,30 @@
         <FlapiSearchBar :value="props.searchTerms" @update:value="$emit('update:searchTerms', $event)" />
       </div>
 
+      <!-- Pagination -->
+      <div class="flex w-full items-center justify-center gap-2">
+        <FlapiSelect
+          v-if="showItemsPerPageSelect"
+          :options="itemsPerPagesOptions"
+          :modelValue="itemsPerPage"
+          @update:modelValue="handleSelectChange"
+          id="itemsPerPage"
+        />
+        <FlapiPagination
+          v-if="totalPages > 1"
+          :currentPage="currentPage"
+          :totalPages="totalPages"
+          :maxButtons="4"
+          @update:currentPage="goToPage"
+          @prev="goToPrev"
+          @next="goToNext"
+        />
+      </div>
+
       <!-- Cards -->
-      <div v-if="props.items.length > 0" class="flex w-full flex-wrap items-center gap-6">
+      <div v-if="paginatedItems.length > 0" class="flex w-full flex-wrap items-center gap-6">
         <FlapiTableCard
-          v-for="(item, index) in props.items"
+          v-for="(item, index) in paginatedItems"
           :fields="props.cardFields || props.fields"
           :item="item"
           :load="props.load"
@@ -80,9 +100,9 @@
                 </tr>
               </thead>
 
-              <tbody v-if="props.items.length && !props.load" class="divide-y divide-light-300">
+              <tbody v-if="paginatedItems.length && !props.load" class="divide-y divide-light-300">
                 <tr
-                  v-for="(item, i) in props.items"
+                  v-for="(item, i) in paginatedItems"
                   :key="`row-${i}-${item.id}`"
                   @click="$emit('click', item.id)"
                   class="divide-x divide-light-300 hover:bg-gray-200"
@@ -119,19 +139,27 @@
             <!-- End Table -->
 
             <!-- Footer -->
-            <div class="grid gap-3 border-t border-light-300 px-6 py-4 md:flex md:items-center md:justify-between">
-              <div class="w-full max-w-[80px] space-y-3">
+            <div
+              v-if="showItemsPerPageSelect || totalPages > 1"
+              class="grid gap-3 border-t border-light-300 px-6 py-4 md:flex md:items-center md:justify-between"
+            >
+              <div v-if="showItemsPerPageSelect" class="w-full max-w-[80px] space-y-3">
                 <FlapiSelect
-                  :options="[
-                    { label: '10', value: 10 },
-                    { label: '25', value: 25 },
-                    { label: '50', value: 50 },
-                    { label: '100', value: 100 },
-                    { label: '150', value: 150 },
-                    { label: '200', value: 200 },
-                  ]"
-                  :modelValue="{ label: '10', value: 10 }"
+                  :options="itemsPerPagesOptions"
+                  :modelValue="itemsPerPage"
+                  @update:modelValue="handleSelectChange"
                   id="itemsPerPage"
+                />
+              </div>
+
+              <div v-if="totalPages > 1" class="flex w-full justify-center md:justify-end">
+                <FlapiPagination
+                  :currentPage="currentPage"
+                  :totalPages="totalPages"
+                  :maxButtons="4"
+                  @update:currentPage="goToPage"
+                  @prev="goToPrev"
+                  @next="goToNext"
                 />
               </div>
             </div>
@@ -155,8 +183,11 @@ import type {
   FlapiTableItem,
   FlapiTableSearchBarPosition,
   FlapiTableCardField,
+  FlapiTableItemPerPage,
+  FlapiSelectOption,
 } from '#/core'
 import FlapiTableCard from '#/components/cards/FlapiTableCard.vue'
+import FlapiPagination from '#/components/navigations/FlapiPagination.vue'
 
 // PROPS
 /**
@@ -172,6 +203,7 @@ const props: FlapiTableProps = defineProps({
   searchBarPosition: { type: String as PropType<FlapiTableSearchBarPosition>, default: 'right' },
   clickable: { type: Boolean, default: false },
   switchToCardAt: { type: Number, default: null },
+  itemsPerPage: { type: Number, default: 10 },
 })
 
 // EMIT
@@ -182,12 +214,6 @@ defineEmits<{
   (event: 'update:searchTerms', value: string): void
   (event: 'click', id: string): void
 }>()
-
-// REF
-/**
- * Ref for screen width
- */
-const screenWidth: Ref<number> = ref(window.innerWidth)
 
 // COMPUTED
 /**
@@ -202,6 +228,75 @@ const fieldsWithSlot: ComputedRef<FlapiTableField[]> = computed((): FlapiTableFi
     return hasSlot(field.key)
   })
 })
+
+/**
+ * Computed property to get the total number of pages
+ * @returns {FlapiTableItem[]} The paginated items
+ */
+const paginatedItems: ComputedRef<FlapiTableItem[]> = computed(() => {
+  const start: number = (currentPage.value - 1) * itemsPerPage.value.value
+  const end: number = start + itemsPerPage.value.value
+  return props.items.slice(start, end)
+})
+
+/**
+ * Function to go to a specific page
+ * @returns {number} The total number of pages
+ */
+const totalPages: ComputedRef<number> = computed(() => {
+  return Math.ceil(props.items.length / itemsPerPage.value.value)
+})
+
+/**
+ * Computed property to get the items per page options
+ * @returns {FlapiTableItemPerPage[]} The items per page options
+ */
+const itemsPerPagesOptions: ComputedRef<FlapiTableItemPerPage[]> = computed(() => {
+  const res: FlapiTableItemPerPage[] = [
+    { label: '10', value: 10 },
+    { label: '20', value: 20 },
+    { label: '50', value: 50 },
+    { label: '75', value: 75 },
+    { label: '100', value: 100 },
+  ]
+
+  // add in res with props itemsPerPage if not already in res
+  if (!res.some((item: FlapiTableItemPerPage) => item.value === props.itemsPerPage)) {
+    res.push({ label: String(props.itemsPerPage), value: props.itemsPerPage })
+  }
+
+  return res
+})
+
+/**
+ * Computed property to get the minimum items per page
+ * @returns {number} The minimum items per page
+ */
+const minItemsPerPage: ComputedRef<number> = computed(() => {
+  return Math.min(...itemsPerPagesOptions.value.map((item: FlapiTableItemPerPage) => item.value))
+})
+
+const showItemsPerPageSelect: ComputedRef<boolean> = computed(() => {
+  return props.items.length > minItemsPerPage.value && !props.load
+})
+
+// REF
+/**
+ * Ref for screen width
+ */
+const screenWidth: Ref<number> = ref(window.innerWidth)
+/**
+ * Ref for pagination, to track the current page
+ */
+const currentPage: Ref<number> = ref(1)
+
+/**
+ * Ref for pagination, used to display the x items per page
+ */
+const itemsPerPage: Ref<FlapiTableItemPerPage> = ref(
+  itemsPerPagesOptions.value.find((item: FlapiTableItemPerPage) => item.value === props.itemsPerPage) ||
+    itemsPerPagesOptions.value[0],
+)
 
 // SLOTS
 /**
@@ -240,6 +335,48 @@ const getValue: (item: FlapiTableItem | null, path: string) => FlapiTableItem | 
     }
     return null
   }, item)
+}
+
+/**
+ * Function to handle the change of items per page
+ * @param {FlapiSelectOption} value - The selected value
+ * @returns {void}
+ */
+const handleSelectChange: (value: FlapiSelectOption) => void = (value: FlapiSelectOption): void => {
+  itemsPerPage.value = {
+    label: value.label,
+    value: Number(value.value),
+  }
+  currentPage.value = 1
+}
+
+/**
+ * Function to go to a specific page
+ * @param {number} page - The page number
+ * @returns {void}
+ */
+const goToPage: (page: number) => void = (page: number): void => {
+  currentPage.value = page
+}
+
+/**
+ * Function to go to the previous page
+ * @returns {void}
+ */
+const goToPrev: () => void = (): void => {
+  if (currentPage.value > 1) {
+    currentPage.value--
+  }
+}
+
+/**
+ * Function to go to the next page
+ * @returns {void}
+ */
+const goToNext: () => void = (): void => {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++
+  }
 }
 
 // LIFECYCLE

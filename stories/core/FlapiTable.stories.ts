@@ -48,6 +48,10 @@ export default {
       action: 'rowClicked',
       description: 'Event emitted when a row is clicked',
     },
+    itemsPerPage: {
+      control: 'number',
+      description: 'Number of items per page',
+    },
   },
 } as Meta<typeof FlapiTable>
 
@@ -247,4 +251,26 @@ ResponsiveAtCard.args = {
   searchTerms: '',
   showSearchBar: true,
   switchToCardAt: 1600,
+}
+
+export const PaginationTable = LogsExampleTemplate.bind({})
+
+PaginationTable.args = {
+  fields: [
+    { key: 'action', label: 'Action' },
+    { key: 'date', label: 'Date' },
+    { key: 'user', label: 'Utilisateurs' },
+    { key: 'message', label: 'Message' },
+  ],
+  cardFields: [
+    { key: 'action', label: 'Action' },
+    { key: 'date', label: 'Date' },
+    { key: 'message', label: 'Message', layout: 'column' },
+  ],
+  items: Array(6).fill(logs).flat(),
+  load: false,
+  searchTerms: '',
+  showSearchBar: true,
+  switchToCardAt: 1600,
+  itemsPerPage: 3,
 }

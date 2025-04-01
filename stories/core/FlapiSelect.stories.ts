@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiSelect from '#/components/core/FlapiSelect.vue'
-import type { FlapiSelectProps, SelectOption } from '#/core'
+import type { FlapiSelectProps, FlapiSelectOption } from '#/core'
 
 type FlapiSelectArgs = FlapiSelectProps
 
@@ -12,14 +12,14 @@ export default {
       control: 'object',
       description: 'Array of options to display in the select dropdown',
       table: {
-        type: { summary: 'SelectOption[]' },
+        type: { summary: 'FlapiSelectOption[]' },
       },
     },
     modelValue: {
       control: 'object',
       description: 'The currently selected option',
       table: {
-        type: { summary: 'SelectOption' },
+        type: { summary: 'FlapiSelectOption' },
       },
     },
     id: {
@@ -63,7 +63,7 @@ Playground.args = {
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2' },
     { label: 'Option 3', value: 'option3' },
-  ] as SelectOption[],
+  ] as FlapiSelectOption[],
   modelValue: { label: 'Option 1', value: 'option1' },
   id: 'select-field',
   label: 'Select an Option',
