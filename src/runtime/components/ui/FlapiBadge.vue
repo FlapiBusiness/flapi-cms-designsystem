@@ -60,7 +60,7 @@ const props: FlapiBadgeProps = defineProps({
  * @returns {ComputedRef<string>} The text color
  */
 const computedTextColor: ComputedRef<string> = computed((): string => {
-  return props.textColor || ColorUtils.getTextColor(props.backgroundColor, 50)
+  return props.textColor || ColorUtils.getTextColor(props.backgroundColor, 70)
 })
 
 /**
