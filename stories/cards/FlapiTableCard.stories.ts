@@ -31,20 +31,22 @@ const Template: StoryFn<FlapiTableCardArgs> = (args: FlapiTableCardArgs) => ({
     return { args }
   },
   template: `
-    <FlapiTableCard v-bind="args">
-      <template #header="{ item }">
-        <div class="flex items-center gap-2 text-base font-medium text-light-400">
-          <FlapiAvatar :name="item.user.name" photo="/assets/avatar-placeholder.png" :size="32" />
-          <span class="font-semibold">{{ item.user.name }}</span>
-        </div>
-      </template>
-      
-      <template #action="{ item }">
-        <FlapiBadge :backgroundColor="item.action.backgroundColor">
-          {{ item.action.message }}
-        </FlapiBadge>
-      </template>
+    <div class="max-w-md">
+      <FlapiTableCard v-bind="args">
+        <template #header="{ item }">
+          <div class="flex items-center gap-2 text-base font-medium text-light-400">
+            <FlapiAvatar :name="item.user.name" photo="/assets/avatar-placeholder.png" :size="32" />
+            <span class="font-semibold">{{ item.user.name }}</span>
+          </div>
+        </template>
+        
+        <template #action="{ item }">
+          <FlapiBadge :backgroundColor="item.action.backgroundColor">
+            {{ item.action.message }}
+          </FlapiBadge>
+        </template>
     </FlapiTableCard>
+    </div>
   `,
 })
 

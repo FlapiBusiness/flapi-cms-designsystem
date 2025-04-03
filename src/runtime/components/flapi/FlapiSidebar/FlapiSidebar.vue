@@ -4,12 +4,6 @@
     :class="{ 'w-full min-w-[280px]': props.expand, 'w-14': !props.expand }"
   >
     <!-- Toggle Button -->
-    <!--    <button-->
-    <!--      class="absolute right-[-12px] top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 shadow hover:bg-gray-400"-->
-    <!--      @click="toggleExpand"-->
-    <!--    >-->
-    <!--      <FlapiIcon :name="props.expand ? 'ChevronLeft' : 'ChevronRight'" class="text-gray-700" :size="20" />-->
-    <!--    </button>-->
     <FlapiSidebarToggleButton :expand="props.expand" @update:expand="emit('update:expand', $event)" />
 
     <!-- Sidebar Content -->

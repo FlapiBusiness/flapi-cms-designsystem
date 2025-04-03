@@ -2,56 +2,63 @@
   <div class="relative z-10 py-10 text-light-400 lg:py-14">
     <div class="grid gap-12" v-if="showTableCard">
       <!-- Search Bar -->
-      <div
-        v-if="props.showSearchBar"
-        class="flex w-full"
-        :class="{
-          'justify-center': !props.searchBarPosition || props.searchBarPosition === 'center',
-          'justify-start': props.searchBarPosition === 'left',
-          'justify-end': props.searchBarPosition === 'right',
-        }"
-      >
-        <FlapiSearchBar :value="props.searchTerms" @update:value="$emit('update:searchTerms', $event)" />
-      </div>
-
-      <!-- Pagination -->
-      <div class="flex w-full items-center justify-center gap-2">
+      <div class="flex flex-col-reverse items-center justify-center gap-4 sm:flex-row">
         <FlapiSelect
           v-if="showItemsPerPageSelect"
           :options="itemsPerPagesOptions"
           :modelValue="itemsPerPage"
           @update:modelValue="handleSelectChange"
+          class="max-w-[100px]"
           id="itemsPerPage"
         />
-        <FlapiPagination
-          v-if="totalPages > 1"
-          :currentPage="currentPage"
-          :totalPages="totalPages"
-          :maxButtons="4"
-          @update:currentPage="goToPage"
-          @prev="goToPrev"
-          @next="goToNext"
-        />
+        <div
+          v-if="props.showSearchBar"
+          class="flex w-full"
+          :class="{
+            'justify-center': !props.searchBarPosition || props.searchBarPosition === 'center',
+            'justify-start': props.searchBarPosition === 'left',
+            'justify-end': props.searchBarPosition === 'right',
+          }"
+        >
+          <FlapiSearchBar :value="props.searchTerms" @update:value="$emit('update:searchTerms', $event)" />
+        </div>
       </div>
 
       <!-- Cards -->
-      <div v-if="paginatedItems.length > 0" class="flex w-full flex-wrap items-center gap-6">
-        <FlapiTableCard
-          v-for="(item, index) in paginatedItems"
-          :fields="props.cardFields || props.fields"
-          :item="item"
-          :load="props.load"
-          :key="`card-${index}-${item.id}`"
-        >
-          <!--  SLOT card-header  -->
-          <template v-if="hasSlot('card-header')" #header="slotProps">
-            <slot name="card-header" v-bind="slotProps" />
-          </template>
+      <FlapiSpinner v-if="props.load" class="relative left-1/2 top-1/2" />
 
-          <template v-for="(field, i) in fieldsWithSlot" #[field.key]="slotProps" :key="`slot-${i}-${field.key}`">
-            <slot :name="field.key" v-bind="slotProps" />
-          </template>
-        </FlapiTableCard>
+      <div v-else-if="paginatedItems.length > 0" class="grid gap-8">
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <FlapiTableCard
+            v-for="(item, index) in paginatedItems"
+            :fields="props.cardFields || props.fields"
+            :item="item"
+            :load="props.load"
+            :key="`card-${index}-${item.id}`"
+          >
+            <!--  SLOT card-header  -->
+            <template v-if="hasSlot('card-header')" #header="slotProps">
+              <slot name="card-header" v-bind="slotProps" />
+            </template>
+
+            <template v-for="(field, i) in fieldsWithSlot" #[field.key]="slotProps" :key="`slot-${i}-${field.key}`">
+              <slot :name="field.key" v-bind="slotProps" />
+            </template>
+          </FlapiTableCard>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex w-full items-center justify-end gap-4">
+          <FlapiPagination
+            v-if="totalPages > 1 && !props.load"
+            :currentPage="currentPage"
+            :totalPages="totalPages"
+            :maxButtons="4"
+            @update:currentPage="goToPage"
+            @prev="goToPrev"
+            @next="goToNext"
+          />
+        </div>
       </div>
       <p v-else class="flex w-full items-center justify-center gap-2 text-center text-light-400">
         <span class="text-sm font-semibold">Aucun résultat</span>
