@@ -44,6 +44,7 @@ import MoreHorizontal from '#/components/icons/MoreHorizontal.vue'
 import Search from '#/components/icons/Search.vue'
 import Settings from '#/components/icons/Settings.vue'
 import Share from '#/components/icons/Share.vue'
+import Trash from '#/components/icons/Trash.vue'
 import Users from '#/components/icons/Users.vue'
 import X from '#/components/icons/X.vue'
 import XCircle from '#/components/icons/XCircle.vue'
@@ -104,6 +105,7 @@ const iconsDictionary: Record<string, IconComponent> = {
   Search,
   Settings,
   Share,
+  Trash,
   Users,
   X,
   XCircle,
