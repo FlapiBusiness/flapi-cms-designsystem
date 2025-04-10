@@ -8,7 +8,9 @@
 export type FlapiSidebarItem = {
   to: string
   icon: string
+  iconViewBox?: string
   text: string
+  subItems?: FlapiSidebarItem[]
 }
 
 /**
@@ -24,4 +26,12 @@ export type FlapiSidebarProps = {
   items: FlapiSidebarItem[]
   avatar?: string | null
   expand: boolean
+}
+
+/**
+ * Sidebar emits definition
+ * @type {FlapiSidebarEmit}
+ */
+export type FlapiSidebarEmit = {
+  (event: 'update:expand', value: boolean): void
 }

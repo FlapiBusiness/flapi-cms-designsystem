@@ -5,7 +5,14 @@
       class="font-base flex cursor-pointer select-none items-center gap-2 rounded px-3 py-2 font-medium text-light-400 transition-all"
       :class="{ 'justify-center': !props.large, 'bg-primary-400': props.active, 'hover:bg-gray-200': !props.active }"
     >
-      <FlapiIcon :name="props.icon" :width="20" :height="20" mode="stroke" class="mb-[3px]" />
+      <FlapiIcon
+        :name="props.icon"
+        :width="20"
+        :height="20"
+        mode="stroke"
+        class="mb-[3px]"
+        :viewBox="props.iconViewBox || undefined"
+      />
       <span v-if="props.large">
         {{ props.text }}
       </span>
@@ -16,25 +23,9 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import FlapiIcon from '#/components/ui/FlapiIcon.vue'
+import type { FlapiSidebarLinkProps } from '#/core'
 
-/**
- * Type definition for the SideBarLink props
- * @type {SideBarLinkProps}
- * @property {boolean} large - Whether the sidebar is expanded
- * @property {boolean} active - Whether the link is active
- * @property {string} to - The link to navigate to
- * @property {string} text - The text to display
- * @property {string} icon - The icon to display
- */
-export type SideBarLinkProps = {
-  large: boolean
-  active: boolean
-  to: string
-  text: string
-  icon: string
-}
-
-const props: SideBarLinkProps = defineProps({
+const props: FlapiSidebarLinkProps = defineProps({
   large: {
     type: Boolean,
     default: false,
@@ -54,6 +45,10 @@ const props: SideBarLinkProps = defineProps({
   icon: {
     type: String,
     default: 'Link',
+  },
+  iconViewBox: {
+    type: String,
+    default: null,
   },
 })
 </script>

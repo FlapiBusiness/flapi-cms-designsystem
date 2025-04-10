@@ -62,9 +62,9 @@
     "delete:component": "sh ./scripts/delete-component.sh",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:ts",
     "lint:prettier": "prettier --check .",
-    "lint:eslint": "eslint .",
+    "lint:eslint": "eslint . --fix",
     "lint:ts": "vue-tsc --noEmit",
-    "lint:fix": "prettier --write --list-different . && npm run lint:prettier --fix && npm run lint:eslint --fix",
+    "lint:fix": "prettier --write --list-different . && npm run lint:prettier && npm run lint:eslint",
     "prepare": "husky && nuxi prepare"
   },
   "dependencies": {

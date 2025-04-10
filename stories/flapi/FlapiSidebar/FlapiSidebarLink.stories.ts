@@ -1,8 +1,8 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiSidebarLink from '#/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
-import type { SideBarLinkProps } from '#/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
+import type { FlapiSidebarLinkProps } from '#/core'
 
-type FlapiSidebarLinkArgs = SideBarLinkProps
+type FlapiSidebarLinkArgs = FlapiSidebarLinkProps
 
 export default {
   title: 'flapi/FlapiSidebarLink',
@@ -27,6 +27,10 @@ export default {
     icon: {
       control: 'text',
       description: 'The name of the icon to display',
+    },
+    iconViewBox: {
+      control: 'text',
+      description: 'The viewBox attribute for the icon SVG',
     },
   },
 } as Meta<typeof FlapiSidebarLink>

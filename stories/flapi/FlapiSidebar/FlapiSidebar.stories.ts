@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
 import FlapiSidebar from '#/components/flapi/FlapiSidebar/FlapiSidebar.vue'
 import items from '#/components/flapi/FlapiSidebar/items.json'
+import subItems from '#/components/flapi/FlapiSidebar/sub-items.json'
 import type { FlapiSidebarProps } from '#/core'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
@@ -75,6 +76,24 @@ export const Collapsed = Template.bind({})
 Collapsed.args = {
   username: 'John Doe',
   items,
+  avatar: '/assets/avatar-placeholder.png',
+  expand: false,
+}
+
+// Sidebar with no Avatar
+export const NoAvatar = Template.bind({})
+NoAvatar.args = {
+  username: 'John Doe',
+  items,
+  avatar: null,
+  expand: true,
+}
+
+// Sidebar with subItems
+export const WithSubItems = Template.bind({})
+WithSubItems.args = {
+  username: 'John Doe',
+  items: subItems,
   avatar: '/assets/avatar-placeholder.png',
   expand: false,
 }
