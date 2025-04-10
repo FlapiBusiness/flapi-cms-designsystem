@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex h-full">
+  <nav class="flex h-full text-sm">
     <!-- Sidebar -->
     <div
       class="relative h-full bg-gray-500 shadow-md"
@@ -13,16 +13,16 @@
         <div class="flex h-full flex-col justify-between">
           <!-- Logo -->
           <div class="flex items-center border-b p-4" :class="props.expand ? 'justify-start' : 'justify-center'">
-            <FlapiLogo :size="32" :large="props.expand" />
+            <FlapiLogo :size="28" :large="props.expand" />
           </div>
           <div class="flex items-center gap-2 border-b p-2" :class="props.expand ? 'justify-start' : 'justify-center'">
             <FlapiAvatar
               :photo="props.avatar || undefined"
               :name="props.username"
-              :size="40"
+              :size="32"
               backgroundColor="#35424d"
             />
-            <span v-if="props.expand" class="text-base font-medium text-light-400">
+            <span v-if="props.expand" class="font-medium text-light-400">
               {{ props.username }}
             </span>
           </div>

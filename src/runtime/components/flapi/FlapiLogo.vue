@@ -17,7 +17,16 @@
         fill="#EEE3FF"
       />
     </svg>
-    <span v-if="props.large" class="text-xl font-medium text-light-400"> Flapi </span>
+    <span
+      v-if="props.large"
+      class="font-medium text-light-400"
+      :class="{
+        'text-2xl': Number(props.size) >= 40,
+        'text-lg': Number(props.size) < 40,
+      }"
+    >
+      Flapi
+    </span>
   </div>
 </template>
 
