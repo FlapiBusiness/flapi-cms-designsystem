@@ -105,12 +105,6 @@ type ${CAPITALIZED_NAME}Args = ${CAPITALIZED_NAME}Props
 export default {
   title: '${DIR_PATH}/${CAPITALIZED_NAME}',
   component: ${CAPITALIZED_NAME},
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design',
-    },
-  },
   argTypes: {
     title: {
       control: 'text',
