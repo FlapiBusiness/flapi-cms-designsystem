@@ -36,6 +36,14 @@ export default {
         defaultValue: { summary: 'true' },
       },
     },
+    activePath: {
+      control: 'text',
+      description: 'The active path for the sidebar item',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '' },
+      },
+    },
   },
 } as Meta<typeof FlapiSidebar>
 
@@ -43,6 +51,7 @@ const Template: StoryFn<FlapiSidebarArgs> = (args: FlapiSidebarArgs) => ({
   components: { FlapiSidebar },
   setup() {
     const expand: Ref<boolean> = ref(args.expand)
+    const activePath: Ref<string | null> = ref(args.activePath || null)
 
     /**
      * Updates the expanded state of the sidebar
@@ -53,11 +62,26 @@ const Template: StoryFn<FlapiSidebarArgs> = (args: FlapiSidebarArgs) => ({
       expand.value = value
     }
 
-    return { args, expand, handleUpdateExpand }
+    /**
+     * Updates the active path of the sidebar
+     * @param {string} value - The new active path
+     * @returns {void}
+     */
+    const handleUpdateActivePath: (value: string) => void = (value: string): void => {
+      activePath.value = value
+    }
+
+    return { args, expand, activePath, handleUpdateActivePath, handleUpdateExpand }
   },
   template: `
     <div class="h-screen">
-      <FlapiSidebar v-bind="args" :expand="expand"  @update:expand="handleUpdateExpand" />
+      <FlapiSidebar 
+        v-bind="args" 
+        :expand="expand"  
+        :activePath="activePath"
+        @update:expand="handleUpdateExpand" 
+        @update:activePath="handleUpdateActivePath"
+      />
     </div>
   `,
 })
@@ -69,6 +93,7 @@ Expanded.args = {
   items,
   avatar: '/assets/avatar-placeholder.png',
   expand: true,
+  activePath: '/',
 }
 
 // Sidebar in Collapsed Mode
@@ -78,6 +103,7 @@ Collapsed.args = {
   items,
   avatar: '/assets/avatar-placeholder.png',
   expand: false,
+  activePath: '/',
 }
 
 // Sidebar with no Avatar
@@ -87,6 +113,7 @@ NoAvatar.args = {
   items,
   avatar: null,
   expand: true,
+  activePath: '/',
 }
 
 // Sidebar with subItems
@@ -96,4 +123,5 @@ WithSubItems.args = {
   items: subItems,
   avatar: '/assets/avatar-placeholder.png',
   expand: false,
+  activePath: '/users',
 }

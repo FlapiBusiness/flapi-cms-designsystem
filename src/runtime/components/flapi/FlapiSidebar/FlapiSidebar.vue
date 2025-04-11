@@ -33,7 +33,7 @@
               v-for="item in props.items"
               :key="item.to"
               :large="props.expand"
-              :active="route?.path === item.to || activeItems.includes(item)"
+              :active="itemIsActive(item)"
               :to="item.to"
               :text="item.text"
               :icon="item.icon"
@@ -57,7 +57,7 @@
     </div>
     <!-- Submenu (second column) -->
     <div
-      v-if="activeSubItems.length > 0"
+      v-if="showSubmenu"
       class="relative h-full border-l border-gray-400 bg-gray-200 shadow-md"
       :class="{ 'min-w-[280px]': props.expand, 'w-14': !props.expand }"
     >
@@ -71,7 +71,7 @@
               v-for="item in activeSubItems"
               :key="item.to"
               :large="props.expand"
-              :active="route?.path === item.to || activeItems.includes(item)"
+              :active="itemIsActive(item)"
               :to="item.to"
               :text="item.text"
               :icon="item.icon"
@@ -87,9 +87,7 @@
 
 <script lang="ts" setup>
 import type { ComputedRef, PropType } from 'vue'
-import { computed, defineProps, ref } from 'vue'
-import type { RouteLocationNormalizedGeneric } from 'vue-router'
-import { useRoute } from 'vue-router'
+import { computed, defineProps, ref, onMounted } from 'vue'
 import FlapiLogo from '#/components/flapi/FlapiLogo.vue'
 import FlapiSidebarLink from '#/components/flapi/FlapiSidebar/FlapiSidebarLink.vue'
 import FlapiAvatar from '#/components/ui/FlapiAvatar.vue'
@@ -114,29 +112,61 @@ const props: FlapiSidebarProps = defineProps({
     type: Boolean,
     default: false,
   },
-  subMenuExpand: {
-    type: Boolean,
-    default: false,
+  activePath: {
+    type: String,
+    default: null,
   },
 })
-
-const route: RouteLocationNormalizedGeneric = useRoute()
 
 /* EMIT */
 const emit: FlapiSidebarEmit = defineEmits<{
   (event: 'update:expand', value: boolean): void
+  (event: 'update:activePath', value: string): void
 }>()
 
 /* REF */
-const activeItems: Ref<FlapiSidebarItem[]> = ref([])
 const activeItem: Ref<FlapiSidebarItem | null> = ref(null)
 
 /* COMPUTED */
+const activeParentItem: ComputedRef<FlapiSidebarItem | null> = computed(() => {
+  return activeItem.value ? findParentItem(activeItem.value) : null
+})
+
 const activeSubItems: ComputedRef<FlapiSidebarItem[]> = computed(() => {
-  return activeItem.value?.subItems || []
+  return activeItem.value?.subItems || activeParentItem.value?.subItems || []
+})
+
+const showSubmenu: ComputedRef<boolean> = computed(() => {
+  return (activeItem.value?.subItems || []).length > 0 || activeParentItem.value !== null
+})
+
+// join items and items sub items
+const allItems: ComputedRef<FlapiSidebarItem[]> = computed(() => {
+  return props.items.reduce((acc: FlapiSidebarItem[], item: FlapiSidebarItem) => {
+    acc.push(item)
+    if (item.subItems) {
+      acc.push(...item.subItems)
+    }
+    return acc
+  }, [])
 })
 
 /* METHODS */
+/**
+ * Find the parent item of a given sidebar item.
+ * @param {FlapiSidebarItem} item - The sidebar item to find the parent for.
+ * @returns {FlapiSidebarItem | null} - The parent item or null if not found.
+ */
+const findParentItem: (item: FlapiSidebarItem) => FlapiSidebarItem | null = (
+  item: FlapiSidebarItem,
+): FlapiSidebarItem | null => {
+  return (
+    props.items.find((parent: FlapiSidebarItem) =>
+      parent.subItems?.some((subItem: FlapiSidebarItem) => subItem.to === item.to),
+    ) || null
+  )
+}
+
 /**
  * Handle the click event on a sidebar item.
  * If the item has sub-items, it sets the active item to the clicked item.
@@ -144,29 +174,35 @@ const activeSubItems: ComputedRef<FlapiSidebarItem[]> = computed(() => {
  * @returns {void}
  */
 const handleItemClick: (item: FlapiSidebarItem | null) => void = (item: FlapiSidebarItem | null): void => {
-  activeItems.value = []
-
   if (!item) {
     activeItem.value = null
     return
   }
 
-  // Si c'est un subitem, on cherche son parent
-  const parentItem: FlapiSidebarItem | undefined = props.items.find((parent: FlapiSidebarItem) =>
-    parent.subItems?.includes(item),
-  )
-
-  if (parentItem) {
-    activeItem.value = parentItem
-    activeItems.value = [parentItem, item]
-  } else if (item.subItems?.length) {
-    // Si c'est un item avec sous-menu
-    activeItem.value = item
-    activeItems.value = [item]
-  } else {
-    // Item classique sans sous-menu
-    activeItem.value = null
-    activeItems.value = [item]
-  }
+  activeItem.value = item
+  emit('update:activePath', item.to)
 }
+
+/**
+ * Check if the given item is active.
+ * @param {FlapiSidebarItem} item - The sidebar item to check.
+ * @returns {boolean} - True if the item is active, false otherwise.
+ */
+const itemIsActive: (item: FlapiSidebarItem) => boolean = (item: FlapiSidebarItem): boolean => {
+  return props.activePath === item.to || activeParentItem.value === item
+}
+
+// LIFECYCLE
+onMounted(() => {
+  // set activeItem with active props.activePath if null
+  if (!activeItem.value) {
+    const activeItemFound: FlapiSidebarItem | undefined = allItems.value.find((item: FlapiSidebarItem) => {
+      return item.to === props.activePath
+    })
+
+    if (activeItemFound) {
+      activeItem.value = activeItemFound
+    }
+  }
+})
 </script>

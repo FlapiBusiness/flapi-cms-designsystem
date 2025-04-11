@@ -5,7 +5,7 @@
     <div
       v-if="!props.disabled"
       :class="[
-        'pointer-events-none absolute z-10 whitespace-nowrap rounded-md bg-gray-400 px-3 py-1 text-sm font-semibold text-white opacity-0 transition-opacity delay-150 duration-200',
+        'pointer-events-none absolute z-50 whitespace-nowrap rounded-md bg-gray-400 px-3 py-1 text-sm font-semibold text-white opacity-0 transition-opacity delay-150 duration-200',
         positionClass,
         'group-hover:opacity-100',
       ]"

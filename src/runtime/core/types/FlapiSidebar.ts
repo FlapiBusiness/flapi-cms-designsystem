@@ -26,6 +26,7 @@ export type FlapiSidebarProps = {
   items: FlapiSidebarItem[]
   avatar?: string | null
   expand: boolean
+  activePath?: string | null
 }
 
 /**
@@ -34,4 +35,5 @@ export type FlapiSidebarProps = {
  */
 export type FlapiSidebarEmit = {
   (event: 'update:expand', value: boolean): void
+  (event: 'update:activePath', value: string): void
 }
