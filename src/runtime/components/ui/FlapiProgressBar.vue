@@ -1,9 +1,16 @@
 <template>
   <div class="w-full">
-    <div class="relative h-3 w-full overflow-hidden rounded-full" :style="{ backgroundColor: props.backgroundColor }">
+    <div
+      class="relative h-3 w-full overflow-hidden rounded-full"
+      :style="{
+        backgroundColor: props.backgroundColor,
+        height: props.height + 'px',
+      }"
+    >
       <div
-        class="absolute left-0 top-0 h-full rounded-full transition-all duration-500 ease-out"
+        class="absolute left-0 top-0 rounded-full transition-all duration-500 ease-out"
         :style="{
+          height: props.height + 'px',
           width: props.progress + '%',
           backgroundColor: props.progressColor,
         }"
@@ -23,6 +30,10 @@ const props: FlapiProgressBarProps = defineProps({
   progress: {
     type: Number,
     default: 0,
+  },
+  height: {
+    type: Number,
+    default: 12,
   },
   backgroundColor: {
     type: String,

@@ -28,6 +28,7 @@ import Account from '#/components/icons/Account.vue'
 import Activity from '#/components/icons/Activity.vue'
 import AlertCircle from '#/components/icons/AlertCircle.vue'
 import ArrowRight from '#/components/icons/ArrowRight.vue'
+import ArrowUpRight from '#/components/icons/ArrowUpRight.vue'
 import BarChart from '#/components/icons/BarChart.vue'
 import BriefCase from '#/components/icons/BriefCase.vue'
 import CheckCircle from '#/components/icons/CheckCircle.vue'
@@ -104,6 +105,7 @@ const iconsDictionary: Record<string, IconComponent> = {
   Activity,
   AlertCircle,
   ArrowRight,
+  ArrowUpRight,
   BriefCase,
   BarChart,
   CheckCircle,
