@@ -1,8 +1,8 @@
 <template>
   <li :class="props.large ? 'w-full' : 'w-fit'">
     <FlapiTooltip :text="props.text" position="right" class="w-full" :disabled="props.large">
-      <component
-        :is="props.to ? 'NuxtLink' : 'button'"
+      <NuxtLink
+        v-if="props.to"
         :to="props.to"
         class="font-base flex w-full cursor-pointer select-none items-center gap-2 rounded px-3 py-2 font-medium text-light-400 transition-all"
         :class="{ 'justify-center': !props.large, 'bg-primary-400': props.active, 'hover:bg-gray-400': !props.active }"
@@ -17,7 +17,24 @@
         <span v-if="props.large">
           {{ props.text }}
         </span>
-      </component>
+      </NuxtLink>
+
+      <button
+        v-else
+        class="font-base flex w-full cursor-pointer select-none items-center gap-2 rounded px-3 py-2 font-medium text-light-400 transition-all"
+        :class="{ 'justify-center': !props.large, 'bg-primary-400': props.active, 'hover:bg-gray-400': !props.active }"
+      >
+        <FlapiIcon
+          :name="props.icon"
+          :width="16"
+          :height="16"
+          mode="stroke"
+          :viewBox="props.iconViewBox || undefined"
+        />
+        <span v-if="props.large">
+          {{ props.text }}
+        </span>
+      </button>
     </FlapiTooltip>
   </li>
 </template>
