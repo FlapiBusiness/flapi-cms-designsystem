@@ -140,7 +140,7 @@ const showSubmenu: ComputedRef<boolean> = computed(() => {
   return (activeItem.value?.subItems || []).length > 0 || activeParentItem.value !== null
 })
 
-// join items and items sub items
+// join items and items subitems
 const allItems: ComputedRef<FlapiSidebarItem[]> = computed(() => {
   return props.items.reduce((acc: FlapiSidebarItem[], item: FlapiSidebarItem) => {
     acc.push(item)
@@ -169,7 +169,7 @@ const findParentItem: (item: FlapiSidebarItem) => FlapiSidebarItem | null = (
 
 /**
  * Handle the click event on a sidebar item.
- * If the item has sub-items, it sets the active item to the clicked item.
+ * If the item has subitems, it sets the active item to the clicked item.
  * @param {FlapiSidebarItem | null} item - The clicked sidebar item.
  * @returns {void}
  */
@@ -180,7 +180,9 @@ const handleItemClick: (item: FlapiSidebarItem | null) => void = (item: FlapiSid
   }
 
   activeItem.value = item
-  emit('update:activePath', item.to)
+  if (item.to) {
+    emit('update:activePath', item.to)
+  }
 }
 
 /**

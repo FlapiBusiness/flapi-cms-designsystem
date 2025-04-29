@@ -6,7 +6,7 @@
  * @property {string} text - The text for the link
  */
 export type FlapiSidebarItem = {
-  to: string
+  to?: string
   icon: string
   iconViewBox?: string
   text: string

@@ -1,7 +1,8 @@
 <template>
   <li :class="props.large ? 'w-full' : 'w-fit'">
     <FlapiTooltip :text="props.text" position="right" class="w-full" :disabled="props.large">
-      <NuxtLink
+      <component
+        :is="props.to ? 'NuxtLink' : 'button'"
         :to="props.to"
         class="font-base flex w-full cursor-pointer select-none items-center gap-2 rounded px-3 py-2 font-medium text-light-400 transition-all"
         :class="{ 'justify-center': !props.large, 'bg-primary-400': props.active, 'hover:bg-gray-400': !props.active }"
@@ -16,7 +17,7 @@
         <span v-if="props.large">
           {{ props.text }}
         </span>
-      </NuxtLink>
+      </component>
     </FlapiTooltip>
   </li>
 </template>
@@ -38,7 +39,7 @@ const props: FlapiSidebarLinkProps = defineProps({
   },
   to: {
     type: String,
-    required: true,
+    default: null,
   },
   text: {
     type: String,
