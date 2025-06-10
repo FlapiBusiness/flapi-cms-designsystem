@@ -21,8 +21,12 @@
   },
   "typesVersions": {
     "*": {
-      ".": ["dist/types.d.mts"],
-      "core": ["dist/runtime/core/index.d.mts"]
+      ".": [
+        "dist/types.d.mts"
+      ],
+      "core": [
+        "dist/runtime/core/index.d.mts"
+      ]
     }
   },
   "main": "./dist/module.mjs",
@@ -64,7 +68,7 @@
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:ts",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint .",
-    "lint:ts": "vue-tsc --noEmit",
+    "lint:ts": "vue-tsc --noEmit --project tsconfig.lint.json",
     "lint:fix": "prettier --write --list-different . && npm run lint:prettier --fix && npm run lint:eslint --fix",
     "prepare": "husky && nuxi prepare"
   },

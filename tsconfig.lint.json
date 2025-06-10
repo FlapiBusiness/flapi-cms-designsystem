@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["src/runtime/*"],
+      "#/core": ["src/runtime/core/index"],
+      "#/core/*": ["src/runtime/core/*"],
+      "#/components/*": ["src/runtime/components/*"],
+      "@/*": ["src/runtime/*"],
+      "~/*": ["src/runtime/*"]
+    }
+  }
+}

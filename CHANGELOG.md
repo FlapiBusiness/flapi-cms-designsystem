@@ -2,36 +2,34 @@
 
 ## [1.3.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.2.0...v1.3.0) (2025-05-01)
 
-
 ### Features
 
-* add account icon ([3cfc213](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/3cfc213b81672cfe25ffabc962ec8e5a8df0285e))
-* add arrow up right icon ([0408a1c](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0408a1ca98147b543e250b12bc1f303c0c36aac4))
-* add design system link and remove dynamic import icons ([1d5a2b2](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1d5a2b2197e46124e09a82eecafbb16ad0133aca))
-* add Logout icon component and integrate into FlapiIcon ([94afa82](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/94afa82dc0c558c8062d531931d267545cdcd09e))
-* **components:** flapi tooltip component and used in flapi sidebar ([5c70224](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/5c70224ba38b8178158131501d4c21eea59ccfb7))
-* **components:** flapi tooltip component and used in flapi sidebar ([996c50c](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/996c50c8fe9f180b5c5bdd90ed85f06e018298b3))
-* flapi progress bar component ([0e54275](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0e542751af8c20e386e5692a895eda21c2e04f98))
-* **flapi-badge:** reduce text color lightness ([20e221a](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/20e221a55a37049d36aac15425511b3f5232b1c8))
-* **flapi-pagination:** number of pages, buttons, emits ([eb92317](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/eb9231760ab63a9134b0686880aeadbce8a83968))
-* **flapi-table:** card search bar ([0c55dbe](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0c55dbe411489719292e4752aff52aedda5986fa))
-* **flapi-table:** layout filter and grid ([2d59de6](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2d59de6e106fb26f0a59df60dab75a9424ed2e33))
-* **flapi-table:** paginate and items per page ([2172efc](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2172efc813563cc2ab34adfa5dfa0196d4604a3f))
-* **flapi-table:** scrollable, responsive show card at x pixel, search bar position ([e225c6f](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/e225c6f3371784a82e3b75aec60242c1ebb1312b))
-* **flapi-table:** sub menu ([1795c8e](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1795c8eaca7ff68635842b92931de002fd24fcfa))
-* m ([85227c3](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/85227c3c66b0c4782f5a0fa2a705093b73aef71f))
-* m ([4d72efc](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/4d72efc3af99e371093f286a4d04e6a78b85a123))
-* move user avatar display and add logout button to FlapiSidebar ([5390010](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/53900104dd47c1d41184abdfe83e8ed264c91980))
-* nullable obj for flapi table ([c1a1d3e](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/c1a1d3ea48225b0ad54cb5d17607029fd9495061))
-* refacto icon, sidebar ([0c0bbe5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0c0bbe5a0fefdb430e2d4d15a65f2255f69805d9))
-* udapte css for flapibadge ([26180b5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/26180b5b44e3b96102a2155fe82f1b1ddc3e7b5d))
-
+- add account icon ([3cfc213](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/3cfc213b81672cfe25ffabc962ec8e5a8df0285e))
+- add arrow up right icon ([0408a1c](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0408a1ca98147b543e250b12bc1f303c0c36aac4))
+- add design system link and remove dynamic import icons ([1d5a2b2](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1d5a2b2197e46124e09a82eecafbb16ad0133aca))
+- add Logout icon component and integrate into FlapiIcon ([94afa82](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/94afa82dc0c558c8062d531931d267545cdcd09e))
+- **components:** flapi tooltip component and used in flapi sidebar ([5c70224](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/5c70224ba38b8178158131501d4c21eea59ccfb7))
+- **components:** flapi tooltip component and used in flapi sidebar ([996c50c](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/996c50c8fe9f180b5c5bdd90ed85f06e018298b3))
+- flapi progress bar component ([0e54275](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0e542751af8c20e386e5692a895eda21c2e04f98))
+- **flapi-badge:** reduce text color lightness ([20e221a](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/20e221a55a37049d36aac15425511b3f5232b1c8))
+- **flapi-pagination:** number of pages, buttons, emits ([eb92317](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/eb9231760ab63a9134b0686880aeadbce8a83968))
+- **flapi-table:** card search bar ([0c55dbe](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0c55dbe411489719292e4752aff52aedda5986fa))
+- **flapi-table:** layout filter and grid ([2d59de6](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2d59de6e106fb26f0a59df60dab75a9424ed2e33))
+- **flapi-table:** paginate and items per page ([2172efc](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/2172efc813563cc2ab34adfa5dfa0196d4604a3f))
+- **flapi-table:** scrollable, responsive show card at x pixel, search bar position ([e225c6f](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/e225c6f3371784a82e3b75aec60242c1ebb1312b))
+- **flapi-table:** sub menu ([1795c8e](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1795c8eaca7ff68635842b92931de002fd24fcfa))
+- m ([85227c3](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/85227c3c66b0c4782f5a0fa2a705093b73aef71f))
+- m ([4d72efc](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/4d72efc3af99e371093f286a4d04e6a78b85a123))
+- move user avatar display and add logout button to FlapiSidebar ([5390010](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/53900104dd47c1d41184abdfe83e8ed264c91980))
+- nullable obj for flapi table ([c1a1d3e](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/c1a1d3ea48225b0ad54cb5d17607029fd9495061))
+- refacto icon, sidebar ([0c0bbe5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0c0bbe5a0fefdb430e2d4d15a65f2255f69805d9))
+- udapte css for flapibadge ([26180b5](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/26180b5b44e3b96102a2155fe82f1b1ddc3e7b5d))
 
 ### Bug Fixes
 
-* flapi sidebar ([1091f0d](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1091f0dbbee280dcc6c256e16487dd4869ec56f2))
-* flapi table components types ([ab53cfd](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/ab53cfd66b750d7d381379982327e43d5906b863))
-* lint errors ([9d1ab0b](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/9d1ab0b8324e56bc6c326c8dfdee1713ea78920d))
+- flapi sidebar ([1091f0d](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/1091f0dbbee280dcc6c256e16487dd4869ec56f2))
+- flapi table components types ([ab53cfd](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/ab53cfd66b750d7d381379982327e43d5906b863))
+- lint errors ([9d1ab0b](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/9d1ab0b8324e56bc6c326c8dfdee1713ea78920d))
 
 ## [1.2.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.1.0...v1.2.0) (2025-02-05)
 
