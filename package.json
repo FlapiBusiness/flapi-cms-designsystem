@@ -12,18 +12,20 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     },
     "./core": {
-      "types": "./dist/runtime/core/index.d.ts",
-      "import": "./dist/runtime/core/index.js",
-      "require": "./dist/runtime/core/index.js"
+      "import": "./dist/runtime/core/index.js"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": ["dist/types.d.mts"],
+      "core": ["dist/runtime/core/index.d.mts"]
+    }
+  },
+  "main": "./dist/module.mjs",
   "files": [
     "dist"
   ],
