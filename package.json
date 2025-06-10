@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "components:build:css:prod": "npx tailwindcss -c tailwind.config.ts -i ./src/runtime/assets/css/tailwind.css -o ./src/runtime/assets/css/generated.css",
-    "module:build:prod": "npm run components:build:css:prod && nuxt-module-build build",
+    "module:build:prod": "npm run components:build:css:prod && tsx scripts/build-module.ts",
     "storybook:run:dev": "storybook dev -p 6006 -c .storybook",
     "storybook:build:prod": "storybook build",
     "web:build:static:develop": "nuxi generate --dotenv .env.development",
@@ -68,7 +68,7 @@
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:ts",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint .",
-    "lint:ts": "vue-tsc --noEmit --project tsconfig.lint.json",
+    "lint:ts": "vue-tsc --noEmit",
     "lint:fix": "prettier --write --list-different . && npm run lint:prettier --fix && npm run lint:eslint --fix",
     "prepare": "husky && nuxi prepare"
   },
@@ -131,6 +131,7 @@
     "prettier-plugin-tailwindcss": "^0.6.12",
     "serve": "^14.2.4",
     "storybook": "^8.6.14",
+    "tsx": "^4.19.4",
     "typescript": "~5.8.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.3",

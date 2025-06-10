@@ -1,13 +1,14 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "include": [
-    "src/**/*",
-    "tests/**/*.spec.ts",
-    "stories/**/*",
-    ".nuxt/**/*",
-    "cypress/support/**/*",
-    ".storybook/**/*",
-    "plugins/**/*"
-  ],
-  "exclude": ["dist", "node_modules"]
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["src/runtime/*"],
+      "#/core": ["src/runtime/core/index"],
+      "#/core/*": ["src/runtime/core/*"],
+      "#/components/*": ["src/runtime/components/*"],
+      "@/*": ["src/runtime/*"],
+      "~/*": ["src/runtime/*"]
+    }
+  }
 }

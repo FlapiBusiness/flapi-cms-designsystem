@@ -60,3 +60,6 @@ src-app/cypress/downloads
 # Storybook
 *storybook.log
 storybook-static
+
+#
+tsconfig.temp.json

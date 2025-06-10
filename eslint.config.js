@@ -135,7 +135,7 @@ const mainConfig = {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: ['./tsconfig.json'],
+        project: ['./tsconfig.build.json'],
       },
     },
   },
@@ -144,7 +144,7 @@ const mainConfig = {
     parserOptions: {
       extraFileExtensions: ['.vue'],
       parser: eslintParserTypeScript,
-      project: ['./tsconfig.json'],
+      project: ['./tsconfig.build.json'],
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
