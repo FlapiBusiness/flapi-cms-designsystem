@@ -3,7 +3,7 @@ import { localize } from '@vee-validate/i18n'
 import en from '@vee-validate/i18n/dist/locale/en.json'
 import fr from '@vee-validate/i18n/dist/locale/fr.json'
 import { required, email, numeric, min, max } from '@vee-validate/rules'
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin } from 'nuxt/app'
 
 /**
  * Plugin Nuxt pour la configuration globale de VeeValidate.
