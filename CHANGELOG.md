@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.4.0...v1.5.0) (2025-06-13)
+
+
+### Features
+
+* add component images ([ad3ef72](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/ad3ef72faa745a6fa2946b74bbfa893edfc7e34d))
+* add google button image and minus icon ([99b041e](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/99b041eeafc3e1f4c1a29a1d1f3105b8ebb4ee5d))
+* deploy ([0a489ce](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/0a489cee24687ac13db604f314fdf7ce010105a0))
+* deploy ([7feec92](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/7feec927bfa46569d0cecfab6fdacde955a8c4f9))
+
 ## [1.4.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.3.0...v1.4.0) (2025-06-10)
 
 ### Features
