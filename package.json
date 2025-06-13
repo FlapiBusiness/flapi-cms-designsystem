@@ -65,6 +65,7 @@
     "cypress-run-edge": "cypress run --browser edge --e2e --config-file cypress.config.ts",
     "create:component": "sh ./scripts/create-component.sh",
     "delete:component": "sh ./scripts/delete-component.sh",
+    "generate-previews": "tsx scripts/generate-component-previews.ts",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:ts",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint .",
@@ -76,6 +77,7 @@
     "@nuxt/kit": "^3.17.5",
     "@vee-validate/i18n": "^4.15.1",
     "@vee-validate/rules": "^4.15.1",
+    "puppeteer": "^24.10.1",
     "vee-validate": "^4.15.1"
   },
   "devDependencies": {
@@ -131,6 +133,7 @@
     "prettier-plugin-tailwindcss": "^0.6.12",
     "serve": "^14.2.4",
     "storybook": "^8.6.14",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.4",
     "typescript": "~5.8.3",
     "vite-tsconfig-paths": "^5.1.4",

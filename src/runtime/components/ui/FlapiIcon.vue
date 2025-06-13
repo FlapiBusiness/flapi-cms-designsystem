@@ -50,6 +50,7 @@ import Login from '#/components/icons/Login.vue'
 import Logout from '#/components/icons/Logout.vue'
 import Mail from '#/components/icons/Mail.vue'
 import MessageCircle from '#/components/icons/MessageCircle.vue'
+import Minus from '#/components/icons/Minus.vue'
 import MoreHorizontal from '#/components/icons/MoreHorizontal.vue'
 import PeopleGroup from '#/components/icons/PeopleGroup.vue'
 import PlusCircle from '#/components/icons/PlusCircle.vue'
@@ -127,6 +128,7 @@ const iconsDictionary: Record<string, IconComponent> = {
   Logout,
   Mail,
   MessageCircle,
+  Minus,
   MoreHorizontal,
   PeopleGroup,
   PlusCircle,

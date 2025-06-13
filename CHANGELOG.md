@@ -2,18 +2,16 @@
 
 ## [1.4.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.3.0...v1.4.0) (2025-06-10)
 
-
 ### Features
 
-* updating dependencies ([b771055](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/b771055e9bedb84fc5b2c43be6e95d2a483ecfde))
-
+- updating dependencies ([b771055](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/b771055e9bedb84fc5b2c43be6e95d2a483ecfde))
 
 ### Bug Fixes
 
-* fixed resolution path for unit test ([26189f1](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/26189f159f41ee3a3c4dc6c909104aefab992efa))
-* last fix for linter vue-tsc ([5b0884c](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/5b0884ccdb4aa7629da1954e049eb8e8e63f92be))
-* last fixed for build module nuxt, lint and ide ([d5c8453](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/d5c8453899244f59fcfe5d78ffd67c2cccf38120))
-* migrate new version 1.0.0 to nuxt module ([8fe6612](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/8fe6612a417f7d2eed9f7be1aad2b690b011e529))
+- fixed resolution path for unit test ([26189f1](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/26189f159f41ee3a3c4dc6c909104aefab992efa))
+- last fix for linter vue-tsc ([5b0884c](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/5b0884ccdb4aa7629da1954e049eb8e8e63f92be))
+- last fixed for build module nuxt, lint and ide ([d5c8453](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/d5c8453899244f59fcfe5d78ffd67c2cccf38120))
+- migrate new version 1.0.0 to nuxt module ([8fe6612](https://github.com/FlapiBusiness/flapi-cms-designsystem/commit/8fe6612a417f7d2eed9f7be1aad2b690b011e529))
 
 ## [1.3.0](https://github.com/FlapiBusiness/flapi-cms-designsystem/compare/v1.2.0...v1.3.0) (2025-05-01)
 
