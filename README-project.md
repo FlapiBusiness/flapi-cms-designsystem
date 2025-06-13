@@ -71,7 +71,7 @@ Nous utilisons les conventions de commit pour maintenir une cohérence dans l'hi
 
 Pour indiquer qu'un commit introduit des modifications incompatibles avec les versions antérieures (breaking changes), ajoutez un ! après le type de commit, par exemple feat! ou fix!.
 
-Pour plus de détails sur les conventions de commit, consultez : [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+Pour plus de détails sur les conventions de commit, consultez : [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/
 
 <br /><br /><br /><br />
 
